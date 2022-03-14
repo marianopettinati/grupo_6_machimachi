@@ -9,7 +9,7 @@ Contribuidores:
 Fernando Veliz
 Valeria Moncada
 Mariano Pettinati
-Patricio Di Rocco
+Patricio Di Rocco:
 
 Referencias:
 www.cheeky.com.ar
