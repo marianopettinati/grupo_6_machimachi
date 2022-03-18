@@ -23,11 +23,11 @@
     Las siguientes páginas web pertecen a referentes del segmento. Ofrecen productos para un mismo público objetivo y ofrecen una organización de la información y display de producto similar al buscado. Asimismo ofrecen un patrón de diseño a tener en cuenta a la hora de diferenciarse y lograr un producto que transmita la identidad Machi Machi. 
 
 <ul>
-   <li> <a href="" title=""> www.cheeky.com.ar</a> </li>
-   <li> <a href="" title=""> www.mimo.com.ar</a> </li>
-   <li> <a href="" title=""> www.rusty.com.ar</a> </li>
-   <li> <a href="" title=""> www.grisino.com</a> </li>
-   <li> <a href="" title=""> www.zuppachicos.com.ar</a> </li>
+   <li> <a href="www.cheeky.com.ar" target='_blank'> www.cheeky.com.ar</a> </li>
+   <li> <a href="www.mimo.com.ar" target='_blank'> www.mimo.com.ar</a> </li>
+   <li> <a href="www.rusty.com.ar" target='_blank'> www.rusty.com.ar</a> </li>
+   <li> <a href="www.grisino.com" target='_blank'> www.grisino.com</a> </li>
+   <li> <a href="www.zuppachicos.com.ar" target='_blank'> www.zuppachicos.com.ar</a> </li>
 </ul>
 
 <h2>WIREFRAME</h2>
