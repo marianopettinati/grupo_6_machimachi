@@ -3,11 +3,11 @@
 
 <h4>TEMÁTICA DEL MARKET PLACE Y OBJETIVO DE TRABAJO</h4>
 
-<p>    Machi Machi es un emprendimiento de ropa infantil tejida a mano para chicos y chicas de 3 a 12 años. Su idea fuerza es "amamos el color" y busca ofrecer una alternativa fresca y divertida en el mercado de ropa para niños que traiga a la memoria los pulóveres que nos tejían nuestras abuelas, que revalorice el valor del trabajo artesanal y que vuelva a vestir a los niños como niños y no con guardarropas de pequeños adultos.
-<p>    Machi Machi se enfoca especilmente en ropa pensada para que los chicos jueguen, corran, se expresen, se diviertan y, fundamentalmente, sean niños. Para eso, diseña prendas en colores vivos, que transmitan felicidad y que permitan a los niños expresarse sin prejuicios y mostrarse como son. 
-<p>    Machi Machi confecciona prendas con lanas de primera calidad y con el amor, el detalle y el esmero que solo el trabajo hecho a mano puede dar. </p>
+<p>    *Machi Machi* es un emprendimiento de ropa infantil tejida a mano para chicos y chicas de 3 a 12 años. Su idea fuerza es "amamos el color" y busca ofrecer una alternativa fresca y divertida en el mercado de ropa para niños que traiga a la memoria los pulóveres que nos tejían nuestras abuelas, que revalorice el valor del trabajo artesanal y que vuelva a vestir a los niños como niños y no con guardarropas de pequeños adultos.
+<p>    *Machi Machi* se enfoca especilmente en ropa pensada para que los chicos jueguen, corran, se expresen, se diviertan y, fundamentalmente, sean niños. Para eso, diseña prendas en colores vivos, que transmitan felicidad y que permitan a los niños expresarse sin prejuicios y mostrarse como son. 
+<p>    *Machi Machi* confecciona prendas con lanas de primera calidad y con el amor, el detalle y el esmero que solo el trabajo hecho a mano puede dar. </p>
 
-<p>    Nuestro trabajo como equipo a cargo del desarrollo del portal de e-commerce de MachiMachi es lograr un página web que respete la identidad planteada por el cliente, que asegure una buena navegación por los productos de su catálogo y que ofrezca una forma sencilla de comprar sus productos. Debe ser una página atractiva visualmente, pero no sobrecargada de información o confusa y debe ser consistente con la imagen de la marca y su estética.</p>
+<p>    Nuestro trabajo como equipo a cargo del desarrollo del portal de e-commerce de *MachiMachi* es lograr un página web que respete la identidad planteada por el cliente, que asegure una buena navegación por los productos de su catálogo y que ofrezca una forma sencilla de comprar sus productos. Debe ser una página atractiva visualmente, pero no sobrecargada de información o confusa y debe ser consistente con la imagen de la marca y su estética.</p>
 
 
 <h4>INTEGRANTES DEL EQUIPO</h4>
