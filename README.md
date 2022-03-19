@@ -33,6 +33,8 @@
 <h2>WIREFRAME</h2>
     https://www.figma.com/file/Z4F8rQL8zsVmMXG5FLqUym/machimachi-wireframe?node-id=577%3A1390
 
+<h2>Diseño del sitio (Home) + Paleta de colores + Tipografía + Logo (Desafío opcional)</h2>
+    https://www.figma.com/file/rHqiPnnwKpx8A7zhnSYba3/Untitled?node-id=0%3A1
 
 <h2>TRELLO</h2>
     https://trello.com/b/C52po0zO/dh
