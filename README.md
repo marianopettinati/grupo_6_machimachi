@@ -15,7 +15,7 @@
 <ul>
     <li><h3>Mariano Pettinati:</h3> <p>Mariano es licenciado en Ciencia Política y Magíster en Finanzas. Aprendió Turbo Pascal en la prehistoria y tiene también una noción muy junior de Python. Sin embargo, se cruzó más de una vez con el Visual Basic for Applications -lenguaje que todavía de vez en cuando usa- y desde entonces la programación y el desarrollo le son una asignatura pendiente </p></li>
     <li><h3>Fernando Veliz:</h3> <p>Fer es analista en sistemas y apasionado por la tecnología. Tiene experiencia con codeando con c# y java y ha trabajado en equipos con metodologías ágiles como Scrum. Es proactivo y propositivo y ha demostrado ser un buen jugador en equipo, ocupando distintos roles de trabajo, aunque se siente maś cómodo siendo un mediador.</p>  </li>
-    <li><h3>Patricio Di Rocco:</h3> <p>Pato trabaja en un comercio de articulos de electricidad, le gusta aprender cosas nuevas para abrir nuevas puertas cómo viajar y aprender idiomas</p></li>
+    <li><h3>Patricio Di Rocco:</h3> <p>Pato es chef pero trabaja en un comercio de articulos de electricidad y se dedica tambien a la venta de productos por mercado libre, le gusta aprender cosas nuevas y entre ellas meterse en el mundo de la programacion, para obtener nuevos conocimientos y seguir creciendo. </p></li>
     <li><h3>Valeria Moncada:</h3> <p>Vale es una amante de los animales, siempre en búsqueda de aprender nuevas cosas. Le encantaría seguir aprendiendo y formándose en el mundo de la programación</p></li>
  </ul>
 
