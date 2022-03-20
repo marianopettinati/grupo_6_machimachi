@@ -1,0 +1,23 @@
+{
+  "name": "grupo_6_machimachi",
+  "version": "1.0.0",
+  "description": "<h1> grupo_6_machimachi",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marianopettinati/grupo_6_machimachi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marianopettinati/grupo_6_machimachi/issues"
+  },
+  "homepage": "https://github.com/marianopettinati/grupo_6_machimachi#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}
