@@ -1,0 +1,66 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+}
+.general{
+    color: #EA3F32;
+}
+
+.logo{
+    width: 15px;
+    align-self: flex-end;
+}
+
+.img-container{
+    width: 50px;
+}
+
+.logoMachiMachi{
+    width: 150px;
+}
+
+.icons-nav i{
+    font-size: 10px;
+}
+
+nav{
+    background-color: #EFEBEB;
+}
+
+main{
+    padding: 5px;
+}
+
+main section h4{
+    margin: 15px 0;
+}
+main section thead{
+    margin-left: 10px;
+    border-collapse: collapse;
+}
+main section thead tr th{
+    display: none;
+}
+
+main section table tbody tr.item-info{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.tituloCuenta{
+    color: #EA3F32;
+}
+.formularioRegister{
+    
+}
