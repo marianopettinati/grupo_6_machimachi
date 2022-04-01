@@ -1,0 +1,312 @@
+*{
+    box-sizing: border-box;
+    font-family: 'poppins';
+}
+
+.header-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /*color: rgb(255, 30, 0);*/
+}
+
+.img-container {
+    width: 50px;
+    display: none;
+}
+
+.logo{
+    width: 15px;
+    align-self: flex-end;
+}
+
+.marca {
+    width: 40vw;
+}
+
+.icons-nav{
+    color: darkred;
+    font-size: 10px;
+    text-decoration: none;
+}
+
+.icons-nav a{
+    padding: 3px;
+    color: darkred;
+}
+
+header nav {
+    display: none;
+    background-color: #EFEBEB;
+    font-weight: bolder;
+    color: darkred
+    padding: 20px;
+    text-align: center;
+}
+
+header nav a{
+    padding: 20px;
+    text-decoration: none;
+}
+
+#niños {color: #326DC7:}
+#niñas {color:#FC5DD9;}
+#sale{color:#0F9D58;}
+#home{color: #EA3F32;}
+
+div.burguer-menu{
+    text-align: center;
+}
+
+div.burger-menu i{ 
+    display: block;
+    background-color: #EFEBEB;
+    color: darkred;
+    text-align: center;
+    padding: 15px;
+}
+
+/*FLEX container */
+.product-detail{
+    display: flex;
+    margin: 1em;
+    /* border: 3px red solid; */
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+/*Fotos del producto*/
+.product-images {
+    /* border: dashed black 2px; */
+    justify-content: space-around;
+    align-self: flex-start;
+    margin-top: 15px;
+
+}
+
+.product-main-img {
+    text-align: center;
+    width: 50vw;
+    min-width: 120px;
+}
+
+.alt-pics {
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    
+}
+
+.alt-pics a img{
+    width: 15vw;
+}
+
+/*CAJA DETALLES*/
+div.product-description{
+    text-align: justify;
+    /* border: solid green 5px; */
+    justify-content: space-around;
+    margin-top: 15px;
+    align-self: stretch;
+    width: 50vw;
+    min-width: 120px;
+}
+
+h3 {
+    color: darkred;
+    font-weight: bolder;
+    margin: 12px 12px 0px 12px;
+}
+
+h4 {
+    margin: 5px 12px 12px 12px;
+    font-size: small;
+    font-weight: bolder;
+
+}
+div.product-description p{
+    text-align: left;
+    color: black;
+    font-weight: 600;
+    font-size: 12px;
+    margin: 12px;
+}
+
+div.quantity p input{
+    width: 20px;
+    text-align: center;
+    color: black;
+    font-weight: 600;
+    margin: 12px;
+}
+
+div.buy-button {
+    text-align: center;
+}
+
+div.buy-button a {
+    color: darkred;
+    font-weight: bolder;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px 30px;
+    margin: 12px;
+    background-color: #EFEBEB;
+    border-radius: 0%;
+}
+
+.recomendados {
+    border-top: solid #EFEBEB 2px;
+    border-bottom: solid #EFEBEB 2px;;
+    margin: 50px 20px;
+}
+
+.recomendados h4 {
+    color: darkred;
+    margin-top: 20px;
+    font-weight: bolder;
+}
+
+.recommended-products {
+    /*border: solid black 3px;*/
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 10px;
+}
+
+.recommended-products a img{
+    width: 20vw;
+}
+ 
+.imagenes_producto {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  
+/*.imagen_producto {
+    border: solid green 2px;
+    min-width: 200px;
+    width: 20vw;
+    background-size: cover;
+    background-position: center center;
+    background-color: #fdfdfd;
+}
+   
+#imagen_producto_1 { 
+    background-image: url("../images/wool-heart.png");
+}
+#imagen_producto_2 { background-image: url("../images/IMG_0499.jpg"); }
+#imagen_producto_3 { background-image: url("/public/images/IMG_0498.jpg"); }
+#imagen_producto_4 { background-image: url("/public/images/IMG_0499.jpg"); }
+ */
+
+.suscribe, .copyright {
+    display: block;
+    background-color: lightgray;
+    padding: 5px;
+    text-align: center;
+}
+
+.suscribe a {
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;    
+}
+
+.copyright{
+    font-size: 6px;
+}
+
+.footer-container {
+    background-color: #EFEBEB;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-container div a {
+    text-decoration: none;
+    color: darkred;
+    font-size: 10px;
+    font-weight: bolder
+}
+
+.footer-container div a h4{
+    font-size: 12px;
+    margin: 5px;
+}
+
+.footer-container div p {
+    display: none;
+    text-decoration: none;
+    color: darkred;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* Tablet */
+@media (min-width: 361px) and (max-width: 769px) {
+    header nav{
+        padding: 10px;
+        display: block;
+        margin: 0;
+    }
+
+    header nav a {
+        font-size: 15px;
+        padding: 8px;
+    }
+
+    div.burger-menu i{ 
+        display: none;
+    }
+    
+    .footer-container {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1em;
+    }
+    .footer-container div {
+        max-width: 20vw;
+    }
+
+    .footer-container div p {
+        display: inline;
+}
+
+/*
+main section .products {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+*/  
+
+
+/* Desktop*/
+@media (min-width: 770px){
+    
+    header nav{
+        display: block;
+        padding: 15px;
+        margin: 0;
+    }
+    
+    header nav a {
+        font-size: 18px;
+        padding: 8px;
+    }
+           
+    div.burger-menu i{ 
+        display: none;
+    }
+}
