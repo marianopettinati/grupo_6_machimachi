@@ -2,11 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Amamos el color!</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/home_styles.css">     <!-- REVISAR LINK DE ESTILOS  -->
+    <link rel="stylesheet" href="css/login_styles.css"> 
 </head>
+
 <body>
+    <header>
+        <div class="header-container">
+            <div class="img-container">  <img class="logo" src="/images/mm-logo.jpeg" alt="logo"> </div>
+            <img src="/images/mm-logo-con-nombre.png" alt="logo con nombre" class="marca">
+            <div class="icons-nav" >
+                <a href="#"> <i class="fas fa-search"></i> </a>
+                <a href="#"> <i class="fas fa-heart general"></i> </a>
+                <a href="#"> <i class="fas fa-shopping-bag general"></i> </a>
+                <a href="#"> <i class="far fa-user general"></i></a>
+            </div>
+        </div>
+        <nav class= "secciones">
+            <a href="#" id="home">Home</a>
+            <a href="#" id="niños">Niños</a>
+            <a href="#" id="niñas">Niñas</a>
+            <a href="#" id="sale">Sale</a>
+        </nav>
+        
+    </header>
+   
+    <div class="loginSection">
+        <form class="loginWraper">
+           
+            <h2>
+                INICIAR SESIÓN
+            </h2>
+        <div class="loginInput">
+        <label for="login_email">E-mail:*</label>
+        <input type="text" name="Email"/>
+    </div>
+        <div class="loginInput">
+            <label for="login_password">Password:*</label>
+            <input type="password" name="login_password"/>
+            
+        </div>
+        <p>
+            Olvidé mi contraseña/Crear cuenta.
+        </p>
+      
+        <button type="submit">INICIAR SESIÓN</button>
+        </div>
+       
+    </form>
+    </div>
+
+ 
+        
+
+        
+    
+    <footer class="footer">
+            
+        <div class="footer-container">
+            <div>
+                <a href="#"> <h4>NOSOTROS</h4></a>
+                <p>Lorem ipsum dolor sit amet consectetur </p>
+            </div>
+            <div>
+                <a href="#"> <h4>CONTACTO</h4></a>
+                <p>Lorem ipsum dolor sit amet consectetur</p>
+            </div>
+            <div>
+                <a href="#"> <h4>AYUDA</h4></a>
+                <p>Lorem ipsum dolor sit amet consectetur</p>
+            </div>
+            <div>
+                <a href="#"> <h4>SEGUINOS</h4></a>
+                <p>Lorem ipsum dolor sit amet consectetur</p>
+            </div>          
+        </div>
+    </footer>
+    <section class="copyright">
+            <p>2022. Todos los derechos reservados.</p>
+        </section>
     
 </body>
 </html>
+
