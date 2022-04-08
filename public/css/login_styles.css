@@ -60,3 +60,9 @@ h2 {
 
 }
 
+#registro{
+    text-decoration: none;
+    color: black;
+    font-size: 10px;
+    font-weight: bold;
+}

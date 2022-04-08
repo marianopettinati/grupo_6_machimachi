@@ -67,7 +67,6 @@ div.burger-menu i{
     padding: 15px;
 }
 
-
 #promo {
     height: 30vh;
     margin: 10px 0;
@@ -125,6 +124,26 @@ div.burger-menu i{
     font-weight: bold;
 }
 
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.products article{
+    min-width: 200px;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.products article img{
+    max-width: 340px;
+    justify-items: center;
+
+}
+
 /* Tablet */
 @media (min-width: 361px) {
     header nav{
@@ -154,19 +173,7 @@ div.burger-menu i{
 
     .footer-container div p {
         display: inline;
-}
-
-
-    .products {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        width: 30vw;
-        
-    }
-  
+}  
 
 
 /* Desktop*/
