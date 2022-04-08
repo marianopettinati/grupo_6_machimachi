@@ -27,13 +27,14 @@
 
 .icons-nav{
     color: darkred;
-    font-size: 10px;
+    font-size: 14px;
     text-decoration: none;
 }
 
 .icons-nav a{
     padding: 3px;
     color: darkred;
+    text-decoration: none;
 }
 
 header nav {

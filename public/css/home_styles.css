@@ -26,14 +26,15 @@
 }
 
 .icons-nav{
-    color: darkred;
-    font-size: 10px;
+    color: darkred
+    font-size: 14px;
     text-decoration: none;
 }
 
 .icons-nav a{
     padding: 3px;
     color: darkred;
+    text-decoration: none;
 }
 
 header nav {
@@ -136,6 +137,10 @@ div.burger-menu i{
     min-width: 200px;
     justify-content: space-around;
     align-items: baseline;
+}
+
+.products article:hover {
+    border: solid 1px lightgray;
 }
 
 .products article img{
