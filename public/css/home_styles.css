@@ -26,14 +26,15 @@
 }
 
 .icons-nav{
-    color: darkred;
-    font-size: 10px;
+    color: darkred
+    font-size: 14px;
     text-decoration: none;
 }
 
 .icons-nav a{
     padding: 3px;
     color: darkred;
+    text-decoration: none;
 }
 
 header nav {
@@ -66,7 +67,6 @@ div.burger-menu i{
     text-align: center;
     padding: 15px;
 }
-
 
 #promo {
     height: 30vh;
@@ -125,6 +125,30 @@ div.burger-menu i{
     font-weight: bold;
 }
 
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.products article{
+    min-width: 200px;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.products article:hover {
+    border: solid 1px lightgray;
+}
+
+.products article img{
+    max-width: 340px;
+    justify-items: center;
+
+}
+
 /* Tablet */
 @media (min-width: 361px) {
     header nav{
@@ -154,19 +178,7 @@ div.burger-menu i{
 
     .footer-container div p {
         display: inline;
-}
-
-
-    .products {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        width: 30vw;
-        
-    }
-  
+}  
 
 
 /* Desktop*/
