@@ -32,6 +32,7 @@
             </ul>    
         </nav>
     </header>
+    
     <main>
         <section class="resume-cart">
             <h4>Mi carrito</h4>
@@ -49,23 +50,71 @@
                         <td class="td-img">
                             <img src="./img/Gorrito cebra.png" alt="producto" class="img-product">
                         </td>
-                        <td>
+                        <td class="item-detail">
                             <div class="product-item-detail">
                                 <h7 class="title-item-detail">Gorrito de cebra tejido a mano</h7>
                                 <dl>
                                     <dt>Talle: </dt>
                                     <dd>Medium</dd>
                                 </dl>
+                                <span class="price">Precio: $650</span>
                             </div>
-                            <span class="price">Precio: $650</span>
+                            <div class="container-cant-subtotal">
+                                <div class="cantidad">
+                                    <button class="plus-less">-</button>
+                                    <input type="text" class="inp-cantidad" value="1">
+                                    <button class="plus-less">+</button>
+                                </div>
+                                <span class="total-item">$650</span>
+                            </div>
                         </td>
-                        <td></td>
-                        <td></td>
+                        <td class="tacho">
+                            <div><i class="far fa-trash-alt"></i></div>
+                        </td>
+                    </tr>
+                    <tr class="item-info">
+                        <td class="td-img">
+                            <img src="./img/Gorrito frutilla.png" alt="producto" class="img-product">
+                        </td>
+                        <td class="item-detail">
+                            <div class="product-item-detail">
+                                <h7 class="title-item-detail">Gorrito frutilla tejido a mano</h7>
+                                <dl>
+                                    <dt>Talle: </dt>
+                                    <dd>Large</dd>
+                                </dl>
+                                <span class="price">Precio: $650</span>
+                            </div>
+                            <div class="container-cant-subtotal">
+                                <div class="cantidad">
+                                    <button class="plus-less">-</button>
+                                    <input type="text" class="inp-cantidad" value="2">
+                                    <button class="plus-less">+</button>
+                                </div>
+                                <span class="total-item">$1300</span>
+                            </div>
+                        </td>
+                        <td class="tacho">
+                            <div><i class="far fa-trash-alt"></i></div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </section>
-        
+        <section class="resume-cart">
+            <h4>Resumen de la compra</h4>
+            <div class="cupon-descuento">
+                <h6><i class="fas fa-gift"></i> ¿Tenés un cupón de descuento?</h6>
+                <div class="descuento">
+                    <div class="inp-aplicar">
+                        <input type="text" placeholder="Ingresá tu cupón">
+                    </div>                    
+                    <div class="btn-aplicar">
+                        <button>Aplicar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 </html>

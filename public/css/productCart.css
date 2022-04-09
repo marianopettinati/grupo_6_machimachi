@@ -90,19 +90,26 @@ main section thead tr th{
     display: none;
 }
 
+/* Item */
 main section table tbody tr.item-info{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    margin: 10px 0;
 }
 
 .td-img{
-    width: 15%;
+    width: 20%;
     margin: 0 3%;
 }
 
 .img-product{
     width: 100%;
+    height: 100%;
+}
+
+.item-detail{
+    width: 60%;
 }
 
 .product-item-detail{
@@ -125,6 +132,90 @@ dl{
 }
 
 .price{
+    font-size: 11px;
+}
+
+.container-cant-subtotal{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cantidad{
+    display: flex;
+    justify-content: flex-start;
+    width: 40%;
+    height: 25%;
+    min-height: 20px;
+    border: 1px solid black;
+}
+
+.plus-less{
+    width: 30%;
+    border: 0;
+    background-color: #fff;
+}
+
+.inp-cantidad{
+    width: 40%;
+    border: 0;
+    text-align: center;
+    font-size: 11px;
+}
+
+.total-item{
+    font-size: 14px;
+    margin-right: 15%;
+}
+
+.tacho{
+    display: flex;
+    justify-content: center;
+    width: 10%;
+}
+
+/* Resumen de compra */
+
+.resume-cart{
+
+}
+
+.cupon-descuento{
+    background-color: #EFEBEB;
+}
+
+.cupon-descuento>h6{
     font-size: 12px;
-    
+    padding: 10px;
+}
+
+.descuento{
+    display: flex;
+    height: 20px;
+    padding: 10px;
+}
+
+.descuento>div.inp-aplicar{
+    height: 100%;
+    background-color: #fff;
+    border-bottom: 2px solid #EA3F32;
+    border-top: 2px solid #EA3F32;
+    border-left: 2px solid #EA3F32;
+}
+
+.descuento>div>input{
+    border:0;
+}
+
+.descuento>div>button{
+    border: 0;
+    background-color: white;
+}
+
+.descuento>div.btn-aplicar{
+    z-index: 1;
+    height: 100%;
+    background-color: white;
+    border-bottom: 2px solid #EA3F32;
+    border-top: 2px solid #EA3F32;
+    border-right: 2px solid #EA3F32;
 }
