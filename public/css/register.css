@@ -1,20 +1,20 @@
 *{
-    margin: 0px;
-    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'poppins';
 }
 
-body{
-    font-family: 'Roboto', sans-serif;
-}
 .header-container{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    padding: 10px 20px;
+    margin: 10px 0px;
+    /*color: rgb(255, 30, 0);*/
 }
-.general{
-    color: #EA3F32;
+
+.img-container {
+    width: 50px;
+    display: none;
 }
 
 .logo{
@@ -22,45 +22,198 @@ body{
     align-self: flex-end;
 }
 
-.img-container{
-    width: 50px;
+.marca {
+    width: 40vw;
+    margin-left: 5vw;
 }
 
-.logoMachiMachi{
-    width: 150px;
+.icons-nav{
+    color: darkred
+    font-size: 14px;
+    text-decoration: none;
+    margin-right: 5vw;
 }
 
-.icons-nav i{
-    font-size: 10px;
+.icons-nav a{
+    padding: 3px;
+    color: darkred;
+    text-decoration: none;
 }
 
-nav{
-    background-color: #EFEBEB;
-}
-
-main{
-    padding: 5px;
-}
-
-main section h4{
-    margin: 15px 0;
-}
-main section thead{
-    margin-left: 10px;
-    border-collapse: collapse;
-}
-main section thead tr th{
+header nav {
     display: none;
+    background-color: #d3d3d3;
+    font-weight: bolder;
+    color: darkred
+    padding: 20px;
+    text-align: center;
 }
 
-main section table tbody tr.item-info{
+header nav a{
+    padding: 20px;
+    text-decoration: none;
+}
+
+#niños {color: #326DC7:}
+#niñas {color:#FC5DD9;}
+#sale{color:#0F9D58;}
+#home{color: #EA3F32;}
+
+div.burguer-menu{
+    text-align: center;
+}
+
+div.burger-menu i{ 
+    display: block;
+    background-color: #d3d3d3;
+    color: darkred;
+    text-align: center;
+    padding: 15px;
+}
+
+
+.copyright{
+    font-size: 6px;
+}
+
+.footer-container {
+    background-color: #EFEBEB;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-container div a {
+    text-decoration: none;
+    color: darkred;
+    font-size: 10px;
+    font-weight: bolder
+}
+
+.footer-container div a h4{
+    font-size: 12px;
+    margin: 5px;
+}
+
+.footer-container div p {
+    display: none;
+    text-decoration: none;
+    color: darkred;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.register-form {
+    min-height: 300px;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
 }
-.tituloCuenta{
-    color: #EA3F32;
+
+.wraper {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 30px 20px;
+    border-radius: 5px;
+    /*shadow props*/
+    box-shadow: 7px 10px 28px -8px rgba(0,0,0,0.68);
+-webkit-box-shadow: 7px 10px 28px -8px rgba(0,0,0,0.68);
+-moz-box-shadow: 7px 10px 28px -8px rgba(0,0,0,0.68);
 }
-.formularioRegister{
+
+.input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+
+.input>input{
     
+    background-color: #E1E1E1;
+}
+
+.input>label{
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.wraper>p {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.wraper>button{
+    background-color: #E1E1E1;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 15px;
+
+}
+
+
+
+/* Tablet */
+@media (min-width: 361px) {
+    .header-container{
+        margin: 20px 0px;
+    }
+
+    header nav{
+        padding: 10px;
+        display: block;
+        margin: 0;
+    }
+
+    header nav a {
+        font-size: 15px;
+        padding: 8px;
+    }
+
+    div.burger-menu i{ 
+        display: none;
+    }
+    
+    .footer-container {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1em;
+    }
+    .footer-container div {
+        max-width: 20vw;
+    }
+
+    .footer-container div p {
+        display: inline;
+}  
+
+
+/* Desktop*/
+@media (min-width: 770px){
+    
+    header nav{
+        display: block;
+        padding: 15px;
+        margin: 0;
+    }
+    
+    header nav a {
+        font-size: 18px;
+        padding: 8px;
+    }
+           
+    div.burger-menu i{ 
+        display: none;
+    }
 }

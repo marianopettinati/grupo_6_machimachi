@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/home_styles.css">     <!-- REVISAR LINK DE ESTILOS  -->
+        <link rel="stylesheet" href="css/register.css">     <!-- REVISAR LINK DE ESTILOS  -->
     </head>
     
     <body>
@@ -35,44 +35,50 @@
         </header>
     
     <main>
-        <form action="/register" method="post">
+
+        
+
+
+        <div class="register-form">
+        <form action="/register" method="post" class="wraper">
             <div class="tituloCuenta">
-                <h1>
+                <h2>
                     Crea tu cuenta!
-                </h1>
+                </h2>
             </div>
-            <label for="nombre">Nombre:</label>
-            <div class="formularioRegister">
+            <div class="input">
+                <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" placeholder="Ej: Fabrizio" required="" id="nombre">
             </div>
-            <div>
+            <div class="input">
                 <label for="apellido">Apellido:</label>
                 <input type="text" name="apellido" id="apellido">
             </div>
-            <div>
+            <div class="input">
                 <label for="email">E-mail:</label>
                 <input type="email" name="email" id="email">
             </div>
-            <div>
+            <div class="input">
                 <label for="telefono">Telefono:</label>
                 <input type="tel" name="telefono" id="telefono">
             </div>
-            <div>
+            <div class="input">
                 <label for="contrasena">Contraseña:</label>
                 <input type="password" name="contrasena" id="contrasena">
             </div>
-            <div>
+            <div class="input">
                 <label for="repetirContrasena">Repetir contraseña:</label>
                 <input type="password" name="repetirContrasena" id="repetirContrasena">
             </div>
-            <div>
+            <div class="input">
                 <label for="terminos">Acepto terminos y condiciones.</label>
                 <input type="checkbox" name="terminos">
             </div>
-            <div>
+            <div class="input">
                 <button type="submit">Registrarse</button>
             </div>
         </form>
+        </div>
 
        
         <footer class="footer">
@@ -97,9 +103,8 @@
             </div>
         </footer>
         <section class="copyright">
-                <p>2022. Todos los derechos reservados.</p>
-            </section>
-
+            <p>2022. Todos los derechos reservados.</p>
+        </section>
     </main>
 </body>
 </html>
