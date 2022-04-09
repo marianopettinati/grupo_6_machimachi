@@ -145,6 +145,8 @@ div.burger-menu i{
 
 h2 {
     text-align: center;
+    color: #e23f30;
+    font-weight: 600;
 }
 
 .wraper>p {
@@ -161,6 +163,20 @@ h2 {
 
 }
 
+.input>button{
+    background-color: #e23f30;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+}
+
+form div>button.register:hover{
+    background-color: #E61515;
+    color: white;
+    font-weight: 600;
+    transition-duration: 500ms;
+}
 
 
 /* Tablet */
