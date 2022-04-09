@@ -8,6 +8,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    margin: 10px 0px;
     /*color: rgb(255, 30, 0);*/
 }
 
@@ -23,12 +24,14 @@
 
 .marca {
     width: 40vw;
+    margin-left: 5vw;
 }
 
 .icons-nav{
     color: darkred
     font-size: 14px;
     text-decoration: none;
+    margin-right: 5vw;
 }
 
 .icons-nav a{
@@ -39,7 +42,7 @@
 
 header nav {
     display: none;
-    background-color: #EFEBEB;
+    background-color: #d3d3d3;
     font-weight: bolder;
     color: darkred
     padding: 20px;
@@ -62,7 +65,7 @@ div.burguer-menu{
 
 div.burger-menu i{ 
     display: block;
-    background-color: #EFEBEB;
+    background-color: #d3d3d3;
     color: darkred;
     text-align: center;
     padding: 15px;
@@ -70,7 +73,7 @@ div.burger-menu i{
 
 #promo {
     height: 30vh;
-    margin: 10px 0;
+    margin: 10px 0px 30px 0;
     background-image: url("/images/IMG_0500.jpg");
     background-size: cover;
     color: darkred;
@@ -94,10 +97,12 @@ div.burger-menu i{
 }
 
 .copyright{
-    font-size: 6px;
+    font-size: 8px;
+    padding: 1px;
 }
 
 .footer-container {
+    border-top: solid #d3d3d3 2px;
     background-color: #EFEBEB;
     display: flex;
     flex-wrap: nowrap;
@@ -133,14 +138,20 @@ div.burger-menu i{
     flex-wrap: wrap;
 }
 
+.products a{
+    color: darkred;
+    text-decoration: none;
+}
+
 .products article{
     min-width: 200px;
     justify-content: space-around;
     align-items: baseline;
+    margin-bottom: 30px;
 }
 
 .products article:hover {
-    border: solid 1px lightgray;
+    box-shadow: 10px 10px 20px pink;;
 }
 
 .products article img{
@@ -149,8 +160,20 @@ div.burger-menu i{
 
 }
 
+.product-name {
+    margin: 5px 0;
+}
+.price {
+    font-style: italic;
+    margin: 0px;
+}
+
 /* Tablet */
 @media (min-width: 361px) {
+    .header-container{
+        margin: 20px 0px;
+    }
+    
     header nav{
         padding: 10px;
         display: block;
