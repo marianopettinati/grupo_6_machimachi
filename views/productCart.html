@@ -12,20 +12,20 @@
 <body>
     <header>
         <div class="header-container">
-            <div class="img-container"><img src="./img/logo.jpg" alt="logo"  class="logo"></div>
-            <img src="./img/logoMachiMachi.jpeg" alt="logo Machi Machi" class="logoMachiMachi">
+            <img src="./images/logo2-machimachi.png" alt="logo"  class="logo">
+            <img src="./images/mm-logo-con-nombre.png" alt="logo Machi Machi" class="logoMachiMachi">
             <div class="icons-nav">
-                <i class="fas fa-search general"></i>
-                <i class="fas fa-heart general"></i>
-                <i class="fas fa-shopping-bag general"></i>
-                <i class="fas fa-user general"></i>
+                <a href=""><i class="fas fa-search general"></i></a>
+                <a href=""><i class="fas fa-heart general"></i></a>
+                <a href="/cart"><i class="fas fa-shopping-bag general"></i></a>
+                <a href="/login"><i class="fas fa-user general"></i></a>
             </div>
         </div>
         <nav>
             <ul>
                 <!--TODO: las etiquetas a deberían linkear a las secciones correspondientes-->
-                <li><a href="" class="general">Home</a></li>
-                <li><a href="" class="bebes">Bebés</a></li>
+                <li><a href="/" class="general">Home</a></li>
+                <!--<li><a href="" class="bebes">Bebés</a></li>-->
                 <li><a href="" class="niños">Niños</a></li>
                 <li><a href="" class="niñas">Niñas</a></li>
                 <li><a href="" class="sale">Sale</a></li>
@@ -34,7 +34,8 @@
     </header>
     
     <main>
-        <section class="resume-cart">
+        
+        <section class="resume-products">
             <h4>Mi carrito</h4>
             <table>
                 <thead>
@@ -48,7 +49,7 @@
                 <tbody>
                     <tr class="item-info">
                         <td class="td-img">
-                            <img src="./img/Gorrito cebra.png" alt="producto" class="img-product">
+                            <img src="./images/Gorrito cebra.png" alt="producto" class="img-product">
                         </td>
                         <td class="item-detail">
                             <div class="product-item-detail">
@@ -74,7 +75,7 @@
                     </tr>
                     <tr class="item-info">
                         <td class="td-img">
-                            <img src="./img/Gorrito frutilla.png" alt="producto" class="img-product">
+                            <img src="./images/Gorrito frutilla.png" alt="producto" class="img-product">
                         </td>
                         <td class="item-detail">
                             <div class="product-item-detail">
@@ -107,14 +108,41 @@
                 <h6><i class="fas fa-gift"></i> ¿Tenés un cupón de descuento?</h6>
                 <div class="descuento">
                     <div class="inp-aplicar">
-                        <input type="text" placeholder="Ingresá tu cupón">
-                    </div>                    
-                    <div class="btn-aplicar">
+                        <input type="text" placeholder="Ingresá tu cupón" required>
                         <button>Aplicar</button>
                     </div>
                 </div>
             </div>
+            <div class="resume-valor">
+                <span>Subtotal: $1950</span>
+                <span>Total: $1950</span>
+                <button type="submit">Iniciar pago</button>
+            </div>
         </section>
     </main>
+    <footer class="footer">
+             
+        <div class="footer-container">
+            <div>
+                <a href="#"> <h4>NOSOTROS</h4></a>
+                <p>Lorem ipsum dolor sit amet consectetur </p>
+            </div>
+            <div>
+                <a href="#"> <h4>CONTACTO</h4></a>
+                <p>Lorem ipsum dolor sit amet consectetur</p>
+            </div>
+            <div>
+                <a href="#"> <h4>AYUDA</h4></a>
+                <p>Lorem ipsum dolor sit amet consectetur</p>
+            </div>
+            <div>
+                <a href="#"> <h4>SEGUINOS</h4></a>
+                <p>Lorem ipsum dolor sit amet consectetur</p>
+            </div>          
+        </div>
+    </footer>
+    <section class="copyright">
+            <p>2022. Todos los derechos reservados.</p>
+    </section>
 </body>
 </html>
