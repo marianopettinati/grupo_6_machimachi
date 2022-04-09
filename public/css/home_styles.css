@@ -28,7 +28,7 @@
 }
 
 .icons-nav{
-    color: darkred
+    color: darkred;
     font-size: 14px;
     text-decoration: none;
     margin-right: 5vw;
@@ -44,7 +44,7 @@ header nav {
     display: none;
     background-color: #d3d3d3;
     font-weight: bolder;
-    color: darkred
+    color: darkred;
     padding: 20px;
     text-align: center;
 }
@@ -54,7 +54,7 @@ header nav a{
     text-decoration: none;
 }
 
-#niños {color: #326DC7:}
+#niños {color: #326DC7;}
 #niñas {color:#FC5DD9;}
 #sale{color:#0F9D58;}
 #home{color: #EA3F32;}
@@ -201,6 +201,7 @@ div.burger-menu i{
 
     .footer-container div p {
         display: inline;
+    }
 }  
 
 

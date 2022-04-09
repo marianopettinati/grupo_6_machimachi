@@ -1,10 +1,7 @@
 *{
     margin: 0px;
     padding: 0px;
-}
-
-body{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'poppins';
 }
 
 .bebes{
@@ -27,6 +24,10 @@ body{
     color: #EA3F32;
 }
 
+span{
+    font-size: 12px;
+}
+
 /* Navbar */
 
 .header-container{
@@ -42,16 +43,16 @@ body{
     align-self: flex-end;
 }
 
-.img-container{
-    width: 50px;
-}
-
 .logoMachiMachi{
     width: 150px;
 }
 
 .icons-nav i{
     font-size: 10px;
+}
+
+i:hover{
+    cursor: pointer;
 }
 
 nav{
@@ -79,8 +80,8 @@ main{
     padding: 5px;
 }
 
-main section h4{
-    margin: 15px 0;
+main h4{
+    margin: 15px 3px;
 }
 main section thead{
     margin-left: 10px;
@@ -106,6 +107,7 @@ main section table tbody tr.item-info{
 .img-product{
     width: 100%;
     height: 100%;
+    border-radius: 5px;
 }
 
 .item-detail{
@@ -176,34 +178,47 @@ dl{
 /* Resumen de compra */
 
 .resume-cart{
-
+    margin: 3px 0;
+}
+.resume-products{
+    margin: 3px 0;
 }
 
 .cupon-descuento{
     background-color: #EFEBEB;
+    border-radius: 5px;
+    padding: 10px 0;
 }
 
 .cupon-descuento>h6{
     font-size: 12px;
     padding: 10px;
+    text-align: center;
 }
 
 .descuento{
     display: flex;
     height: 20px;
     padding: 10px;
+    justify-content: center;
 }
 
 .descuento>div.inp-aplicar{
     height: 100%;
     background-color: #fff;
-    border-bottom: 2px solid #EA3F32;
-    border-top: 2px solid #EA3F32;
-    border-left: 2px solid #EA3F32;
+    border-radius: 5px;
+    padding: 1px;
+    border: 2px solid #999;
+}
+
+div.inp-aplicar:focus-within{
+    border: 2px solid #EA3F32;
+    transition-duration: 300ms;
 }
 
 .descuento>div>input{
     border:0;
+    outline: none;
 }
 
 .descuento>div>button{
@@ -211,11 +226,176 @@ dl{
     background-color: white;
 }
 
-.descuento>div.btn-aplicar{
-    z-index: 1;
-    height: 100%;
-    background-color: white;
-    border-bottom: 2px solid #EA3F32;
-    border-top: 2px solid #EA3F32;
-    border-right: 2px solid #EA3F32;
+.descuento>div>button:hover{
+    cursor: pointer;
 }
+
+.resume-valor{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    text-align: center;
+}
+
+.resume-valor>span{
+    padding: 2px;
+}
+
+.resume-valor>button{
+    padding: 2px;
+    border-radius: 3px;
+    background-color: rgb(240, 57, 57);
+    color: white;
+}
+
+.resume-valor>button:hover{
+    background-color: #E61515;
+    color: white;
+    transition-duration: 500ms;
+    cursor: pointer;
+}
+
+/* footer */ 
+.copyright{
+    font-size: 8px;
+    padding: 1px;
+    display: block;
+    background-color: lightgray;
+    padding: 5px;
+    text-align: center;
+}
+
+.footer-container {
+    border-top: solid #d3d3d3 2px;
+    background-color: #EFEBEB;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-container div a {
+    text-decoration: none;
+    color: darkred;
+    font-size: 10px;
+    font-weight: bolder
+}
+
+.footer-container div a h4{
+    font-size: 12px;
+    margin: 5px;
+}
+
+.footer-container div p {
+    display: none;
+    text-decoration: none;
+    color: darkred;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+@media (min-width: 361px) {
+    .logo{
+        width: 30px;
+        align-self: flex-end;
+    }
+    
+    .logoMachiMachi{
+        width: 300px;
+    }
+    
+    .icons-nav i{
+        font-size: 15px;
+    }
+
+    .title-item-detail{
+        font-size: 16px;
+        font-weight: 600;
+        display: block;
+        padding: 2px 0;
+    }
+
+    dl{
+        display: flex;
+        font-size: 14px;
+        color: #999;
+        padding: 2px 0;
+    }
+
+    .price{
+        font-size: 15px;
+        padding: 2px 0;
+    }
+
+    main section table tbody tr.item-info{
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    main h4{
+        margin: 20px 5px;
+        font-size: 20px;
+    }
+
+
+    header ul li{
+        list-style-type: none;
+        margin: 10px;
+        font-weight: 600;
+    }
+
+    header ul li a{
+        font-size: 16px;
+    }
+
+    .footer-container {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1em;
+    }
+    .footer-container div {
+        max-width: 20vw;
+    }
+
+    .footer-container div p {
+        display: inline;
+    }
+}
+
+/* Desktop*/
+@media (min-width: 770px){
+    .logo{
+        width: 40px;
+        align-self: flex-end;
+    }
+    
+    .logoMachiMachi{
+        width: 400px;
+    }
+    
+    .icons-nav i{
+        font-size: 20px;
+    }
+
+    main h4{
+        margin: 20px;
+        font-size: 30px;
+    }
+
+    main{
+        display: flex;
+    }
+
+    .resume-products{
+        margin: 3px 0;
+        width: 58%;
+    }
+    .resume-cart{
+        width: 38%;
+    }
+}
+
