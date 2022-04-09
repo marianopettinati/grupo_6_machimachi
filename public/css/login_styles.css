@@ -62,7 +62,7 @@ a{
     color: white;
 }
 
-form div>button.IniciarSesion:hover{
+form>button.IniciarSesion:hover{
     background-color: #E61515;
     color: white;
     font-weight: 600;
