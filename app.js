@@ -1,4 +1,7 @@
 const express = require('express');
+const routeMain = require ('./routes/mainRoutes')
+const loginRoutes = require ('./routes/loginRoutes')
+const cartRoutes = require ('./routes/cartRoutes')
 const app = express();
 const path = require('path');
 
@@ -10,25 +13,20 @@ app.listen(3000, ()=>{
     console.log("Servidor corriendo ok");
 });
 
-app.get('/', (req, res) =>{
-    res.sendFile(path.join(__dirname, './views/home.html'));
-})
+app.set ("view engine", "ejs")
 
-app.get('/cart', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/productCart.html'));
-})
-app.get('/register', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/register.html'));
-})
+app.use('/', routeMain);
+
+app.use('/cart', cartRoutes);
+
+app.use('/register', loginRoutes);
+
+app.use('/login', loginRoutes);
+
+app.use('/forgotpassword', loginRoutes);
+
 app.get('/product', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/product.html'));
-})
-app.get('/login', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/login.html'));
-})
-
-app.get('/forgotpassword', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/forgotpassword.html'));
 })
 
 
