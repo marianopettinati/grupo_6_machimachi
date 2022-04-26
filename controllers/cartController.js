@@ -1,10 +1,10 @@
-const cart = (req, res) => {
+const viewCart = (req, res) => {
     res.render('productCart', {});
 };
 
 
 const cartController = {
-    cart,
+    viewCart,
 };
 
 // Acá exportamos el resultado
