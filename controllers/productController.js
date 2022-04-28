@@ -17,14 +17,14 @@ const productos = [
         id: 3,
         name: 'Gorrito cebra',
         price: '$2200',
-        img: '/images/Gorrito cebra.png',
+        img: '/images/IMG_gorrito_Cebra.jpg',
         gender: 'Niños',
     },
     {
         id: 4,
         name: 'Gorrito frutilla',
         price: '$2200',
-        img: '/images/Gorrito frutilla.png',
+        img: '/images/IMG_gorrito_Frutilla.jpg',
         gender: 'Niñas',
     },
     {
@@ -41,7 +41,7 @@ const productos = [
         img: '/images/IMG_0502.jpg',
         gender: 'Niños',
     },
-];
+]
 
 const producto = (id) => {
     let producto;
@@ -50,7 +50,6 @@ const producto = (id) => {
             producto=item;
         }
     });
-    console.log(producto);
     return producto;
 }
 
