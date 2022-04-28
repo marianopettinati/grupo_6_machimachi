@@ -70,34 +70,7 @@ form>button.IniciarSesion:hover{
 }
 
 /* Tablet */
-@media (min-width: 361px) and (max-width: 769px) {
-    header nav{
-        padding: 10px;
-        display: block;
-        margin: 0;
-    }
-
-    header nav a {
-        font-size: 15px;
-        padding: 8px;
-    }
-
-    div.burger-menu i{ 
-        display: none;
-    }
-    
-    .footer-container {
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 1em;
-    }
-    .footer-container div {
-        max-width: 20vw;
-    }
-
-    .footer-container div p {
-        display: inline;
+@media (min-width: 361px) and (max-width: 769px) {    
 }
 
 /*
@@ -112,19 +85,4 @@ main section .products {
 /* Desktop*/
 @media (min-width: 770px){
     
-    header nav{
-        display: block;
-        padding: 15px;
-        margin: 0;
-    }
-}
-
-    header nav a {
-        font-size: 18px;
-        padding: 8px;
-    }
-           
-    div.burger-menu i{ 
-        display: none;
-    }
 }

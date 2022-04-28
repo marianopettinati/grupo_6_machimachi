@@ -1,0 +1,111 @@
+.bebes{
+    color:#F4B400;
+}
+
+.niños{
+    color: #326DC7;
+}
+
+.niñas{
+    color:#FC5DD9;
+}
+
+.sale{
+    color:#0F9D58;
+}
+
+.general{
+    color: #EA3F32;
+}
+
+span{
+    font-size: 12px;
+}
+
+/* Navbar */
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+}
+
+.logo{
+    width: 15px;
+    align-self: flex-end;
+}
+
+.logoMachiMachi{
+    width: 150px;
+}
+
+.icons-nav i{
+    font-size: 10px;
+}
+
+i:hover{
+    cursor: pointer;
+}
+
+nav{
+    background-color: #EFEBEB;
+}
+
+header ul li{
+    list-style-type: none;
+    margin: 5px;
+    font-weight: 600;
+}
+
+header ul li a{
+    text-decoration: none;
+    font-size: 10px;
+}
+
+header ul{
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 361px) {
+    .logo{
+        width: 30px;
+        align-self: flex-end;
+    }
+    
+    .logoMachiMachi{
+        width: 300px;
+    }
+    
+    .icons-nav i{
+        font-size: 15px;
+    }
+
+    header ul li{
+        list-style-type: none;
+        margin: 10px;
+        font-weight: 600;
+    }
+
+    header ul li a{
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 770px){
+    
+    .logo{
+        width: 40px;
+        align-self: flex-end;
+    }
+    
+    .logoMachiMachi{
+        width: 400px;
+    }
+    
+    .icons-nav i{
+        font-size: 20px;
+    }
+}

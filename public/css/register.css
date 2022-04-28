@@ -3,106 +3,15 @@
     font-family: 'poppins';
 }
 
-.header-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0px;
-    /*color: rgb(255, 30, 0);*/
-}
-
-.img-container {
-    width: 50px;
-    display: none;
-}
-
-.logo{
-    width: 15px;
-    align-self: flex-end;
-}
-
 .marca {
     width: 40vw;
     margin-left: 5vw;
 }
 
-.icons-nav{
-    color: darkred
-    font-size: 14px;
-    text-decoration: none;
-    margin-right: 5vw;
-}
-
-.icons-nav a{
-    padding: 3px;
-    color: darkred;
-    text-decoration: none;
-}
-
-header nav {
-    display: none;
-    background-color: #d3d3d3;
-    font-weight: bolder;
-    color: darkred
-    padding: 20px;
-    text-align: center;
-}
-
-header nav a{
-    padding: 20px;
-    text-decoration: none;
-}
-
-#niños {color: #326DC7:}
+#niños {color: #326DC7;}
 #niñas {color:#FC5DD9;}
 #sale{color:#0F9D58;}
 #home{color: #EA3F32;}
-
-div.burguer-menu{
-    text-align: center;
-}
-
-div.burger-menu i{ 
-    display: block;
-    background-color: #d3d3d3;
-    color: darkred;
-    text-align: center;
-    padding: 15px;
-}
-
-
-.copyright{
-    font-size: 6px;
-}
-
-.footer-container {
-    background-color: #EFEBEB;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    text-align: center;
-}
-
-.footer-container div a {
-    text-decoration: none;
-    color: darkred;
-    font-size: 10px;
-    font-weight: bolder
-}
-
-.footer-container div a h4{
-    font-size: 12px;
-    margin: 5px;
-}
-
-.footer-container div p {
-    display: none;
-    text-decoration: none;
-    color: darkred;
-    font-size: 10px;
-    font-weight: bold;
-}
 
 .register-form {
     min-height: 300px;
@@ -181,55 +90,11 @@ form div>button.register:hover{
 
 /* Tablet */
 @media (min-width: 361px) {
-    .header-container{
-        margin: 20px 0px;
-    }
 
-    header nav{
-        padding: 10px;
-        display: block;
-        margin: 0;
-    }
-
-    header nav a {
-        font-size: 15px;
-        padding: 8px;
-    }
-
-    div.burger-menu i{ 
-        display: none;
-    }
-    
-    .footer-container {
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 1em;
-    }
-    .footer-container div {
-        max-width: 20vw;
-    }
-
-    .footer-container div p {
-        display: inline;
 }  
 
 
 /* Desktop*/
 @media (min-width: 770px){
-    
-    header nav{
-        display: block;
-        padding: 15px;
-        margin: 0;
-    }
-    
-    header nav a {
-        font-size: 18px;
-        padding: 8px;
-    }
-           
-    div.burger-menu i{ 
-        display: none;
-    }
+
 }

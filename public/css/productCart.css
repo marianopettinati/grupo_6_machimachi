@@ -28,53 +28,6 @@ span{
     font-size: 12px;
 }
 
-/* Navbar */
-
-.header-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 10px 20px;
-}
-
-.logo{
-    width: 15px;
-    align-self: flex-end;
-}
-
-.logoMachiMachi{
-    width: 150px;
-}
-
-.icons-nav i{
-    font-size: 10px;
-}
-
-i:hover{
-    cursor: pointer;
-}
-
-nav{
-    background-color: #EFEBEB;
-}
-
-header ul li{
-    list-style-type: none;
-    margin: 5px;
-    font-weight: 600;
-}
-
-header ul li a{
-    text-decoration: none;
-    font-size: 10px;
-}
-
-header ul{
-    display: flex;
-    justify-content: center;
-}
-
 /* main */
 main{
     padding: 5px;
@@ -255,60 +208,8 @@ div.inp-aplicar:focus-within{
     cursor: pointer;
 }
 
-/* footer */ 
-.copyright{
-    font-size: 8px;
-    padding: 1px;
-    display: block;
-    background-color: lightgray;
-    padding: 5px;
-    text-align: center;
-}
-
-.footer-container {
-    border-top: solid #d3d3d3 2px;
-    background-color: #EFEBEB;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    text-align: center;
-}
-
-.footer-container div a {
-    text-decoration: none;
-    color: darkred;
-    font-size: 10px;
-    font-weight: bolder
-}
-
-.footer-container div a h4{
-    font-size: 12px;
-    margin: 5px;
-}
-
-.footer-container div p {
-    display: none;
-    text-decoration: none;
-    color: darkred;
-    font-size: 10px;
-    font-weight: bold;
-}
-
 
 @media (min-width: 361px) {
-    .logo{
-        width: 30px;
-        align-self: flex-end;
-    }
-    
-    .logoMachiMachi{
-        width: 300px;
-    }
-    
-    .icons-nav i{
-        font-size: 15px;
-    }
-
     .title-item-detail{
         font-size: 16px;
         font-weight: 600;
@@ -339,48 +240,10 @@ div.inp-aplicar:focus-within{
         margin: 20px 5px;
         font-size: 20px;
     }
-
-
-    header ul li{
-        list-style-type: none;
-        margin: 10px;
-        font-weight: 600;
-    }
-
-    header ul li a{
-        font-size: 16px;
-    }
-
-    .footer-container {
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 1em;
-    }
-    .footer-container div {
-        max-width: 20vw;
-    }
-
-    .footer-container div p {
-        display: inline;
-    }
 }
 
 /* Desktop*/
 @media (min-width: 770px){
-    .logo{
-        width: 40px;
-        align-self: flex-end;
-    }
-    
-    .logoMachiMachi{
-        width: 400px;
-    }
-    
-    .icons-nav i{
-        font-size: 20px;
-    }
-
     main h4{
         margin: 20px;
         font-size: 30px;

@@ -1,110 +1,52 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>Amamos el color!</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <link rel="stylesheet" href="/css/normalize.css">
-        <link rel="stylesheet" href="/css/register.css">     <!-- REVISAR LINK DE ESTILOS  -->
+    <%- include ('./partials/head') %>
+    <title>Registrate!</title>
+    <link rel="stylesheet" href="/css/register.css">     <!-- REVISAR LINK DE ESTILOS  -->
     </head>
     
     <body>
-        <header>
-            <div class="header-container">
-                <div class="img-container">  <img class="logo" src="/images/mm-logo.jpeg" alt="logo"> </div>
-                <img src="/images/mm-logo-con-nombre.png" alt="logo con nombre" class="marca">
-                <div class="icons-nav" >
-                    <a href="#"> <i class="fas fa-search"></i> </a>
-                    <a href="#"> <i class="fas fa-heart general"></i> </a>
-                    <a href="/cart"> <i class="fas fa-shopping-bag general"></i> </a>
-                    <a href="/user/login"> <i class="far fa-user general"></i></a>
-                </div>
+        <%- include ('./partials/header') %>
+        <main>
+            <div class="register-form">
+                <form action="/register" method="post" class="wraper">
+                    <div class="tituloCuenta">
+                        <h2>
+                            ¡Crea tu cuenta!
+                        </h2>
+                    </div>
+                    <div class="input">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" name="nombre" placeholder="Ej: Fabrizio" required="" id="nombre">
+                    </div>
+                    <div class="input">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" name="apellido" id="apellido">
+                    </div>
+                    <div class="input">
+                        <label for="email">E-mail:</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div class="input">
+                        <label for="telefono">Telefono:</label>
+                        <input type="tel" name="telefono" id="telefono">
+                    </div>
+                    <div class="input">
+                        <label for="contrasena">Contraseña:</label>
+                        <input type="password" name="contrasena" id="contrasena">
+                    </div>
+                    <div class="input">
+                        <label for="repetirContrasena">Repetir contraseña:</label>
+                        <input type="password" name="repetirContrasena" id="repetirContrasena">
+                    </div>
+                    <div class="input">
+                        <label for="terminos">Acepto terminos y condiciones.</label>
+                        <input type="checkbox" name="terminos">
+                    </div>
+                    <div class="input">
+                        <button class="register" type="submit">Registrarse</button>
+                    </div>
+                </form>
             </div>
-            <nav class= "secciones">
-                <a href="/" id="home">Home</a>
-                <a href="#" id="niños">Niños</a>
-                <a href="#" id="niñas">Niñas</a>
-                <a href="#" id="sale">Sale</a>
-            </nav>
-            <div class="burger-menu">
-                <i class="fa fa-bars burger"></i>
-            </div>
-        </header>
-    
-    <main>
-
-        
-
-
-        <div class="register-form">
-        <form action="/register" method="post" class="wraper">
-            <div class="tituloCuenta">
-                <h2>
-                    ¡Crea tu cuenta!
-                </h2>
-            </div>
-            <div class="input">
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" placeholder="Ej: Fabrizio" required="" id="nombre">
-            </div>
-            <div class="input">
-                <label for="apellido">Apellido:</label>
-                <input type="text" name="apellido" id="apellido">
-            </div>
-            <div class="input">
-                <label for="email">E-mail:</label>
-                <input type="email" name="email" id="email">
-            </div>
-            <div class="input">
-                <label for="telefono">Telefono:</label>
-                <input type="tel" name="telefono" id="telefono">
-            </div>
-            <div class="input">
-                <label for="contrasena">Contraseña:</label>
-                <input type="password" name="contrasena" id="contrasena">
-            </div>
-            <div class="input">
-                <label for="repetirContrasena">Repetir contraseña:</label>
-                <input type="password" name="repetirContrasena" id="repetirContrasena">
-            </div>
-            <div class="input">
-                <label for="terminos">Acepto terminos y condiciones.</label>
-                <input type="checkbox" name="terminos">
-            </div>
-            <div class="input">
-                <button class="register" type="submit">Registrarse</button>
-            </div>
-        </form>
-        </div>
-
-       
-        <footer class="footer">
-            
-            <div class="footer-container">
-                <div>
-                    <a href="#"> <h4>NOSOTROS</h4></a>
-                    <p>Lorem ipsum dolor sit amet consectetur </p>
-                </div>
-                <div>
-                    <a href="#"> <h4>CONTACTO</h4></a>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                </div>
-                <div>
-                    <a href="#"> <h4>AYUDA</h4></a>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                </div>
-                <div>
-                    <a href="#"> <h4>SEGUINOS</h4></a>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                </div>          
-            </div>
-        </footer>
-        <section class="copyright">
-            <p>2022. Todos los derechos reservados.</p>
-        </section>
-    </main>
-</body>
+            <%- include('./partials/footer') %> 
+        </main>
+    </body>
 </html>
