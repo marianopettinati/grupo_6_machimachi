@@ -50,7 +50,6 @@ const producto = (id) => {
             producto=item;
         }
     });
-    console.log(producto);
     return producto;
 }
 
