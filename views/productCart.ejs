@@ -1,37 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include ('./partials/head') %>
     <title>Carrito de compras</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/productCart.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" /> 
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <img src="./images/logo2-machimachi.png" alt="logo"  class="logo">
-            <img src="./images/mm-logo-con-nombre.png" alt="logo Machi Machi" class="logoMachiMachi">
-            <div class="icons-nav">
-                <a href=""><i class="fas fa-search general"></i></a>
-                <a href=""><i class="fas fa-heart general"></i></a>
-                <a href="/cart"><i class="fas fa-shopping-bag general"></i></a>
-                <a href="/login"><i class="fas fa-user general"></i></a>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <!--TODO: las etiquetas a deberían linkear a las secciones correspondientes-->
-                <li><a href="/" class="general">Home</a></li>
-                <!--<li><a href="" class="bebes">Bebés</a></li>-->
-                <li><a href="" class="niños">Niños</a></li>
-                <li><a href="" class="niñas">Niñas</a></li>
-                <li><a href="" class="sale">Sale</a></li>
-            </ul>    
-        </nav>
-    </header>
+    <%- include ('./partials/header') %>
     
     <main>
         
@@ -120,29 +93,6 @@
             </div>
         </section>
     </main>
-    <footer class="footer">
-             
-        <div class="footer-container">
-            <div>
-                <a href="#"> <h4>NOSOTROS</h4></a>
-                <p>Lorem ipsum dolor sit amet consectetur </p>
-            </div>
-            <div>
-                <a href="#"> <h4>CONTACTO</h4></a>
-                <p>Lorem ipsum dolor sit amet consectetur</p>
-            </div>
-            <div>
-                <a href="#"> <h4>AYUDA</h4></a>
-                <p>Lorem ipsum dolor sit amet consectetur</p>
-            </div>
-            <div>
-                <a href="#"> <h4>SEGUINOS</h4></a>
-                <p>Lorem ipsum dolor sit amet consectetur</p>
-            </div>          
-        </div>
-    </footer>
-    <section class="copyright">
-            <p>2022. Todos los derechos reservados.</p>
-    </section>
+    <%- include('./partials/footer') %> 
 </body>
 </html>

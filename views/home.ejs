@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<%- include ('./partials/head') %>
+    <%- include ('./partials/head') %>
+    <title>Amamos el color!</title>
+    <link rel="stylesheet" href="css/home_styles.css">    
+</head>
 
 <body>
     <!-- Header -->
-   <%- include ('./partials/header') %>;
+   <%- include ('./partials/header') %>
 
     <main>
         <div id="promo">
@@ -12,60 +13,19 @@
         </div>
         <section>
             <div class="products">
-                <a href="/product">
-                    <article>
-                        <img src="/images/IMG_0503.jpg" alt="sweater uno" class="product_img" >
-                        <div class="main-article">
-                            <h4 class="product-name">Sweater Bowie</h4>
-                            <p class="price">$4.500</p>
+                    <% productos.map((item)=>{ %>
+                        <div class="product-container">
+                            <a href="/product">
+                                <img src=<%= item.img %> alt=<%= item.name %> class="product_img" >
+                                <div class="main-article">
+                                    <h4 class="product-name">
+                                        <%= item.name %>
+                                    </h4>
+                                    <p class="price"><%= item.price %></p>
+                                </div>
+                            </a>
                         </div>
-                    </article>
-                </a>
-                <a href="/product">
-                    <article>
-                        <img src="/images/IMG_0501.jpg" alt="sweater dos" class="product_img" >
-                        <div class="main-article">
-                            <h4 class="product-name">Sweater Freddie</h4>
-                            <p class="price">$4.500</p>
-                        </div>
-                    </article>
-                </a>
-                <a href="/product">
-                    <article>
-                        <img src="/images/Gorrito cebra.png" alt="gorro cebra" class="product_img" >
-                        <div class="main-article">
-                            <h4 class="product-name">Gorro-cebra</h4>
-                            <p class="price">$2.200</p>
-                        </div>
-                    </article>
-                </a>
-                <a href="/product">
-                    <article>
-                        <img src="/images/IMG_0503.jpg" alt="sweater uno" class="product_img" >
-                        <div class="main-article">
-                            <h4 class="product-name">Sweater Bowie</h4>
-                            <p class="price">$4.500</p>
-                        </div>
-                    </article>
-                </a>
-                <a href="/product">
-                    <article>
-                        <img src="/images/IMG_0501.jpg" alt="sweater dos" class="product_img" >
-                        <div class="main-article">
-                            <h4 class="product-name">Sweater Freddie</h4>
-                            <p class="price">$4.500</p>
-                        </div>
-                    </article>
-                </a>
-                <a href="/product">
-                    <article>
-                        <img src="/images/Gorrito frutilla.png" alt="gorro cebra" class="product_img" >
-                        <div class="main-article">
-                            <h4 class="product-name">Gorro-cebra</h4>
-                            <p class="price">$2.200</p>
-                        </div>
-                    </article>
-                </a>
+                    <% }) %>
             </div>
         </section>
 
