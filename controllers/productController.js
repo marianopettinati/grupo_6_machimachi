@@ -59,7 +59,7 @@ const product = (req, res) => {
 
 const viewProduct = (req, res) => {
     let idProducto = req.params.id;
-    res.render('product', {producto: producto(idProducto)});
+    res.render('product', {producto: producto(idProducto), productos: productos});
 }
 
 const productController = {
