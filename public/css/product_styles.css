@@ -12,24 +12,22 @@
 .product-detail{
     display: flex;
     margin: 1em;
-    /* border: 3px red solid; */
-    justify-content: space-around;
-    flex-wrap: nowrap;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /*Fotos del producto*/
 .product-images {
-    /* border: dashed black 2px; */
     justify-content: space-around;
-    align-self: flex-start;
     margin-top: 15px;
-
+    width: 30vw;
+    display: flex;
+    min-width: 190px;
 }
 
 .product-main-img {
-    text-align: center;
-    width: 50vw;
-    min-width: 120px;
+    height: 400px;
+    min-width: 160px;
 }
 
 .alt-pics {
@@ -46,13 +44,9 @@
 
 /*CAJA DETALLES*/
 div.product-description{
-    text-align: justify;
-    /* border: solid green 5px; */
-    justify-content: space-around;
     margin-top: 15px;
-    align-self: stretch;
-    width: 50vw;
-    min-width: 120px;
+    width: 40vw;
+    min-width: 180px;
 }
 
 h3 {
@@ -110,18 +104,48 @@ div.buy-button a {
     font-weight: bolder;
 }
 
+.product-recommended h4{
+    margin: 0;
+}
+
+.product-recommended a{
+    text-decoration: none;
+}
+
 .recommended-products {
     /*border: solid black 3px;*/
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-    align-items: flex-start;
     margin: 10px;
 }
 
+.recommended-products .price {
+    font-style: italic;
+    margin: 0px;
+}
+
+.product-recommended{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
 .recommended-products a img{
-    width: 20vw;
+    width: 140px;
+    height: 140px;
+}
+
+.product-recommended:hover {
+    box-shadow: 10px 10px 20px pink;;
+}
+
+img{
+    border-radius: 5px;
 }
  
 .imagenes_producto {

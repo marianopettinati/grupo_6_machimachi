@@ -11,11 +11,6 @@
         <div class="product-detail">
             <div class="product-images">
                 <img class="product-main-img" src=<%= producto.img %> alt=<%= producto.name %>> 
-               <!-- <div class="alt-pics">
-                    <a href="#"> <img src="/images/Gorrito frutilla.png" alt="" ></a>
-                    <a href="#"> <img src="/images/IMG_0502.jpg" alt="" ></a>
-                    <a href="#"> <img src="/images/IMG_0504.jpg" alt="" ></a>    
-                </div>-->
             </div>
 
             <div class="product-description">
@@ -34,7 +29,16 @@
                 <% for(let i=0; i<4; i++){ %>
                     <% let item = productos[i] %>
                     <% if( item.id !=producto.id) { %>
-                        <a href="/product/<%= item.id %>"> <img src=<%= item.img %> alt=<%= item.name %>></a>               
+                        <div class="product-recommended">
+                            <a href="/product/<%= item.id %>"> <img src=<%= item.img %> alt=<%= item.name %>>
+                                <div>
+                                    <h4 class="product-name">
+                                        <%= item.name %>
+                                    </h4>
+                                    <p class="price"><%= item.price %></p>
+                                </div>
+                            </a> 
+                        </div>          
                 <% }} %>
                 <!--        <div id="imagen_producto_2" class="imagen_producto"></div>
                 <div id="imagen_producto_3" class="imagen_producto"></div>
@@ -48,6 +52,6 @@
         
         
     </main>
-    
+    <%- include('./partials/footer') %> 
 </body>
 </html>
