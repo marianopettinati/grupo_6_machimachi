@@ -52,7 +52,9 @@
     width: 350px;
     height: 380px;
     justify-content: center;
+    align-items: center;
     margin: 0 30px 30px 30px;
+    border-radius: 5px;
 }
 
 .products .product-container:hover {
@@ -62,7 +64,7 @@
 .products .product-container img{
     width: 300px;
     height: 280px;
-    margin-top: 20px;
+    border-radius: 5px;
 }
 
 .product-name {
