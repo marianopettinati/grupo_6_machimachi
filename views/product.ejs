@@ -1,6 +1,6 @@
 <%- include ('./partials/head') %>
     <title>Amamos el color!</title>
-    <link rel="stylesheet" href="css/product_styles.css">
+    <link rel="stylesheet" href="/css/product_styles.css">
 </head>
 
 <body>
@@ -10,7 +10,7 @@
 
         <div class="product-detail">
             <div class="product-images">
-                <img class="product-main-img" src=<%= producto.img %> alt="producto"> 
+                <img class="product-main-img" src=<%= producto.img %> alt=<%= producto.name %>> 
                <!-- <div class="alt-pics">
                     <a href="#"> <img src="/images/Gorrito frutilla.png" alt="" ></a>
                     <a href="#"> <img src="/images/IMG_0502.jpg" alt="" ></a>
@@ -19,8 +19,8 @@
             </div>
 
             <div class="product-description">
-                <h3 class="item">Gorro Cebra</h3>
-                <h4 class="price"> $ 650.-</h4>
+                <h3 class="item"><%= producto.name %></h3>
+                <h4 class="price"> <%= producto.price %></h4>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus! </p>
                 <div class="quantity"> <p><input type="Cantidad"> Cantidad </p></div>
                 <div class="buy-button"> <a href="/cart">COMPRAR</a></div>
@@ -31,10 +31,11 @@
         <section class="recomendados">
             <h4>Te podría interesar</h4>
             <div class="recommended-products">
-                <a href="#"> <img src="/images/IMG_0501.jpg" alt="" width=18vw></a>               
-                <a href="#"> <img src="/images/IMG_0495.jpg" alt="" width=18vw></a> 
-                <a href="#"> <img src="/images/IMG_0498.jpg" alt="" width=18vw></a> 
-                <a href="#"> <img src="/images/IMG_0499.jpg" alt="" width=18vw></a> 
+                <% for(let i=0; i<4; i++){ %>
+                    <% let item = productos[i] %>
+                    <% if( item.id !=producto.id) { %>
+                        <a href="/product/<%= item.id %>"> <img src=<%= item.img %> alt=<%= item.name %>></a>               
+                <% }} %>
                 <!--        <div id="imagen_producto_2" class="imagen_producto"></div>
                 <div id="imagen_producto_3" class="imagen_producto"></div>
                 <div id="imagen_producto_4" class="imagen_producto"></div> -->
