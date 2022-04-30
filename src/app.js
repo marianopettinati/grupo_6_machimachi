@@ -7,7 +7,7 @@ const rutasCarrito = require('./routes/cart');
 const rutasProduct = require('./routes/product');
 const rutasLogin = require('./routes/login');
 
-const publicPath = path.resolve(__dirname, './public');
+const publicPath = path.resolve(__dirname, '../public');
 
 app.use(express.static(publicPath));
 
@@ -16,6 +16,7 @@ app.listen(3000, ()=>{
 });
 
 app.set ("view engine", "ejs")
+app.set("views", path.join(__dirname, "/views"));
 
 app.use('/', rutasMain);
 
