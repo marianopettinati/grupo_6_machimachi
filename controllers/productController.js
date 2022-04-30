@@ -62,9 +62,14 @@ const viewProduct = (req, res) => {
     res.render('product', {producto: producto(idProducto), productos: productos});
 }
 
+const newProduct = (req,res) => {
+    res.render ('productAdd', {});
+}
+
 const productController = {
     product,
     viewProduct,
+    
 }
 
 // Acá exportamos el resultado

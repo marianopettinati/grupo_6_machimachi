@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<%- include ('./partials/head') %>
+<title>Carga de producto</title>
+<link rel="stylesheet" href="/css/register.css">     <!-- REVISAR LINK DE ESTILOS  -->
+</head>
+
+<body>
+    <%- include ('./partials/header') %>
+    <main>
+        <div class="upload-form">
+            <form action="/upload" method="post" class="wraper">
+                <div class="newProduct">
+                    <h2>
+                        Subí un producto
+                    </h2>
+                </div>
+                <div class="input">
+                    <label for="nombre">Nombre del producto:</label>
+                    <input type="text" name="name" placeholder="Gorrito Cebra" required="" id="name">
+                </div>
+                <div class="input">
+                    <label for="price">Precio:</label>
+                    <input type="text" name="price" id="price">
+                </div>
+                <div class="input">
+                    <label for="description">Descripción:</label>
+                    <input type="text" name="description" id="description">
+                </div>
+                <div>
+                    <label for="img">Imagen:</label>
+                    <input type="file" name="img" id="img">
+                </div>
+                <div class="input">
+                    <label for="gender">Colección:</label>
+                    <input type="radio" name="gender" value="niñas">
+                    <input type="radio" name="gender" value="niños">
+                </div>
+                <div class="input">
+                    <button class="upload" type="submit">Cargar producto</button>
+                </div>
+            </form>
+        </div>
+        <%- include('./partials/footer') %> 
+    </main>
+</body>
+</html>

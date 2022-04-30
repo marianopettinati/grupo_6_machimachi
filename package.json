@@ -4,8 +4,8 @@
   "description": "<h1> grupo_6_machimachi",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
+    "test": "clear && nodemon src/app.js -e js, mjs, ejs, css, ajs",
+    "start": "node src/app.js",
     "dev": "nodemon app.js"
   },
   "repository": {
@@ -21,6 +21,6 @@
   "dependencies": {
     "ejs": "^3.1.7",
     "express": "^4.17.3",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.16"
   }
 }
