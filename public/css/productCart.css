@@ -199,6 +199,7 @@ div.inp-aplicar:focus-within{
     border-radius: 3px;
     background-color: rgb(240, 57, 57);
     color: white;
+    display: none;
 }
 
 .resume-valor>button:hover{

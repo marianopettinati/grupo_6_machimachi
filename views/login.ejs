@@ -1,37 +1,32 @@
-    <%- include ('./partials/head') %>
-    <title>Login</title>
-    <link rel="stylesheet" href="/css/login.css">    
+<%- include ('./partials/head') %>
+<title>Login</title>
+<link rel="stylesheet" href="/css/login.css">
 </head>
-
 <body>
     <%- include ('./partials/header') %>
     <main>
-    <div class="loginSection">
-        <form class="loginWraper">
-           
-            <h2>
-                INICIAR SESIÓN
-            </h2>
-        <div class="loginInput">
-        <label for="login_email">Correo electrónico:*</label>
-        <input type="text" name="Email" placeholder="Ingresá tu e-mail"/>
-    </div>
-        <div class="loginInput">
-            <label for="login_password">Contraseña:*</label>
-            <input type="password" name="login_password" placeholder="Ingresá tu contraseña"/>
-            
-        </div>
-        <p>
-            <a href="/user/forgotpassword">Olvidé mi contraseña</a>
-        </p>
-        <button class="IniciarSesion" type="submit">INICIAR SESIÓN</button>
-       
-        </div>
-       
-    </form>
-    </div>
-        <%- include('./partials/footer') %> 
-    </main>   
+        <div class="loginSection">
+            <form class="loginWraper">
+
+                <h2>
+                    INICIAR SESIÓN
+                </h2>
+                <div class="loginInput">
+                    <label for="login_email">Correo electrónico:*</label>
+                    <input type="text" name="Email" placeholder="Ingresá tu e-mail" />
+                </div>
+                <div class="loginInput">
+                    <label for="login_password">Contraseña:*</label>
+                    <input type="password" name="login_password" placeholder="Ingresá tu contraseña" />
+
+                </div>
+                <p>
+                    <a href="/user/forgotpassword">Olvidé mi contraseña</a>
+                </p>
+                <button class="IniciarSesion" type="submit">INICIAR SESIÓN</button>
+            </form>
+        </div>   
+    </main>
+<%- include('./partials/footer') %>
 </body>
 </html>
-
