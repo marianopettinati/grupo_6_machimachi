@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+    font-family: 'poppins';
+}
+
+
+h2 {
+    text-align: center;
+    color: #e23f30;
+    font-weight: 600;
+}
+
+.name{
+    color: darkred;
+    font-weight: bolder;
+    margin: 12px 12px 0px 12px;
+}
+.price {
+    color: darkred;
+    font-weight: bolder;
+    margin: 12px 12px 0px 12px;
+}
+.color {
+    color: darkred;
+    font-weight: bolder;
+    margin: 12px 12px 0px 12px;
+}
+.talle {
+    color: darkred;
+    font-weight: bolder;
+    margin: 12px 12px 0px 12px;
+}
+.gender {
+    color: darkred;
+    font-weight: bolder;
+    margin: 12px 12px 0px 12px;
+}
+
+
+/* Tablet */
+@media (min-width: 361px) {
+
+}  
+
+
+/* Desktop*/
+@media (min-width: 770px){
+
+}

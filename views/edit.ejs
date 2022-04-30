@@ -1,0 +1,34 @@
+<%- include('../partials/head.ejs') %> 
+<body>
+    <main>
+    <%- include('../partials/header.ejs') %>
+    <h2 class="title">LISTA DE PRODUCTOS </h2>
+    <br>
+    <form action="/edit/<%- producto.id %>?m=PUT" method="post" class='formulario'>
+        <figure>
+            <img class="product-main-img" src=<%= producto.img %> alt=<%= producto.name %>>
+        </figure>
+        <label for="name">
+            <input type="text" id="name" name="name" placeholder="<%= producto.name %>" class="control" value="<%= producto.name %>">
+        </label>
+        <label for="price">
+            <input type="number" id="price" name="price" placeholder=" $ <%= producto.price %>" class="control" value="<%= producto.price %>">
+        </label>
+        <label for="color">
+            <input type="text" id="color" name="color" placeholder="<%= producto.color %>" class="control" value="<%= producto.color %>">
+        </label>
+        <label for="talle">
+            <input type="text" id="talle" name="talle" placeholder=" $ <%= producto.talle %>" class="control" value="<%= producto.talle %>">
+        </label>
+        <label for="gender">
+            <input type="radio" name="gender" value="niñas">
+            <input type="radio" name="gender" value="niños">
+        </label>
+        <fieldset ><textarea id="review" name="review" placeholder="<%=producto.review%>" value="<%=producto.review%>"></textarea></fieldset>
+            <label for="file" class="control-formulario2"><input type="file" id="file" name="file"></label>
+        <fieldset><button type="submit">Enviar</button></fieldset>
+    </form>
+</main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>
