@@ -2,10 +2,9 @@
   "name": "grupo_6_machimachi",
   "version": "1.0.0",
   "description": "<h1> grupo_6_machimachi",
-  "main": "app.js",
   "scripts": {
     "test": "clear && nodemon src/app.js -e js, mjs, ejs, css, ajs",
-    "start": "node app.js",
+    "start": "nodemon ./src/app.js",
     "dev": "nodemon app.js"
   },
   "repository": {
