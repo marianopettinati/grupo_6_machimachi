@@ -29,6 +29,14 @@
                     <label for="description">Descripción:</label>
                     <input type="text" name="description" id="description">
                 </div>
+                <div class="color">
+                    <label for="color">Color:</label>
+                    <input type="text" id="color" name="color" placeholder="<%= producto.color %>" class="control" value="<%= producto.color %>">
+                </div>
+                <div class="talle">
+                    <label for="talle">Talle</label>
+                    <input type="text" id="talle" name="talle" placeholder=" $ <%= producto.talle %>" class="control" value="<%= producto.talle %>">
+                </div>
                 <div>
                     <label for="img">Imagen:</label>
                     <input type="file" name="img" id="img">

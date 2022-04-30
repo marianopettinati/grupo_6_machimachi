@@ -2,7 +2,7 @@
 <body>
     <main>
     <%- include('../partials/header.ejs') %>
-    <h2 class="title">LISTA DE PRODUCTOS </h2>
+    <h2 class="title">EDITAR PRODUCTO </h2>
     <br>
     <form action="/edit/<%- producto.id %>?m=PUT" method="post" class='formulario'>
         <figure>
@@ -23,6 +23,9 @@
         <label for="gender">
             <input type="radio" name="gender" value="niñas">
             <input type="radio" name="gender" value="niños">
+        </label>
+        <label for="img">
+            <input type="file" name="img" id="img">
         </label>
         <fieldset ><textarea id="review" name="review" placeholder="<%=producto.review%>" value="<%=producto.review%>"></textarea></fieldset>
             <label for="file" class="control-formulario2"><input type="file" id="file" name="file"></label>
