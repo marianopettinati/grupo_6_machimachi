@@ -1,0 +1,11 @@
+[{
+    "id": 1,
+    "name": "Fernando",
+    "lastname": "Veliz",
+    "email": "ferveliz@unmail.com",
+    "password": "pass",
+    "admin": true,
+    "img": "/images/mm-isologotipo-redondo.jpg"
+
+}
+]
