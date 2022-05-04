@@ -66,10 +66,19 @@ const newProduct = (req,res) => {
     res.render ('productAdd', {});
 }
 
+const deleteProduct = (res, req) => {
+    let idProducto = req.body.id;
+    let newListProducts = productos.filter((producto)=>{
+        return producto.id!=idProducto;
+    });
+    productos=newListProducts;
+    res.send(productos);
+}
+
 const productController = {
     product,
     viewProduct,
-    
+    deleteProduct
 }
 
 // Acá exportamos el resultado
