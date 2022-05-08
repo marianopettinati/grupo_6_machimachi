@@ -10,76 +10,40 @@
         
         <section class="resume-products">
             <h4>Mi carrito</h4>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Producto</th>
-                        <th>Talle</th>
-                        <th>Cantidad</th>
-                        <th>Precio</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="item-info">
-                        <td class="td-img">
-                            <img src="./images/Gorrito cebra.png" alt="producto" class="img-product">
-                        </td>
-                        <td class="item-detail">
-                            <div class="product-item-detail">
-                                <h7 class="title-item-detail">Gorrito de cebra tejido a mano</h7>
-                                <dl>
-                                    <dt>Talle: </dt>
-                                    <dd>Medium</dd>
-                                </dl>
-                                <span class="price">Precio: $650</span>
-                            </div>
+            <div class="products-details">
+                <% productos.map((item)=>{ %>
+                    <div class="product-detail">
+                        <div class="product-img">
+                            <a href="/product/<%= item.producto.id %>">
+                                <img src=<%= item.producto.img %> alt=<%= item.producto.name %> class="img-product">
+                            </a>
+                        </div>
+                        <div class="description-detail">
+                            <h7 class="title-item-detail"><%= item.producto.name %></h7>
+                            <span>Talle: Medium</span>
+                            <span class="price">Precio: $<%= item.producto.price %></span>
                             <div class="container-cant-subtotal">
                                 <div class="cantidad">
                                     <button class="plus-less">-</button>
-                                    <input type="text" class="inp-cantidad" value="1">
+                                    <input type="number" class="inp-cantidad" value=<%= item.cantidad %> disabled>
                                     <button class="plus-less">+</button>
                                 </div>
-                                <span class="total-item">$650</span>
                             </div>
-                        </td>
-                        <td class="tacho">
-                            <div><i class="far fa-trash-alt"></i></div>
-                        </td>
-                    </tr>
-                    <tr class="item-info">
-                        <td class="td-img">
-                            <img src="./images/Gorrito frutilla.png" alt="producto" class="img-product">
-                        </td>
-                        <td class="item-detail">
-                            <div class="product-item-detail">
-                                <h7 class="title-item-detail">Gorrito frutilla tejido a mano</h7>
-                                <dl>
-                                    <dt>Talle: </dt>
-                                    <dd>Large</dd>
-                                </dl>
-                                <span class="price">Precio: $650</span>
-                            </div>
-                            <div class="container-cant-subtotal">
-                                <div class="cantidad">
-                                    <button class="plus-less">-</button>
-                                    <input type="text" class="inp-cantidad" value="2">
-                                    <button class="plus-less">+</button>
-                                </div>
-                                <span class="total-item">$1300</span>
-                            </div>
-                        </td>
-                        <td class="tacho">
-                            <div><i class="far fa-trash-alt"></i></div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                        </div>                    
+                        <div class="other-info">
+                            <i class="far fa-trash-alt"></i>
+                            <span class="total-item">$<%= item.subTotal %></span>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
         </section>
         <section class="resume-cart">
             <h4>Resumen de la compra</h4>
             <div class="cupon-descuento">
                 <h6><i class="fas fa-gift"></i> ¿Tenés un cupón de descuento?</h6>
                 <div class="descuento">
+                    <% let descuento=0; %>
                     <div class="inp-aplicar">
                         <input type="text" placeholder="Ingresá tu cupón" required>
                         <button>Aplicar</button>
@@ -87,8 +51,11 @@
                 </div>
             </div>
             <div class="resume-valor">
-                <span>Subtotal: $1950</span>
-                <span>Total: $1950</span>
+                <% let SubTotal = 0 %>
+                <% productos.forEach((producto)=>{SubTotal=SubTotal+producto.subTotal})%>
+                <span>Subtotal: $<%= SubTotal%></span>
+                <% let total=0; total=SubTotal-descuento;%>
+                <span>Total: $<%= total%></span>
                 <button type="submit">Iniciar pago</button>
             </div>
         </section>

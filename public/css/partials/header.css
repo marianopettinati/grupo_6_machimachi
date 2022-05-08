@@ -69,14 +69,14 @@ header ul{
     justify-content: center;
 }
 
-@media (min-width: 361px) {
+@media (min-width: 391px) {
     .logo{
-        width: 30px;
+        width: 20px;
         align-self: flex-end;
     }
     
     .logoMachiMachi{
-        width: 300px;
+        width: 200px;
     }
     
     .icons-nav i{
@@ -90,7 +90,7 @@ header ul{
     }
 
     header ul li a{
-        font-size: 20px;
+        font-size: 15px;
     }
 }
 
@@ -106,6 +106,10 @@ header ul{
     }
     
     .icons-nav i{
+        font-size: 20px;
+    }
+
+    header ul li a{
         font-size: 20px;
     }
 }
