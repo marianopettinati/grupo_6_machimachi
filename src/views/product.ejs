@@ -16,22 +16,26 @@
             <div class="product-description">
                 <h3 class="item"><%= producto.name %></h3>
                 <h4 class="price"> $ <%= producto.price %></h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus! </p>
-                <div><p>Color</p>
+                <p> <%= producto.description %> </p>
+                <!-- <div><p>Color</p>
                     <select class="color">
                         <option value="value1">Verde</option> 
                         <option value="value2">Rojo</option>
                         <option value="value3">Azul</option>
                         <option value="value4">Amarillo</option>
-                    </select>
-                <div><p>Talle</p>
-                    <select class="talles">
-                        <option value="value1">XS</option> 
-                        <option value="value2">S</option>
-                        <option value="value3">M</option>
-                        <option value="value4">L</option>
-                    </select>
-                </div>
+                    </select> -->
+                <br>
+                <div class="talle">
+                    <h4>Talle</h4>
+                    <div>
+                        <select class="talles">
+                            <option value="value1">XS</option> 
+                            <option value="value2">S</option>
+                            <option value="value3">M</option>
+                            <option value="value4">L</option>
+                        </select>
+                    </div>
+                </div>                
                 <div class="buy-button"> <a href="/cart">COMPRAR</a></div>
 
             </div>

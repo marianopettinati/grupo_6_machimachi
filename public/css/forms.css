@@ -12,8 +12,15 @@
 #niñas {color:#FC5DD9;}
 #sale{color:#0F9D58;}
 #home{color: #EA3F32;}
+#name, #img {font-size: 12px;;}
 
-.register-form {
+#radio-button {
+    display:flex;
+    justify-content: space-around;
+    font-size: 12px;
+}
+
+.register-form, .upload-form, .login-section {
     min-height: 300px;
     width: 100%;
     display: flex;
@@ -80,7 +87,7 @@ h2 {
     color: white;
 }
 
-form div>button.register:hover{
+form div>button.submit:hover{
     background-color: #E61515;
     color: white;
     font-weight: 600;

@@ -4,6 +4,7 @@
     "lastname": "Veliz",
     "email": "ferveliz@unmail.com",
     "password": "pass",
+    "phone": "+541112345678",
     "admin": true,
     "img": "/images/mm-isologotipo-redondo.jpg"
 

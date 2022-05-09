@@ -59,8 +59,10 @@ h4 {
     margin: 5px 12px 12px 12px;
     font-size: small;
     font-weight: bolder;
-
 }
+
+.talles { font-size: 12px; }
+
 div.product-description p{
     text-align: left;
     color: black;
@@ -68,6 +70,7 @@ div.product-description p{
     font-size: 12px;
     margin: 12px;
 }
+
 
 div.quantity p input{
     width: 20px;

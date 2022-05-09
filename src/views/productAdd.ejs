@@ -4,7 +4,7 @@
 <head>
 <%- include ('./partials/head') %>
 <title>Carga de producto</title>
-<link rel="stylesheet" href="/css/register.css">     <!-- REVISAR LINK DE ESTILOS  -->
+<link rel="stylesheet" href="/css/forms.css">     <!-- REVISAR LINK DE ESTILOS  -->
 </head>
 
 <body>
@@ -29,25 +29,25 @@
                     <label for="description">Descripción:</label>
                     <input type="text" name="description" id="description">
                 </div>
-                <div class="color">
-                    <label for="color">Color:</label>
-                    <input type="text" id="color" name="color" placeholder="Ej: Azul" class="control" value="">
-                </div>
-                <div class="talle">
-                    <label for="talle">Talle</label>
-                    <input type="text" id="talle" name="talle" placeholder="Ej: M" class="control" value="">
-                </div>
-                <div>
+                <div class="input">
                     <label for="img">Imagen:</label>
                     <input type="file" name="img" id="img">
                 </div>
                 <div class="input">
-                    <label for="gender">Colección:</label>
-                    <input type="radio" name="gender" value="niñas">
-                    <input type="radio" name="gender" value="niños">
+                    <label for="gender">Colección:</label> 
+                    <div id="radio-button">
+                        <div>
+                            <input type="radio" name="gender" value="niñas" >
+                            <label> Niñas </label>
+                        </div>
+                        <div>
+                            <input type="radio" name="gender" value="niños">
+                            <label> Niños </label>
+                        </div>
+                    </div>                 
                 </div>
                 <div class="input">
-                    <button class="upload" type="submit">Cargar producto</button>
+                    <button class="submit" type="submit">Cargar producto</button>
                 </div>
             </form>
         </div>
