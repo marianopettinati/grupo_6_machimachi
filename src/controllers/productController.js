@@ -19,17 +19,17 @@ const productos = JSON.parse (file_data);
 //     res.render('product', {productos: productos});
 // };
 
-const getProduct = (req, res) => {
-    // let idProducto = req.params.id;
-    // res.render('product', {producto: producto(idProducto), productos: productos});
-    const product = req.params.id_product;
-    const this_product = productos.find((el) => el.id === parseInt(product));
-    res.render('product', {producto:this_product});
-}
 
 const newProduct = (req,res) => {
     res.render ('productAdd');
 }
+
+const getProduct = (req, res) => {
+    const idProduct = req.params.id;
+    const product = productos.find((el) => el.id === parseInt(idProduct));
+    res.render('product', {producto:product, productos: productos});
+}
+
 
 const postProduct = (req, res) => {
 }; 
