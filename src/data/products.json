@@ -1,48 +1,66 @@
-[{
-        "id": 1,
-        "name": "Sweater Bowie",
-        "price": 4500,
-        "img": "/images/IMG_0503.jpg",
-        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus!",
-        "gender": "Niñas"
-    }, {
-        "id": 2,
-        "name": "Sweater Freddie",
-        "price": 4500,
-        "img": "/images/IMG_0501.jpg",
-        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus!",
-        "gender": "Niños"
-    },
-    {
-        "id": 3,
-        "name": "Gorrito cebra",
-        "price": 2200,
-        "img": "/images/IMG_gorrito_Cebra.jpg",
-        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus!",
-        "gender": "Niños"
-    },
-    {
-        "id": 4,
-        "name": "Gorrito frutilla",
-        "price": 2200,
-        "img": "/images/IMG_gorrito_Frutilla.jpg",
-        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus!",
-        "gender": "Niñas"
-    },
-    {
-        "id": 5,
-        "name": "Chaleco bosque",
-        "price": 4500,
-        "img": "/images/IMG_0498.jpg",
-        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus!",
-        "gender": "Niños"
-    },
-    {
-        "id": 6,
-        "name": "Gorrito tricolor",
-        "price": 2200,
-        "img": "/images/IMG_0502.jpg",
-        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus!",
-        "gender": "Niños"
-    }
+[
+  {
+    "id": 1,
+    "name": "Sweater Bowie",
+    "price": 4500,
+    "img": "/images/IMG_0503.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus!",
+    "gender": "Niñas"
+  },
+  {
+    "id": 2,
+    "name": "Sweater Freddie",
+    "price": 4500,
+    "img": "/images/IMG_0501.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus!",
+    "gender": "Niños"
+  },
+  {
+    "id": 3,
+    "name": "Gorrito cebra",
+    "price": 2200,
+    "img": "/images/IMG_gorrito_Cebra.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus!",
+    "gender": "Niños"
+  },
+  {
+    "id": 4,
+    "name": "Gorrito frutilla",
+    "price": 2200,
+    "img": "/images/IMG_gorrito_Frutilla.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus!",
+    "gender": "Niñas"
+  },
+  {
+    "id": 5,
+    "name": "Chaleco bosque",
+    "price": 4500,
+    "img": "/images/IMG_0498.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus!",
+    "gender": "Niños"
+  },
+  {
+    "id": 6,
+    "name": "Gorrito tricolor",
+    "price": 2200,
+    "img": "/images/IMG_0502.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus!",
+    "gender": "Niños"
+  },
+  {
+    "name": "Sweater Jirafa",
+    "description": "lorem ipsum",
+    "price": "4500",
+    "img": "IMG_0495.jpg",
+    "gender": "niñas",
+    "id": 1652147553551
+  },
+  {
+    "name": "bufanda carola",
+    "description": "bufanda abrigada y colorida",
+    "price": "1300",
+    "img": "",
+    "gender": "niños",
+    "id": 1652150964911
+  }
 ]
