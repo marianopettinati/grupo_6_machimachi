@@ -1,0 +1,35 @@
+<%- include ('./partials/head') %>
+    <title>Amamos el color!</title>
+    <link rel="stylesheet" href="/css/product_styles.css">
+</head>
+
+<body>
+    <%- include ('./partials/header') %>
+
+    <main>
+
+        <div class="product-detail">
+            <div class="product-images">
+                <img class="product-main-img" src=<%= producto.img %> alt=<%= producto.name %>> 
+            </div>
+
+            <div class="product-description">
+                <h3 class="item"><%= producto.name %></h3>
+                <h4 class="price"> $ <%= producto.price %></h4>
+                <p> <%= producto.description %> </p>            
+                <br>
+                <form action="/productos/<%= producto.id %>/editar?_method=DELETE" method="POST">
+                    <button type="submit"class="edit-button"> ELIMINAR</button>
+                </form>
+            </div>
+
+
+
+        </div>
+      
+       
+        
+    </main>
+    <%- include('./partials/footer') %> 
+</body>
+</html>

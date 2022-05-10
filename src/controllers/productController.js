@@ -24,17 +24,39 @@ const newProduct = (req,res) => {
     res.render ('productAdd');
 }
 
-const getProduct = (req, res) => {
-    const idProduct = req.params.id;
-    const product = productos.find((el) => el.id === parseInt(idProduct));
-    res.render('product', {producto:product, productos: productos});
-}
-
-
 const postProduct = (req, res) => {
+    const name = req.body.name;
+    const description = req.body.description;
+    const price = req.body.price;
+    const img = req.body.img;
+    const gender = req.body.gender
+    const dateOfCreation = Date.now();
+
+    productos.push ({
+        name,
+        description,
+        price,
+        img,
+        gender,
+        id : parseInt(dateOfCreation)
+    });
+
+    const productos_string = JSON.stringify (productos,null,2);
+    fs.writeFileSync(product_path,productos_string);
+
+    res.redirect ("/");
 }; 
 
+const getProduct = (req, res) => {
+    const idProduct = req.params.id;
+    const producto = productos.find((el) => el.id === parseInt(idProduct));
+    res.render('product', {producto, productos: productos});
+}
+
 const editProduct = (req, res) => {
+    const idProduct = req.params.id;
+    const producto = productos.find((el) => el.id === parseInt(idProduct));
+    res.render('productEdit', {producto});  
 }; 
 
 const putProduct = (req, res) => {
@@ -45,8 +67,11 @@ const deleteProduct = (res, req) => {
     let newListProducts = productos.filter((producto)=>{
         return producto.id!=idProducto;
     });
-    productos=newListProducts;
-    res.send(productos);
+    const prod_restantes = JSON.stringify (newListProducts,null,2);
+    fs.writeFileSync (product_path,prod_restantes);
+    res.redirect ('/');
+    // productos=newListProducts;
+    // res.send(productos);
 }
 
 const productController = {

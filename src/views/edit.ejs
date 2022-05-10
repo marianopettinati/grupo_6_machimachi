@@ -1,7 +1,7 @@
-<%- include('../partials/head.ejs') %> 
+<%- include('./partials/head.ejs') %> 
 <body>
     <main>
-    <%- include('../partials/header.ejs') %>
+    <%- include('./partials/header.ejs') %>
     <h2 class="title">EDITAR PRODUCTO </h2>
     <br>
     <form action="/edit/<%- producto.id %>?m=PUT" method="post" class='formulario'>
@@ -32,6 +32,6 @@
         <fieldset><button type="submit">Enviar</button></fieldset>
     </form>
 </main>
-    <%- include('../partials/footer.ejs') %>
+    <%- include('./partials/footer.ejs') %>
 </body>
 </html>
