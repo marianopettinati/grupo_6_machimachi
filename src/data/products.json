@@ -62,5 +62,21 @@
     "img": "",
     "gender": "niños",
     "id": 1652150964911
+  },
+  {
+    "name": "guantes zuricata",
+    "description": "guantes de lana",
+    "price": "1750",
+    "img": "",
+    "gender": "niñas",
+    "id": 1652317386893
+  },
+  {
+    "name": "bufanda rayada",
+    "description": "bufanda",
+    "price": "1234",
+    "img": "",
+    "gender": "niñas",
+    "id": 1652318335453
   }
 ]

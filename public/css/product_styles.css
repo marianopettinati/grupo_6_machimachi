@@ -127,10 +127,10 @@ div.product-edit {
     transition-duration: 500ms;
 }
 
-#name {
+#name.control, #price.control {
     text-size:12px;
-    color:black;
 }
+
 
 .edit-button {
 
