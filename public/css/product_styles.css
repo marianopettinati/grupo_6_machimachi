@@ -49,12 +49,21 @@ div.product-description{
     min-width: 180px;
 }
 
-h3 {
+#product-name {
     color: darkred;
     font-weight: bolder;
     margin: 12px 12px 0px 12px;
 }
 
+#edit-title {
+    color: darkred;
+    font-weight: bolder;
+   
+}
+
+#edit-title {
+    border: red 2px;    
+}
 h4 {
     margin: 5px 12px 12px 12px;
     font-size: small;
@@ -95,6 +104,37 @@ div.buy-button a {
     border-radius: 0%;
 }
 
+div.product-edit {
+    background-color: #EFEBEB;
+    padding: 10px;
+    margin: 12px;
+}
+
+
+.edit-button{
+    background-color: #e23f30;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+}
+
+.edit-button>button.submit:hover{
+    background-color: #E61515;
+    color: white;
+    font-weight: 600;
+    transition-duration: 500ms;
+}
+
+#name.control, #price.control {
+    text-size:12px;
+}
+
+
+.edit-button {
+
+}
 .recomendados {
     border-top: solid #EFEBEB 2px;
     border-bottom: solid #EFEBEB 2px;;
