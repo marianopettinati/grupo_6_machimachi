@@ -16,7 +16,7 @@
 
 #radio-button {
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
     font-size: 12px;
 }
 
@@ -63,6 +63,7 @@ h2 {
     text-align: center;
     color: #e23f30;
     font-weight: 600;
+    padding-bottom: 15px;
 }
 
 .wraper>p {

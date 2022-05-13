@@ -1,35 +1,72 @@
-<%- include ('./partials/head') %>
-    <title>Amamos el color!</title>
-    <link rel="stylesheet" href="/css/product_styles.css">
-</head>
-
+<%- include('./partials/head.ejs') %> 
+<title>Amamos el color!</title>
+<link rel="stylesheet" href="/css/product_styles.css">
+<link rel="stylesheet" href="/css/forms.css">
 <body>
-    <%- include ('./partials/header') %>
+    <%- include('./partials/header.ejs') %>
 
     <main>
-
         <div class="product-detail">
             <div class="product-images">
                 <img class="product-main-img" src=<%= producto.img %> alt=<%= producto.name %>> 
             </div>
 
             <div class="product-description">
-                <h3 class="item"><%= producto.name %></h3>
+                <h3 id="product-name"><%= producto.name %></h3>
                 <h4 class="price"> $ <%= producto.price %></h4>
                 <p> <%= producto.description %> </p>            
                 <br>
-                <form action="/productos/<%= producto.id %>/editar?_method=DELETE" method="POST">
-                    <button type="submit"class="edit-button"> ELIMINAR</button>
-                </form>
+                <div class="product-edit"> 
+                    <h3 id="edit-title">Editar </h3>
+                    <br>
+                    <form action="/edit/<%- producto.id %>?method=PUT" method="POST">
+                        <div class="input">
+                            <input type="text" id="name" name="name" placeholder="<%= producto.name %>" class="control" value="<%= producto.name %>">
+                        </div>
+                        <div class="input">
+                            <input type="number" id="price" name="price" placeholder=" $ <%= producto.price %>" class="control" value="<%= producto.price %>">
+                        </div>    
+                        <div class="input">
+                            <div id="radio-button">
+                                <label for="gender">Colección:</label> 
+                                <div>
+                                    <input type="radio" name="gender" value="niñas" >
+                                    <label> Niñas </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="gender" value="niños">
+                                    <label> Niños </label>
+                                </div>
+                            </div>                 
+                        </div>
+                        <div class="input">
+                            <textarea id="description" name="description" placeholder="<%=producto.description%>" value="<%=producto.description%>"></textarea>
+                        </div>
+                        <div class="input">
+                            <label for="img">Imagen</label>
+                            <input type="file" name="img" id="img">
+                        </div>
+                        <br>
+                        <div class="input">
+                            <button type="submit" class="edit-button">Guardar cambios</button>
+                        </div>
+                    </form>
+                    <br>
+                    <div class="input">
+                        <form action="/product/<%= producto.id %>/edit?_method=DELETE" method="POST">
+                            <button type="submit"class="edit-button"> Eliminar</button>
+                        </form>
+                    </div>
+                </div>
             </div>
 
 
 
         </div>
-      
-       
+    
+
         
     </main>
-    <%- include('./partials/footer') %> 
+    <%- include('./partials/footer.ejs') %>
 </body>
 </html>
