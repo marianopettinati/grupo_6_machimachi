@@ -1,4 +1,4 @@
-    <%- include ('./partials/head') %>
+<%- include ('./partials/head') %>
     <title>Amamos el color!</title>
     <link rel="stylesheet" href="css/home_styles.css">    
 </head>
@@ -9,24 +9,42 @@
 
     <main>
         <div id="promo"></div>
+        <h2 class="main-title"><span class="red">No</span><span class="green">ve</span><span class="pink">da</span><span class="blue">des</span></h2>
         <section>
             <div class="products">
-                    <% productos.map((item)=>{ %>
+                    <% for(let item=0; item<4;item++){ %>
                         <div class="product-container">
-                            <a href="/product/<%= item.id %>">
-                                <img src=<%= item.img %> alt=<%= item.name %> class="product_img" >
+                            <a href="/product/<%= productos[item].id %>">
+                                <img src=<%= productos[item].img %> alt=<%= productos[item].name %> class="product_img" >
                                 <div>
                                     <h4 class="product-name">
-                                        <%= item.name %>
+                                        <%= productos[item].name %>
                                     </h4>
-                                    <p class="price"> $ <%= item.price %></p>
+                                    <p class="price"> $ <%= productos[item].price %></p>
                                 </div>
                             </a>
                         </div>
-                    <% }) %>
+                    <% } %>
             </div>
         </section>
-
+        <h2 class="main-title"><span class="pink">Más </span><span class="blue">ven</span><span class="yellow">di</span><span class="green">dos</span></h2>
+        <section>
+            <div class="products">
+                    <% for(let item=4; item<8;item++){ %>
+                        <div class="product-container">
+                            <a href="/product/<%= productos[item].id %>">
+                                <img src=<%= productos[item].img %> alt=<%= productos[item].name %> class="product_img" >
+                                <div>
+                                    <h4 class="product-name">
+                                        <%= productos[item].name %>
+                                    </h4>
+                                    <p class="price"> $ <%= productos[item].price %></p>
+                                </div>
+                            </a>
+                        </div>
+                    <% } %>
+            </div>
+        </section>
 
         <section class="suscribe">
             <a href="/user/register" > Registrarse</a> 
