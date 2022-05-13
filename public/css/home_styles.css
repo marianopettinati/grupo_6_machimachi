@@ -3,10 +3,34 @@
     font-family: 'poppins';
 }
 
-#niños {color: #326DC7;}
-#niñas {color:#FC5DD9;}
-#sale{color:#0F9D58;}
-#home{color: #EA3F32;}
+.yellow{
+    color:#F4B400;
+    font-size: 40px;
+}
+
+.blue{
+    color: #326DC7;
+    font-size: 40px;
+}
+
+.pink{
+    color:#FC5DD9;
+    font-size: 40px;
+}
+
+.green{
+    color:#0F9D58;
+    font-size: 40px;
+}
+
+.red{
+    color: #EA3F32;
+    font-size: 40px;
+}
+
+.main-title{
+    padding: 10px 40px;
+}
 
 #promo {
     height: 45vh;
@@ -49,11 +73,11 @@
 
 .products .product-container{
     display: flex;
-    width: 350px;
+    width: 340px;
     height: 380px;
     justify-content: center;
     align-items: center;
-    margin: 0 30px 30px 30px;
+    margin: 30px 15px;
     border-radius: 5px;
 }
 

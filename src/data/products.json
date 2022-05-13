@@ -48,19 +48,29 @@
     "gender": "Niños"
   },
   {
+    "id": 7,
     "name": "Sweater Jirafa",
     "description": "lorem ipsum",
     "price": "4500",
-    "img": "IMG_0495.jpg",
+    "img": "/images/IMG_0495.jpg",
     "gender": "niñas",
-    "id": 1652147553551
+    "sale":true,
+    "discount": 0.1
   },
   {
+    "id": 8,
+    "name": "Gorrito militar",
+    "description": "lorem ipsum",
+    "price": "2200",
+    "img": "/images/IMG_0505.jpg",
+    "gender": "niños"
+  },
+  {
+    "id":9,
     "name": "bufanda carola",
     "description": "bufanda abrigada y colorida",
     "price": "1300",
     "img": "",
-    "gender": "niños",
-    "id": 1652150964911
+    "gender": "niños"
   }
 ]
