@@ -92,6 +92,18 @@ const deleteProduct = (res, req) => {
     
 }
 
+const productsNiñas = (req,res)=> {
+    let productosNiñas= productos.filter((el) => el.gender === "Niñas");
+    res.render('productsGender', { products: productosNiñas})
+    
+}
+
+const productsNiños = (req,res)=> {
+    let productosNiños= productos.filter((el) => el.gender === "Niños");
+    res.render('productsGender', { products: productosNiños})
+}
+
+
 const productController = {
     getProduct,
     newProduct,
@@ -99,6 +111,8 @@ const productController = {
     editProduct,
     putProduct,
     deleteProduct,
+    productsNiñas,
+    productsNiños,
 
 }
 
