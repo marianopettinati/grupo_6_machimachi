@@ -53,7 +53,7 @@
     "description": "lorem ipsum",
     "price": "4500",
     "img": "/images/IMG_0495.jpg",
-    "gender": "niñas",
+    "gender": "Niñas",
     "sale":true,
     "discount": 0.1
   },

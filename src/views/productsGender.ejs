@@ -1,0 +1,58 @@
+<%- include ('./partials/head') %>
+    <title>Amamos el color!</title>
+    <link rel="stylesheet" href="css/productsGender.css">    
+</head>
+
+<body>
+    <!-- Header -->
+   <%- include ('./partials/header') %>
+
+    <main>
+     
+        <h2 class="main-title"> <span class="pink">GORRITOS</span></h2>
+        <section>
+            <div class="products">
+                    <% products.map((item)=>{ %>
+
+                   
+                        <div class="product-container">
+                            <a href="/product/<%= item.id %>">
+                                <img src=<%= item.img %> alt=<%= item.name %> class="product_img" >
+                                <div>
+                                    <h4 class="product-name">
+                                        <%= item.name %>
+                                    </h4>
+                                    <p class="price"> $ <%= item.price %></p>
+                                </div>
+                            </a>
+                        </div>
+                    <%  })  %>
+            </div>
+
+            <h2 class="main-title"> <span class="pink">SWEATERS</span></h2>
+            <section>
+                <div class="products">
+                        <% products.map((item)=>{ %>
+    
+                            <div class="product-container">
+                                <a href="/product/<%= item.id %>">
+                                    <img src=<%= item.img %> alt=<%= item.name %> class="product_img" >
+                                    <div>
+                                        <h4 class="product-name">
+                                            <%= item.name %>
+                                        </h4>
+                                        <p class="price"> $ <%= item.price %></p>
+                                    </div>
+                                </a>
+                            </div>
+                        <%  })  %>
+                </div>
+
+        <section class="suscribe">
+            <a href="/user/register" > Registrarse</a> 
+        </section>
+    </main>
+   
+    <%- include('./partials/footer') %> 
+</body>
+</html>
