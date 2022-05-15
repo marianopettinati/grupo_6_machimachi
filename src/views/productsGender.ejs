@@ -1,6 +1,6 @@
 <%- include ('./partials/head') %>
     <title>Amamos el color!</title>
-    <link rel="stylesheet" href="css/productsGender.css">    
+    <link rel="stylesheet" href="/css/productsGender.css">    
 </head>
 
 <body>
@@ -8,13 +8,18 @@
    <%- include ('./partials/header') %>
 
     <main>
-     
-        <h2 class="main-title"> <span class="pink">GORRITOS</span></h2>
+        <% if(gender=="Niños"){ %>
+            <h2 class="main-title"> <span class="blue"><%= gender %></span></h2>
+        <% } %>
+        <% if (gender=="Niñas") {%>
+            <h2 class="main-title"> <span class="pink"><%= gender %></span></h2>
+        <% } %>
+        <% if (gender=="Sale") {%>
+            <h2 class="main-title"> <span class="pink"><%= gender %></span></h2>
+        <% } %>
         <section>
             <div class="products">
                     <% products.map((item)=>{ %>
-
-                   
                         <div class="product-container">
                             <a href="/product/<%= item.id %>">
                                 <img src=<%= item.img %> alt=<%= item.name %> class="product_img" >
@@ -28,26 +33,7 @@
                         </div>
                     <%  })  %>
             </div>
-
-            <h2 class="main-title"> <span class="pink">SWEATERS</span></h2>
-            <section>
-                <div class="products">
-                        <% products.map((item)=>{ %>
-    
-                            <div class="product-container">
-                                <a href="/product/<%= item.id %>">
-                                    <img src=<%= item.img %> alt=<%= item.name %> class="product_img" >
-                                    <div>
-                                        <h4 class="product-name">
-                                            <%= item.name %>
-                                        </h4>
-                                        <p class="price"> $ <%= item.price %></p>
-                                    </div>
-                                </a>
-                            </div>
-                        <%  })  %>
-                </div>
-
+        </section>
         <section class="suscribe">
             <a href="/user/register" > Registrarse</a> 
         </section>

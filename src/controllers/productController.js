@@ -5,21 +5,6 @@ const product_path = path.join(__dirname,'../data/products.json');
 const file_data = fs.readFileSync(product_path, 'utf-8');
 const productos = JSON.parse (file_data);
 
-// const producto = (id) => {
-//     let producto;
-//     productos.forEach((item) => {
-//         if(item.id==id){
-//             producto=item;
-//         }
-//     });
-//     return producto;
-// }
-
-// const product = (req, res) => {
-//     res.render('product', {productos: productos});
-// };
-
-
 const newProduct = (req,res) => {
     res.render ('productAdd');
 }
@@ -54,15 +39,6 @@ const editProduct = (req, res) => {
 }; 
 
 const putProduct = (req, res) => {
-    
-    // const id_producto = req.params.id;
-    // const name = req.body.name;
-    // const price = req.body.price;
-    // const description =req.body.description
-    // const gender = req.body.gender
-    // const img = 
-    // //me falta la imagen
-
     productos.forEach(element => {
         if(element.id === parseInt(req.params.id)){
             element.name = req.body.name;
@@ -89,14 +65,14 @@ const deleteProduct = (req, res) => {
 }
 
 const productsNiñas = (req,res)=> {
-    let productosNiñas= productos.filter((el) => el.gender === "Niñas");
-    res.render('productsGender', { products: productosNiñas})
+    let productosNiñas= productos.filter((el) => el.gender === "niñas");
+    res.render('productsGender', { products: productosNiñas, gender:"Niñas"})
     
 }
 
 const productsNiños = (req,res)=> {
-    let productosNiños= productos.filter((el) => el.gender === "Niños");
-    res.render('productsGender', { products: productosNiños})
+    let productosNiños= productos.filter((el) => el.gender === "niños");
+    res.render('productsGender', { products: productosNiños, gender:"Niños"})
 }
 
 
