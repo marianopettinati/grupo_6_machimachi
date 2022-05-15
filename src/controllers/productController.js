@@ -9,14 +9,25 @@ const newProduct = (req,res) => {
     res.render ('productAdd');
 }
 
+const lastId = () => {
+    let i=0;
+    const lastId = productos.filter((el) => {
+        i++;
+        return el.id != i;
+    });
+    i++;
+    return i;
+}
+
 const postProduct = (req, res) => {
     productos.push ({
+        id : lastId(),
         name : req.body.name,
         description : req.body.description,
         price : req.body.price,
         img : "/images/" + req.file.filename,
         gender : req.body.gender,
-        id : parseInt(Date.now())
+        
     });
 
     const productos_string = JSON.stringify (productos,null,2);
