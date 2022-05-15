@@ -72,5 +72,12 @@
     "price": "1300",
     "img": "",
     "gender": "niños"
+  },
+  {
+    "name": "test",
+    "description": "test",
+    "price": "test",
+    "gender": "niños",
+    "id": 1652634033952
   }
 ]

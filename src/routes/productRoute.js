@@ -20,14 +20,14 @@ const uploadFile = multer({ storage });
 router.get ('/ninos', productController.productsNiños);
 router.get ('/ninas', productController.productsNiñas);
 
-//prcesamiento POST
+//procesamiento POST
 router.get ('/new', productController.newProduct);
 router.post ('/new', uploadFile.single('product-img'), productController.postProduct);
 
-
-router.get ('/:id/edit', productController.editProduct);
-router.put ('/:id/edit', productController.putProduct);
-router.delete ('/:id/edit', productController.deleteProduct);
+//procesamiento PUT y DELETE
+router.get ('/edit/:id', productController.editProduct);
+router.put ('/edit', productController.putProduct);
+router.delete ('/edit', productController.deleteProduct);
 
 //GET
 router.get ('/:id', productController.getProduct);
