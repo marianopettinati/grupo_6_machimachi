@@ -25,20 +25,13 @@ const newProduct = (req,res) => {
 }
 
 const postProduct = (req, res) => {
-    const name = req.body.name;
-    const description = req.body.description;
-    const price = req.body.price;
-    const img = req.body.img;
-    const gender = req.body.gender
-    const dateOfCreation = Date.now();
-
     productos.push ({
-        name,
-        description,
-        price,
-        img,
-        gender,
-        id : parseInt(dateOfCreation)
+        name : req.body.name,
+        description : req.body.description,
+        price : req.body.price,
+        //img : req.body.product-img,
+        gender : req.body.gender,
+        id : parseInt(Date.now())
     });
 
     const productos_string = JSON.stringify (productos,null,2);

@@ -54,7 +54,7 @@
     "price": "4500",
     "img": "/images/IMG_0495.jpg",
     "gender": "Niñas",
-    "sale":true,
+    "sale": true,
     "discount": 0.1
   },
   {
@@ -66,7 +66,7 @@
     "gender": "niños"
   },
   {
-    "id":9,
+    "id": 9,
     "name": "bufanda carola",
     "description": "bufanda abrigada y colorida",
     "price": "1300",
