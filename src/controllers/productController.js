@@ -25,20 +25,13 @@ const newProduct = (req,res) => {
 }
 
 const postProduct = (req, res) => {
-    const name = req.body.name;
-    const description = req.body.description;
-    const price = req.body.price;
-    const img = req.body.img;
-    const gender = req.body.gender
-    const dateOfCreation = Date.now();
-
     productos.push ({
-        name,
-        description,
-        price,
-        img,
-        gender,
-        id : parseInt(dateOfCreation)
+        name : req.body.name,
+        description : req.body.description,
+        price : req.body.price,
+        img : "/images/" + req.file.filename,
+        gender : req.body.gender,
+        id : parseInt(Date.now())
     });
 
     const productos_string = JSON.stringify (productos,null,2);
@@ -50,30 +43,32 @@ const postProduct = (req, res) => {
 const getProduct = (req, res) => {
     const idProduct = req.params.id;
     const producto = productos.find((el) => el.id === parseInt(idProduct));
-    res.render('product', {producto, productos: productos});
+    res.render('product', {producto, productos});
 };
 
 //editProduct y putProduct funcionan en conjunto para mostrar el producto a editar y hacer el put dps de editarlo
 const editProduct = (req, res) => {
-    const id_producto = req.params.id;
+    let id_producto = req.params.id;
     const producto = productos.find((el) => el.id === parseInt(id_producto));
     res.render('productEdit', {producto});  
 }; 
 
 const putProduct = (req, res) => {
-    const id_producto = req.params.id;
-    const name = req.body.name;
-    const price = req.body.price;
-    const description =req.body.description
-    const gender = req.body.gender
-    //me falta la imagen
+    
+    // const id_producto = req.params.id;
+    // const name = req.body.name;
+    // const price = req.body.price;
+    // const description =req.body.description
+    // const gender = req.body.gender
+    // const img = 
+    // //me falta la imagen
 
     productos.forEach(element => {
-        if(element.id === parseInt(id_producto)){
-            element.name = name;
-            element.price = price;
-            element.description = description;
-            element.gender = gender;
+        if(element.id === parseInt(req.params.id)){
+            element.name = req.body.name;
+            element.price = req.body.price;
+            element.description = req.body.description;
+            element.gender = req.body.gender;
         };
     });
 
@@ -83,12 +78,13 @@ const putProduct = (req, res) => {
 
 }; 
 
-const deleteProduct = (res, req) => {
+const deleteProduct = (req, res) => {
+
     let id_producto = req.params.id;
     let filtered_products = productos.filter(el => el.id!== parseInt(id_producto));
     let inventario = JSON.stringify (filtered_products,null,2);
     fs.writeFileSync (product_path,inventario);
-    res.redirect ('/register');
+    res.redirect ('/');
     
 }
 

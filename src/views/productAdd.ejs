@@ -11,14 +11,14 @@
     <%- include ('./partials/header') %>
     <main>
         <div class="upload-form">
-            <form action="/product/new" method="post" class="wraper">
+            <form action="/product/new" method="POST" enctype="multipart/form-data" class="wraper">
                 <div class="newProduct">
                     <h2>
                         Subí un producto
                     </h2>
                 </div>
                 <div class="input">
-                    <label for="nombre">Nombre del producto:</label>
+                    <label for="name">Nombre del producto:</label>
                     <input type="text" name="name" placeholder="Gorrito Cebra" required="" id="name">
                 </div>
                 <div class="input">
@@ -30,8 +30,8 @@
                     <input type="text" name="description" id="description">
                 </div>
                 <div class="input">
-                    <label for="img">Imagen:</label>
-                    <input type="file" name="img" id="img">
+                    <label for="product-img">Imagen:</label>
+                    <input type="file" name="product-img" id="product-img">
                 </div>
                 <div class="input">
                     <div id="radio-button">
