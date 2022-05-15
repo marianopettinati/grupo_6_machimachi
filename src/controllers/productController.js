@@ -29,7 +29,7 @@ const postProduct = (req, res) => {
         name : req.body.name,
         description : req.body.description,
         price : req.body.price,
-        //img : req.body.product-img,
+        img : "/images/" + req.file.filename,
         gender : req.body.gender,
         id : parseInt(Date.now())
     });
@@ -49,42 +49,42 @@ const getProduct = (req, res) => {
 //editProduct y putProduct funcionan en conjunto para mostrar el producto a editar y hacer el put dps de editarlo
 const editProduct = (req, res) => {
     let id_producto = req.params.id;
-    //const producto = productos.find((el) => el.id === parseInt(id_producto));
-    let producto = productos[id_producto-1]
+    const producto = productos.find((el) => el.id === parseInt(id_producto));
     res.render('productEdit', {producto});  
 }; 
 
 const putProduct = (req, res) => {
-   res.send ("OK PUT")
+    
     // const id_producto = req.params.id;
     // const name = req.body.name;
     // const price = req.body.price;
     // const description =req.body.description
     // const gender = req.body.gender
+    // const img = 
     // //me falta la imagen
 
-    // productos.forEach(element => {
-    //     if(element.id === parseInt(id_producto)){
-    //         element.name = name;
-    //         element.price = price;
-    //         element.description = description;
-    //         element.gender = gender;
-    //     };
-    // });
+    productos.forEach(element => {
+        if(element.id === parseInt(req.params.id)){
+            element.name = req.body.name;
+            element.price = req.body.price;
+            element.description = req.body.description;
+            element.gender = req.body.gender;
+        };
+    });
 
-    // let data = JSON.stringify(productos,null,2);
-    // fs.writeFileSync(product_path,data);
-    // res.redirect("/")
+    let data = JSON.stringify(productos,null,2);
+    fs.writeFileSync(product_path,data);
+    res.redirect("/")
 
 }; 
 
 const deleteProduct = (req, res) => {
-   res.send ("OK DELETE")
-    // let id_producto = req.params.id;
-    // let filtered_products = productos.filter(el => el.id!== parseInt(id_producto));
-    // let inventario = JSON.stringify (filtered_products,null,2);
-    // fs.writeFileSync (product_path,inventario);
-    // res.redirect ('/register');
+
+    let id_producto = req.params.id;
+    let filtered_products = productos.filter(el => el.id!== parseInt(id_producto));
+    let inventario = JSON.stringify (filtered_products,null,2);
+    fs.writeFileSync (product_path,inventario);
+    res.redirect ('/');
     
 }
 

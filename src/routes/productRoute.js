@@ -7,10 +7,11 @@ const productController = require ('../controllers/productController');
 
 const storage = multer.diskStorage({ 
     destination: function (req, file, cb) { 
-       cb(null, path.join(__dirname, '../public/img')); 
+       cb(null, path.join(__dirname, '../../public/images')); 
     }, 
     filename: function (req, file, cb) { 
-       cb(null, file.fieldname + Date.now() + path.extname(file.originalname));
+       const nombreDeImg = file.fieldname + Date.now() + path.extname(file.originalname);
+       cb(null, nombreDeImg);
     }
   });
 
@@ -26,14 +27,11 @@ router.post ('/new', uploadFile.single('product-img'), productController.postPro
 
 //procesamiento PUT y DELETE
 router.get ('/edit/:id', productController.editProduct);
-router.put ('/edit', productController.putProduct);
-router.delete ('/edit', productController.deleteProduct);
+router.put ('/edit/:id', productController.putProduct);  //TO DO
+router.delete ('/edit/:id', productController.deleteProduct);
 
 //GET
 router.get ('/:id', productController.getProduct);
-
-
-
 
 
 module.exports = router;

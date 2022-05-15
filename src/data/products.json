@@ -5,7 +5,7 @@
     "price": 4500,
     "img": "/images/IMG_0503.jpg",
     "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus!",
-    "gender": "Niñas"
+    "gender": "niñas"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "price": 4500,
     "img": "/images/IMG_0501.jpg",
     "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus!",
-    "gender": "Niños"
+    "gender": "niños"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "price": 2200,
     "img": "/images/IMG_gorrito_Cebra.jpg",
     "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus!",
-    "gender": "Niños"
+    "gender": "niños"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "price": 2200,
     "img": "/images/IMG_gorrito_Frutilla.jpg",
     "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus!",
-    "gender": "Niñas"
+    "gender": "niñas"
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "price": 4500,
     "img": "/images/IMG_0498.jpg",
     "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus!",
-    "gender": "Niños"
+    "gender": "niños"
   },
   {
     "id": 6,
@@ -45,7 +45,7 @@
     "price": 2200,
     "img": "/images/IMG_0502.jpg",
     "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus!",
-    "gender": "Niños"
+    "gender": "niños"
   },
   {
     "id": 7,
@@ -53,7 +53,7 @@
     "description": "lorem ipsum",
     "price": "4500",
     "img": "/images/IMG_0495.jpg",
-    "gender": "Niñas",
+    "gender": "niñas",
     "sale": true,
     "discount": 0.1
   },
@@ -66,18 +66,11 @@
     "gender": "niños"
   },
   {
-    "id": 9,
-    "name": "bufanda carola",
-    "description": "bufanda abrigada y colorida",
-    "price": "1300",
-    "img": "",
-    "gender": "niños"
-  },
-  {
-    "name": "test",
-    "description": "test",
-    "price": "test",
-    "gender": "niños",
-    "id": 1652634033952
+    "name": "polainas suerte",
+    "description": "cruzando los dedos una vez más",
+    "price": "2888",
+    "img": "/images/product-img1652647784702.jpeg",
+    "gender": "niñas",
+    "id": 1652647784710
   }
 ]

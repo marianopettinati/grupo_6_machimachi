@@ -19,7 +19,7 @@
                 <div class="product-edit"> 
                     <h3 id="edit-title">Editar </h3>
                     <br>
-                    <form method="POST" action="product/edit/<%= producto.id %>?_method=PUT">
+                    <form method="POST" action="/product/edit/<%= producto.id %>?_method=PUT">
                         <div class="input">
                             <input type="text" id="name" name="name" class="control" value="<%= producto.name %>">
                         </div>
@@ -29,22 +29,30 @@
                         <div class="input">
                             <div id="radio-button">
                                 <label for="gender">Colección:</label> 
+                                <% if (producto.gender == "niñas") { %> 
                                 <div>
-                                    <input type="radio" name="gender" value="niñas" >
+                                    <input type="radio" name="gender" value="niñas" checked>
                                     <label> Niñas </label>
-                                </div>
+                                </div> 
                                 <div>
                                     <input type="radio" name="gender" value="niños">
                                     <label> Niños </label>
                                 </div>
+                                <% } else { %>
+                                    <div>
+                                        <input type="radio" name="gender" value="niñas">
+                                        <label> Niñas </label>
+                                    </div> 
+                                    <div>
+                                        <input type="radio" name="gender" value="niños" checked>
+                                        <label> Niños </label>
+                                    </div>
+                                <% } %>  
                             </div>                 
                         </div>
                         <div class="input">
-                            <textarea id="description" name="description" value="<%=producto.description%>"></textarea>
-                        </div>
-                        <div class="input">
-                            <label for="img">Imagen</label>
-                            <input type="file" name="img" id="img">
+                            <% console.log (producto.description) %> 
+                            <textarea id="description" name="description" value="<%=producto.description%>"><%=producto.description%></textarea>
                         </div>
                         <br>
                         <div class="input">
