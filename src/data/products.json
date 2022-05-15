@@ -66,11 +66,19 @@
     "gender": "niños"
   },
   {
+    "id": 9,
     "name": "polainas suerte",
     "description": "cruzando los dedos una vez más",
     "price": "2888",
     "img": "/images/polainas-tejidas-para-niñas-de-colores.jpg",
-    "gender": "niñas",
-    "id": 1652647784710
+    "gender": "niñas"
+  },
+  {
+    "id": 10,
+    "name": "Combo miñons",
+    "description": "Gorrito, guantes y bufandas de miñons.",
+    "price": "4500",
+    "img": "/images/product-img1652653924113.jpg",
+    "gender": "niñas"
   }
 ]
