@@ -20,6 +20,7 @@ const uploadFile = multer({ storage });
 //router.get ('/', productController.product);
 router.get ('/ninos', productController.productsNiños);
 router.get ('/ninas', productController.productsNiñas);
+router.get ('/sale', productController.saleProducts);
 
 //procesamiento POST
 router.get ('/new', productController.newProduct);

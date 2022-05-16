@@ -77,14 +77,20 @@ const deleteProduct = (req, res) => {
 
 const productsNiñas = (req,res)=> {
     let productosNiñas= productos.filter((el) => el.gender === "niñas");
-    res.render('productsGender', { products: productosNiñas, gender:"Niñas"})
+    res.render('productsGender', { products: productosNiñas, category:"Niñas"})
     
 }
 
 const productsNiños = (req,res)=> {
     let productosNiños= productos.filter((el) => el.gender === "niños");
-    res.render('productsGender', { products: productosNiños, gender:"Niños"})
+    res.render('productsGender', { products: productosNiños, category:"Niños"})
 }
+
+const saleProducts = (req,res)=> {
+    let productoSale= productos.filter((el) => el.sale === true);
+    res.render('productsGender', { products: productoSale, category:"Sale"})
+}
+
 
 
 const productController = {
@@ -96,6 +102,7 @@ const productController = {
     deleteProduct,
     productsNiñas,
     productsNiños,
+    saleProducts,
 
 }
 
