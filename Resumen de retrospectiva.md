@@ -12,3 +12,7 @@
 <h3>Nuestro resumen de la retro</h3>
 <img src="./public/images/img-retrospectiva/Retro sp 3.png">
 
+<h2> Tercera retrospectiva del equipo 6 </h1>
+
+<h3>Nuestro resumen de la retro</h3>
+<img src="./public/images/img-retrospectiva/Retro sprint 4.png">
