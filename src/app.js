@@ -12,6 +12,9 @@ const { urlencoded } = require('express');
 const publicPath = path.resolve(__dirname, '../public');
 app.use(express.static(publicPath));
 
+//Middleware de aplicación
+const userLoggedMiddleware = require ('./middlewares/loggedMiddleware');
+
 //Habilitar peticiones put y delete
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
@@ -34,6 +37,9 @@ app.use(session({
     resave: false, 
     saveUninitialized: true,
 }));
+
+//Middleware
+app.use (userLoggedMiddleware);
 
 //Rutas
 app.use('/', rutasMain);

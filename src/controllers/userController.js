@@ -5,7 +5,7 @@ const { validationResult } = require ('express-validator');
 
 
 const getLogin = (req,res) => {
-    res.render ('login', {usuario : req.session.usuarioLogueado});
+    res.render ('login');
 };
 
 const postLogin = (req, res) => {
@@ -34,7 +34,7 @@ const postLogin = (req, res) => {
         }
 
         delete loggedUser.password;
-        req.session.usuarioLogueado = loggedUser;
+        req.session.loggedUser = loggedUser;
         res.redirect('/');
 
     } else {        
@@ -50,16 +50,21 @@ const forgotpassword = (req, res) => {
     res.render('forgotpassword', {});
 };
 
-const add = (req, res) => {
-    res.render ('productAdd', {});
+const logout = (req,res) => {
+    req.session.destroy();
+    return res.redirect ('/');
 }
+// const add = (req, res) => {
+//     res.render ('newUser', {});
+// }
 
 const loginController = {
     getLogin,
     postLogin,
     forgotpassword,
     register,
-    add,
+    logout,
+    // add,
 };
 
 // Acá exportamos el resultado
