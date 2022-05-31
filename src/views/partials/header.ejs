@@ -1,22 +1,24 @@
 <header>
     <div class="header-container">
-        <a href="/"><img src="/./images/logo2-machimachi.png" alt="logo"  class="logo"></a>
+        <a href="/"><img src="/./images/logo2-machimachi.png" alt="logo"  class="logo"> </a>
         <a href="/"><img src="/./images/mm-logo-con-nombre.png" alt="logo Machi Machi" class="logoMachiMachi"></a>
         <div class="icons-nav">
             <a href=""><i class="fas fa-search general"></i></a>
             <a href=""><i class="fas fa-heart general"></i></a>
             <a href="/cart"><i class="fas fa-shopping-bag general"></i></a>
-            <a href="/user/login"><i class="fas fa-user general"></i></a>
+            <% if (usuario == undefined) { %> 
+                <a href="/user/login" id="usericon"><i class="fas fa-user general"></i> </a>
+            <% } else { %> 
+                <a href="/user/login" id="usericon"><i class="fas fa-user general"></i> <%=usuario.name %> </a>
+            <% } %>
         </div>
     </div>
     <nav>
         <ul>
-            <!--TODO: las etiquetas a deberían linkear a las secciones correspondientes-->
             <li><a href="/" class="general">Home</a></li>
-            <!--<li><a href="" class="bebes">Bebés</a></li>-->
             <li><a href="/product/ninos" class="niños">Niños</a></li>
             <li><a href="/product/ninas" class="niñas">Niñas</a></li>
             <li><a href="/product/sale" class="sale">Sale</a></li>
-        </ul>    
+        </ul>
     </nav>
 </header>
