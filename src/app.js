@@ -5,7 +5,7 @@ const path = require('path');
 const rutasMain = require ('./routes/mainRoute');
 const rutasCarrito = require('./routes/cartRoute');
 const rutasProduct = require('./routes/productRoute');
-const rutasLogin = require('./routes/userRoute');
+const rutasUser = require('./routes/userRoute');
 const { urlencoded } = require('express');
 
 const publicPath = path.resolve(__dirname, '../public');
@@ -33,7 +33,7 @@ app.set('views', path.join(__dirname,'./views'));
 app.use('/', rutasMain);
 app.use('/cart', rutasCarrito);
 app.use('/product', rutasProduct);
-app.use('/user', rutasLogin);
+app.use('/user', rutasUser);
 
 
 app.listen (3000, ()=>{
