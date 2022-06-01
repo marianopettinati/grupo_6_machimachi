@@ -25,7 +25,7 @@
     "password": "pass",
     "phone": "+541112345678",
     "admin": false,
-    "img": "/images/mm-isologotipo-redondo.jpg"
+    "img": "/images/profile_blank.jpg"
 }, {
     "id": 4,
     "name": "Cuarto",

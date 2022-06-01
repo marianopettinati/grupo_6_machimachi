@@ -24,8 +24,8 @@
     "email": "tercero@unmail.com",
     "password": "pass",
     "phone": "+541112345678",
-    "admin": false,
-    "img": "/images/mm-isologotipo-redondo.jpg"
+    "admin": true,
+    "img": "/images/profile_blank.jpg"
 }, {
     "id": 4,
     "name": "Cuarto",

@@ -54,6 +54,11 @@ const logout = (req,res) => {
     req.session.destroy();
     return res.redirect ('/');
 }
+
+const profile = (req,res) => {
+    res.render ('userProfile', {user : req.session.loggedUser});
+}
+
 // const add = (req, res) => {
 //     res.render ('newUser', {});
 // }
@@ -64,6 +69,7 @@ const loginController = {
     forgotpassword,
     register,
     logout,
+    profile,
     // add,
 };
 

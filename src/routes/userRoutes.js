@@ -2,7 +2,8 @@ const express = require ('express');
 const router = express.Router();
 const { body } = require('express-validator');
 const loginController = require ('../controllers/userController');
-const loggedMiddleware = require ('../middlewares/loggedMiddleware')
+const guestMiddleware = require ('../middlewares/guestMiddleware');
+const authMiddleware = require ('../middlewares/authMiddleware');
 
 
 //Express Validator - validaciones:
@@ -12,11 +13,13 @@ const validaciones = [
     body('password').notEmpty().withMessage("Debes ingresar tu contraseña")
 ];
 
-router.get('/login', loggedMiddleware, loginController.getLogin);
-router.post ('/login', loggedMiddleware, validaciones, loginController.postLogin);
+router.get('/login', guestMiddleware, loginController.getLogin);
+router.post ('/login', validaciones, loginController.postLogin);
 
-router.get ('/register', loginController.register);
+router.get ('/register',guestMiddleware, loginController.register);
 router.get ('/forgotpassword', loginController.forgotpassword);
+router.get ('/profile', authMiddleware, loginController.profile);
+router.get ('/logout', loginController.logout);
 //router.get ('/admin/add', loginController.add);
 
 
