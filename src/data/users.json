@@ -1,12 +1,11 @@
-[{
-    "id": 1,
-    "name": "Fernando",
-    "lastname": "Veliz",
-    "email": "ferveliz@unmail.com",
-    "password": "pass",
-    "phone": "+541112345678",
-    "admin": true,
-    "img": "/images/mm-isologotipo-redondo.jpg"
-
-}
+[
+ {
+  "id": 1,
+  "name": "Fernando",
+  "lastname": "Veliz",
+  "email": "fernando.e.veliz@gmail.com",
+  "phone": "1130280788",
+  "password": "$2a$10$O5BndMrbqGHDap2I4h3BFOZytgvBJUah.PxemAiTYR9n9hPSqeIgm",
+  "img": "userImg1654086051235.png"
+ }
 ]

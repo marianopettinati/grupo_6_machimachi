@@ -1,6 +1,5 @@
 const express = require ('express');
 const router = express.Router();
-//const { path } = require('express/lib/application');
 const path = require ('path');
 const multer = require ('multer');
 const productController = require ('../controllers/productController');
@@ -10,7 +9,7 @@ const storage = multer.diskStorage({
        cb(null, path.join(__dirname, '../../public/images')); 
     }, 
     filename: function (req, file, cb) { 
-       const nombreDeImg = file.fieldname + Date.now() + path.extname(file.originalname);
+       const nombreDeImg = file.originalname;
        cb(null, nombreDeImg);
     }
   });
