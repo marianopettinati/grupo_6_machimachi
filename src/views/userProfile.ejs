@@ -15,21 +15,21 @@
             </div>
 
             <div id="user-data-wraper">
-                <h3 class="user-name"> Hola, <%= user.name + ' ' + user.lastname %></h3>
+                <h3 id="user-name"> Hola, <%= user.name + ' ' + user.lastname %></h3>
                 <div id="user-data">
-                    <p> <%= user.email %></p>
-                    <p> <%= user.phone %></p>
+                    <p> Correo electrónico: <%= user.email %></p>
+                    <p> Teléfono: <%= user.phone %></p>
                     <% if (user.admin) { %>
                         <p id="is-admin"> Administrador</p>
                     <% } %>
                 </div>
                          
-                <div>
+                <div class="user-button">
                     <button type="submit">Editar perfil</button>
                 </div>
 
-                <div class= "logout-button"> 
-                    <a href="/user/logout">Cerrar sesión</a>
+                <div class= "user-button"> 
+                    <button> <a href="/user/logout">Cerrar sesión</a> </button>
                 </div>
 
 

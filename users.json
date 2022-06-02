@@ -16,7 +16,7 @@
     "password": "pass",
     "phone": "+541112345678",
     "admin": true,
-    "img": "/images/mm-isologotipo-redondo.jpg"
+    "img": "/images/profile_blank.jpg"
 }, {
     "id": 3,
     "name": "Tercero",
@@ -24,7 +24,7 @@
     "email": "tercero@unmail.com",
     "password": "pass",
     "phone": "+541112345678",
-    "admin": true,
+    "admin": false,
     "img": "/images/profile_blank.jpg"
 }, {
     "id": 4,

@@ -10,65 +10,47 @@
     flex-wrap: wrap;
 }
 
-/*Fotos del producto*/
 #user-image {
     justify-content: space-around;
     margin-top: 15px;
-    width: 30vw;
+    width: 20vw;
+    height: 20vh;
     display: flex;
     min-width: 190px;
 }
 
-#user-main-img {
-    height: 400px;
-    min-width: 160px;
+/* #user-data-wraper{
+    display: block;
+    justify-content: center;
+} */
+
+#user-name {
+    color: darkred;
+    font-weight: bolder;
+    margin: 12px 12px 0px 12px;   
 }
 
 /*CAJA DETALLES*/
-div.user-data{
+div #user-data{
+    padding: 10px;
     margin-top: 15px;
     width: 40vw;
     min-width: 180px;
 }
 
-#user-name {
-    color: darkred;
-    font-weight: bolder;
-    margin: 12px 12px 0px 12px;
+div>p {
+    padding: 10px 0px;
 }
 
-#edit-title {
-    color: darkred;
-    font-weight: bolder;
-   
+#is-admin {
+    padding: 10px 0px;
+    font-weight: bold;
 }
 
-#edit-title {
-    border: red 2px;    
-}
 h4 {
     margin: 5px 12px 12px 12px;
     font-size: small;
     font-weight: bolder;
-}
-
-.talles { font-size: 12px; }
-
-div.product-description p{
-    text-align: left;
-    color: black;
-    font-weight: 600;
-    font-size: 12px;
-    margin: 12px;
-}
-
-
-div.quantity p input{
-    width: 20px;
-    text-align: center;
-    color: black;
-    font-weight: 600;
-    margin: 12px;
 }
 
 div.user-edit {
@@ -82,64 +64,20 @@ div.user-edit {
     background-color: #EFEBEB;
     border-radius: 0%;
 }
-/* 
-div.product-edit {
-    background-color: #EFEBEB;
-    padding: 10px;
-    margin: 12px;
-} */
 
+.user-button {    
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
 
-/* .edit-button{
+.user-button button {
+    color: white;
+    font-weight: bolder;
     background-color: #e23f30;
-    border-radius: 5px;
-    font-weight: 600;
-    font-size: 15px;
+}
+
+a {
     color: white;
-    text-align: center;
-} */
-
-/* .edit-button>button.submit:hover{
-    background-color: #E61515;
-    color: white;
-    font-weight: 600;
-    transition-duration: 500ms;
-} */
-
-/* #name.control, #price.control {
-    text-size:12px;
-} */
-
-
-.suscribe {
-    display: block;
-    background-color: lightgray;
-    padding: 5px;
-    text-align: center;
-}
-
-.suscribe a {
-    text-decoration: none;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;    
-}
-
-/* Tablet */
-@media (min-width: 361px) {
-}
-
-/*
-main section .products {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-*/  
-
-
-/* Desktop*/
-@media (min-width: 770px){  
-
-        
+    font-weight: bolder;
 }
