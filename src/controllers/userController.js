@@ -2,8 +2,35 @@ const { validationResult } = require('express-validator');
 const bcrypjs = require('bcryptjs');
 const User = require('../models/User');
 
-const login = (req, res) => {
-    res.render('login', {});
+const getLogin = (req,res) => {
+    res.render ('login');
+};
+
+const postLogin = (req, res) => {
+    let errors = validationResult(req);
+    let loggedUser;
+    if (errors.isEmpty()) {
+        let users = User.findAll();
+
+        users.forEach(user  => {
+           if (user.email == req.body.email) {
+                if (bcrypjs.compareSync(req.body.password,user.password)){
+                    loggedUser = user;
+                }
+            }
+        });
+        
+        if (loggedUser == undefined) {
+            return res.render('login', {errors: [{msg : 'Credenciales inválidas'}] });
+        }
+
+        delete loggedUser.password;
+        req.session.loggedUser = loggedUser;
+        res.redirect('/');
+
+    } else {        
+        return res.render('login', {errors : errors.array(), old: req.body});
+    }
 };
 
 const register = (req, res) => {
@@ -14,8 +41,13 @@ const forgotpassword = (req, res) => {
     res.render('forgotpassword', {});
 };
 
-const add = (req, res) => {
-    res.render ('productAdd', {});
+const logout = (req,res) => {
+    req.session.destroy();
+    return res.redirect ('/');
+}
+
+const profile = (req,res) => {
+    res.render ('userProfile', {});
 }
 
 const processRegister = (req, res) => {
@@ -43,7 +75,8 @@ const processRegister = (req, res) => {
     let user = {
         ...req.body,
         password: bcrypjs.hashSync(req.body.password, 10),
-        img: req.file.filename,
+        admin: false, 
+        img: '/images/users/'+req.file.filename,
     }
 
     User.create(user);
@@ -52,10 +85,13 @@ const processRegister = (req, res) => {
 }
 
 const loginController = {
-    login,
+    getLogin,
+    postLogin,
     forgotpassword,
     register,
-    add,
+    logout,
+    profile,
+    //add,
     processRegister
 };
 

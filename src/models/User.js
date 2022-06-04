@@ -16,9 +16,15 @@ const generateId = () => {
 }
 
 const getData = () => {
+    let users;
     const _path = getPath();
     const file_data = fs.readFileSync(_path, 'utf-8');
-    return JSON.parse(file_data);
+    if (file_data == "") {
+        users = []
+    } else {
+        users = JSON.parse(file_data);
+    }
+    return users;
 }
 
 const findAll = () => {

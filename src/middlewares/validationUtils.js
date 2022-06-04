@@ -1,7 +1,7 @@
 const { body } = require('express-validator');
 const path = require ('path');
 
-const validacionesLogin = [
+const validacionesRegister = [
     body('name')
                 .notEmpty().withMessage('El campo nombre es requerido').bail()
                 .isLength({min:3}).withMessage('Debe tener minimo 3 caracteres'),
@@ -35,7 +35,14 @@ const validacionesLogin = [
     })
 ];
 
+const validacionesLogin = [
+    body('email').notEmpty().withMessage("Debes completar tu correo").bail()
+        .isEmail().withMessage("Debes completar un email válido"),
+    body('password').notEmpty().withMessage("Debes ingresar tu contraseña")
+];
+
 const validaciones = {
+    validacionesRegister,
     validacionesLogin,
 }
 

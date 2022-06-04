@@ -8,7 +8,7 @@ const productos = JSON.parse (file_data);
 
 
 const home = (req, res) => {
-    res.render('home', {productos: productos});
+   res.render('home', {productos : productos})
 }
 
 const mainController = {

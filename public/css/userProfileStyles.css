@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+    font-family: 'poppins';
+}
+/*FLEX container */
+#user-wraper{
+    display: flex;
+    margin: 1em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#user-image {
+    justify-content: space-around;
+    margin-top: 15px;
+    width: 20vw;
+    height: 20vh;
+    display: flex;
+    min-width: 190px;
+}
+
+/* #user-data-wraper{
+    display: block;
+    justify-content: center;
+} */
+
+#user-name {
+    color: darkred;
+    font-weight: bolder;
+    margin: 12px 12px 0px 12px;   
+}
+
+/*CAJA DETALLES*/
+div #user-data{
+    padding: 10px;
+    margin-top: 15px;
+    width: 40vw;
+    min-width: 180px;
+}
+
+div>p {
+    padding: 10px 0px;
+}
+
+#is-admin {
+    padding: 10px 0px;
+    font-weight: bold;
+}
+
+h4 {
+    margin: 5px 12px 12px 12px;
+    font-size: small;
+    font-weight: bolder;
+}
+
+div.user-edit {
+    text-align: center;
+    color: darkred;
+    font-weight: bolder;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px 30px;
+    margin: 12px;
+    background-color: #EFEBEB;
+    border-radius: 0%;
+}
+
+.user-button {    
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.user-button button {
+    color: white;
+    font-weight: bolder;
+    background-color: #e23f30;
+}
+
+.user-button a {
+    color: white;
+    font-weight: bolder;
+}

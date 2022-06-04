@@ -1,5 +1,11 @@
 <footer class="footer">
-            
+    
+    <% if (!locals.isLogged) { %> 
+        <section class="suscribe">
+            <a href="/user/register" > Registrarse</a> 
+        </section>
+        <% } %> 
+
     <div class="footer-container">
         <div>
             <a href="#"> <h4>NOSOTROS</h4></a>

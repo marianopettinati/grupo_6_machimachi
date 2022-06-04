@@ -43,21 +43,6 @@
     font-style: italic;
 }
 
-.suscribe {
-    display: block;
-    background-color: lightgray;
-    padding: 5px;
-    text-align: center;
-}
-
-.suscribe a {
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
-    font-weight: bolder;    
-}
-
-
 .products {
     display: flex;
     flex-wrap: wrap;

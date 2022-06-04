@@ -56,12 +56,21 @@ i:hover{
 nav{
     margin: 16px 0;
     background-color: #EFEBEB;
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: darkred;
+    font-weight: bolder;
 }
 
 header ul li{
     list-style-type: none;
     margin: 5px;
     font-weight: 600;
+    justify-content: space-around;
 }
 
 header ul li a{
