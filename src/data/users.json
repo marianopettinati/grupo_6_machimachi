@@ -1,0 +1,22 @@
+[
+ {
+  "id": 1,
+  "admin": false,
+  "name": "Fernando",
+  "lastname": "Veliz",
+  "email": "fernando.e.veliz@gmail.com",
+  "phone": "01130280788",
+  "password": "$2a$10$M2ICszxjO/CuSQlBjSQpq.U8yLkGvaknKYy7yfNvEJopgoi7iC1h.",
+  "img": "/images/users/userImg1654308457325.png"
+ },
+ {
+  "id": 2,
+  "name": "Alguien ",
+  "lastname": "Alguien",
+  "email": "alguien@yopmail.com",
+  "phone": "11111111",
+  "password": "$2a$10$U.TZcholKr2u7HlWxHAp0.F14TQrmERuHhohlVTHIm9KPaLmXzTK6",
+  "admin": false,
+  "img": "/images/users/userImg1654309914406.png"
+ }
+]

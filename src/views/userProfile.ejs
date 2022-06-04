@@ -11,15 +11,15 @@
         <div id="user-wraper">
 
             <div id="user-image">
-                <img id="user-main-img" src=<%= user.img %> alt=<%= user.name %>> 
+                <img id="user-main-img" src=<%= locals.loggedUser.img %> alt=<%= locals.loggedUser.name %>> 
             </div>
 
             <div id="user-data-wraper">
-                <h3 id="user-name"> Hola, <%= user.name + ' ' + user.lastname %></h3>
+                <h3 id="user-name"> Hola, <%= locals.loggedUser.name + ' ' + locals.loggedUser.lastname %></h3>
                 <div id="user-data">
-                    <p> Correo electrónico: <%= user.email %></p>
-                    <p> Teléfono: <%= user.phone %></p>
-                    <% if (user.admin) { %>
+                    <p> Correo electrónico: <%= locals.loggedUser.email %></p>
+                    <p> Teléfono: <%= locals.loggedUser.phone %></p>
+                    <% if (locals.loggedUser.admin) { %>
                         <p id="is-admin"> Administrador</p>
                     <% } %>
                 </div>

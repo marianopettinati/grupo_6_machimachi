@@ -8,6 +8,12 @@
     margin-left: 5vw;
 }
 
+.required{
+    margin: 3px 0;
+    color: #EA3F32;
+    font-weight: bold;
+}
+
 #niños {color: #326DC7;}
 #niñas {color:#FC5DD9;}
 #sale{color:#0F9D58;}

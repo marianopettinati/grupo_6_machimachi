@@ -1,50 +1,80 @@
     <%- include ('./partials/head') %>
     <title>Registrate!</title>
-    <link rel="stylesheet" href="/css/forms.css">     <!-- REVISAR LINK DE ESTILOS  -->
+    <link rel="stylesheet" href="/css/forms.css">    
     </head>
     
     <body>
         <%- include ('./partials/header') %>
         <main>
             <div class="register-form">
-                <form action="/register" method="post" class="wraper">
-                    <div class="tituloCuenta">
-                        <h2>
-                            ¡Creá tu cuenta!
+                <div class="wraper">
+                    <form action="/user/register" method="post" enctype="multipart/form-data">
+                        <h2 class="tituloCuenta">
+                            ¡Crea tu cuenta!
                         </h2>
-                    </div>
-                    <div class="input">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" name="nombre" placeholder="Ej: Fabrizio" required="" id="nombre">
-                    </div>
-                    <div class="input">
-                        <label for="apellido">Apellido:</label>
-                        <input type="text" name="apellido" id="apellido">
-                    </div>
-                    <div class="input">
-                        <label for="email">E-mail:</label>
-                        <input type="email" name="email" id="email">
-                    </div>
-                    <div class="input">
-                        <label for="telefono">Telefono:</label>
-                        <input type="tel" name="telefono" id="telefono">
-                    </div>
-                    <div class="input">
-                        <label for="contrasena">Contraseña:</label>
-                        <input type="password" name="contrasena" id="contrasena">
-                    </div>
-                    <div class="input">
-                        <label for="repetirContrasena">Repetir contraseña:</label>
-                        <input type="password" name="repetirContrasena" id="repetirContrasena">
-                    </div>
-                    <div class="input">
-                        <label for="terminos">Acepto terminos y condiciones.</label>
-                        <input type="checkbox" name="terminos">
-                    </div>
-                    <div class="input">
-                        <button class="submit" type="submit">Registrarse</button>
-                    </div>
-                </form>
+                        <div class="input">
+                            <label for="name">Nombre:</label>
+                            <input  type="text" 
+                                    name="name" 
+                                    id="name"
+                                    value="<%= locals.oldData ? oldData.name : null %>"
+                                    >
+                            <% if(locals.errors && errors.name) {%>
+                                <p class="required">* <%= errors.name.msg %></p>
+                            <% } %>
+                        </div>
+                        <div class="input">
+                            <label for="lastname">Apellido:</label>
+                            <input  type="text" 
+                                    name="lastname" 
+                                    id="lastname"
+                                    value="<%= locals.oldData ? oldData.lastname : null %>"
+                                    >
+                            <% if(locals.errors && errors.lastname) {%>
+                                <p class="required">* <%= errors.lastname.msg %></p>   
+                            <% } %>
+                        </div>
+                        <div class="input">
+                            <label for="email">E-mail:</label>
+                            <input  type="text" 
+                                    name="email" 
+                                    id="email"
+                                    value="<%= locals.oldData ? oldData.email : null %>"
+                                    >
+                            <% if(locals.errors && errors.email) {%>
+                                <p class="required">* <%= errors.email.msg %></p>  
+                            <% } %>
+                        </div>
+                        <div class="input">
+                            <label for="phone">Telefono:</label>
+                            <input  type="text" 
+                                    name="phone" 
+                                    id="phone"
+                                    value="<%= locals.oldData ? oldData.phone : null %>"
+                                    >
+                            <% if(locals.errors && errors.phone) {%>
+                                <p class="required">* <%= errors.phone.msg %></p>  
+                            <% } %>
+                        </div>
+                        <div class="input">
+                            <label for="password">Contraseña:</label>
+                            <input type="password" name="password" id="password">
+                            <% if(locals.errors && errors.password) {%>
+                                <p class="required">* <%= errors.password.msg %></p>  
+                            <% } %>
+                        </div>
+                        <div class="input">
+                            <label for="user-img">Imagen:</label>
+                            <input type="file" name="userImg" id="user-img">
+                            <% if(locals.errors && errors.userImg) {%>
+                                <p class="required">* <%= errors.userImg.msg %></p>  
+                            <% } %>
+                        </div>
+                        <div class="input">
+                            <button class="submit" type="submit">Registrarse</button>
+                        </div>
+                    </form>
+                </div>
             </div>
             <%- include('./partials/footer') %> 
         </main>

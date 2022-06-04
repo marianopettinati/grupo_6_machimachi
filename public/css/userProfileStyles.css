@@ -77,7 +77,7 @@ div.user-edit {
     background-color: #e23f30;
 }
 
-a {
+.user-button a {
     color: white;
     font-weight: bolder;
 }

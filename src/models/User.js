@@ -1,23 +1,72 @@
-//MODELO QUE REPRESENTA A UN USUARIO
+const fs = require('fs');
+const path = require('path');
 
-//1. Guardar al usuario en la DB
-//2. Buscar al usuario que se quiere loguear por email
-//3. Buscar a un usuario por ID
-//5. Eliminar a un usuario de la DB
-
-const fs = require ('fs');
-
-const User = {
-    fileName: './data/users.json',
-
-    getData: function(){
-        return fs.readFileSync(this.fileName,'utf-8');
-    },     
-
-
-    create: function (userData) {
-
-    }
+const getPath = () => {
+    const _path = path.join(__dirname,'../data/users.json');
+    return _path;
 }
 
-console.log (User.getData());
+const generateId = () => {
+    let allUser = findAll();
+    let lastUser = allUser.pop();
+    if(lastUser){
+        return lastUser.id + 1;
+    } 
+    return 1;
+}
+
+const getData = () => {
+    let users;
+    const _path = getPath();
+    const file_data = fs.readFileSync(_path, 'utf-8');
+    if (file_data == "") {
+        users = []
+    } else {
+        users = JSON.parse(file_data);
+    }
+    return users;
+}
+
+const findAll = () => {
+    return getData();
+}
+
+const findByPk = (id) => {
+    let allUser = findAll();
+    let userFound = allUser.find((user) => user.id === id);
+    return userFound;
+}
+
+const findByField = (field, text) => {
+    let allUser = findAll();
+    let userFound = allUser.find(user => user[field] === text);
+    return userFound;
+}
+
+const create = (userDate) => {
+    let allUser = findAll();
+    let user = {
+        id: generateId(),
+        ...userDate
+    }
+    allUser.push(user);
+    fs.writeFileSync(getPath(), JSON.stringify(allUser, null, ' '));
+    return true;
+}
+
+const deleteUser = (id) =>{
+    let allUser = findAll();
+    let newListUsers = allUser.filter(user => user.id !== id);
+    fs.writeFileSync(getPath(), JSON.stringify(newListUsers, null, ' '));
+    return true;
+}
+
+const User = {
+    findAll,
+    findByPk,
+    findByField,
+    create,
+    deleteUser
+}
+
+module.exports = User;

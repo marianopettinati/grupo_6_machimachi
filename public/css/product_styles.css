@@ -128,13 +128,13 @@ div.product-edit {
 }
 
 #name.control, #price.control {
-    text-size:12px;
+    font-size:12px;
 }
 
 
-.edit-button {
+/* .edit-button {
 
-}
+} */
 .recomendados {
     border-top: solid #EFEBEB 2px;
     border-bottom: solid #EFEBEB 2px;;
@@ -214,19 +214,6 @@ img{
 #imagen_producto_4 { background-image: url("/public/images/IMG_0499.jpg"); }
  */
 
-.suscribe {
-    display: block;
-    background-color: lightgray;
-    padding: 5px;
-    text-align: center;
-}
-
-.suscribe a {
-    text-decoration: none;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;    
-}
 
 /* Tablet */
 @media (min-width: 361px) {

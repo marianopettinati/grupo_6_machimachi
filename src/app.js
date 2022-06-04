@@ -2,12 +2,12 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const session = require ('express-session');
+const { urlencoded } = require('express');
 
 const rutasMain = require ('./routes/mainRoute');
 const rutasCarrito = require('./routes/cartRoute');
 const rutasProduct = require('./routes/productRoute');
-const rutasLogin = require('./routes/userRoutes');
-const { urlencoded } = require('express');
+const rutasUser = require('./routes/userRoute');
 
 const publicPath = path.resolve(__dirname, '../public');
 app.use(express.static(publicPath));
@@ -45,7 +45,7 @@ app.use (userLoggedMiddleware);
 app.use('/', rutasMain);
 app.use('/cart', rutasCarrito);
 app.use('/product', rutasProduct);
-app.use('/user', rutasLogin);
+app.use('/user', rutasUser);
 
 
 app.listen (3000, ()=>{

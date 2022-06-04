@@ -1,7 +1,7 @@
 {
   "name": "grupo_6_machimachi",
   "version": "1.0.0",
-  "description": "<h1> grupo_6_machimachi",
+  "description": "Grupo 6 machi machi",
   "main": "src/app.js",
   "scripts": {
     "test": "clear && nodemon src/app.js -e js, mjs, ejs, css, ajs",
@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/marianopettinati/grupo_6_machimachi#readme",
   "dependencies": {
-    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "ejs": "^3.1.7",
     "express": "^4.17.3",
     "express-session": "^1.17.3",
