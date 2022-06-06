@@ -18,5 +18,15 @@
   "password": "$2a$10$U.TZcholKr2u7HlWxHAp0.F14TQrmERuHhohlVTHIm9KPaLmXzTK6",
   "admin": false,
   "img": "/images/users/userImg1654309914406.png"
+ },
+ {
+  "id": 3,
+  "name": "valeria",
+  "lastname": "Moncada",
+  "email": "vale246.vm@gmail.com",
+  "phone": "1128612333",
+  "password": "$2a$10$RAAZHQRHfekfE9UY9BmOYefsgHECfe/nO4Wj99TRn4iX58ulgr9lK",
+  "admin": false,
+  "img": "/images/users/userImg1654520047745.jpg"
  }
 ]

@@ -26,6 +26,11 @@ const postLogin = (req, res) => {
 
         delete loggedUser.password;
         req.session.loggedUser = loggedUser;
+
+        if(req.body.rememberMe){
+            res.cookie('dataEmail', req.body.email, { maxAge: 6000})
+        }
+
         res.redirect('/');
 
     } else {        
@@ -42,11 +47,13 @@ const forgotpassword = (req, res) => {
 };
 
 const logout = (req,res) => {
+    res.clearCookie('dataEmail');
     req.session.destroy();
     return res.redirect ('/');
 }
 
 const profile = (req,res) => {
+   console.log(req.cookies.dataEmail);
     res.render ('userProfile', {});
 }
 
