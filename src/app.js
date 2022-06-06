@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const session = require ('express-session');
 const { urlencoded } = require('express');
+const cookies = require ('cookie-parser');
 
 const rutasMain = require ('./routes/mainRoute');
 const rutasCarrito = require('./routes/cartRoute');
@@ -37,6 +38,9 @@ app.use(session({
     resave: false, 
     saveUninitialized: true,
 }));
+
+//Cookies
+app.use (cookies());
 
 //Middleware
 app.use (userLoggedMiddleware);
