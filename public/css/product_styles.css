@@ -195,37 +195,21 @@ img{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-  }
-  
-/*.imagen_producto {
-    border: solid green 2px;
-    min-width: 200px;
-    width: 20vw;
-    background-size: cover;
-    background-position: center center;
-    background-color: #fdfdfd;
 }
-   
-#imagen_producto_1 { 
-    background-image: url("../images/wool-heart.png");
-}
-#imagen_producto_2 { background-image: url("../images/IMG_0499.jpg"); }
-#imagen_producto_3 { background-image: url("/public/images/IMG_0498.jpg"); }
-#imagen_producto_4 { background-image: url("/public/images/IMG_0499.jpg"); }
- */
 
+.price-tachado{
+    font-size: 16px;
+    text-decoration:line-through;
+}
+
+.product-description h4{
+    margin: 10px 12px 12px 0px;
+}
+  
 
 /* Tablet */
 @media (min-width: 361px) {
 }
-
-/*
-main section .products {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-*/  
 
 
 /* Desktop*/

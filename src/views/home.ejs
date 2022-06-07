@@ -20,7 +20,14 @@
                                     <h4 class="product-name">
                                         <%= productos[item].name %>
                                     </h4>
-                                    <p class="price"> $ <%= productos[item].price %></p>
+                                    <p class="price">
+                                        <% if(productos[item].discount!=0) { %>
+                                            <% let newPrice = productos[item].price - (productos[item].price * productos[item].discount)%>
+                                            <span class="price-tachado">$ <%= productos[item].price %></span> $ <%= newPrice %>
+                                        <% } else { %>
+                                            $ <%= productos[item].price %>
+                                        <% } %>
+                                    </p>
                                 </div>
                             </a>
                         </div>
@@ -38,7 +45,14 @@
                                     <h4 class="product-name">
                                         <%= productos[item].name %>
                                     </h4>
-                                    <p class="price"> $ <%= productos[item].price %></p>
+                                    <p class="price">
+                                        <% if(productos[item].discount!=0) { %>
+                                            <% let newPrice = productos[item].price - (productos[item].price * productos[item].discount)%>
+                                            <span class="price-tachado">$ <%= productos[item].price %></span> $ <%= newPrice %>
+                                        <% } else { %>
+                                            $ <%= productos[item].price %>
+                                        <% } %>
+                                    </p>
                                 </div>
                             </a>
                         </div>

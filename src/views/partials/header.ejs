@@ -6,10 +6,10 @@
             <a href=""><i class="fas fa-search general"></i></a>
             <a href=""><i class="fas fa-heart general"></i></a>
             <a href="/cart"><i class="fas fa-shopping-bag general"></i></a>
-            <% if (!locals.isLogged) { %> 
+            <% if (!locals._locals.isLogged) { %> 
                 <a href="/user/login" id="usericon"><i class="fas fa-user general"></i> </a>
             <% } else { %> 
-                <a href="/user/login" id="usericon"><i class="fas fa-user general"></i> <%=locals.loggedUser.name %> </a>
+                <a href="/user/profile" id="usericon"><i class="fas fa-user general"></i> <%= locals._locals.loggedUser.name %> </a>
             <% } %>
         </div>
     </div>

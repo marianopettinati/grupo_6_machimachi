@@ -53,7 +53,6 @@ const logout = (req,res) => {
 }
 
 const profile = (req,res) => {
-   console.log(req.cookies.dataEmail);
     res.render ('userProfile', {});
 }
 

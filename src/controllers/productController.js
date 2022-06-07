@@ -87,7 +87,7 @@ const productsNiños = (req,res)=> {
 }
 
 const saleProducts = (req,res)=> {
-    let productoSale= productos.filter((el) => el.sale === true);
+    let productoSale= productos.filter((el) => el.discount != 0);
     res.render('productsGender', { products: productoSale, category:"Sale"})
 }
 

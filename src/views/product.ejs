@@ -15,7 +15,13 @@
 
             <div class="product-description">
                 <h3 class="item"><%= producto.name %></h3>
-                <h4 class="price"> $ <%= producto.price %></h4>
+                <h4 class="price">
+                    <% if(producto.discount!=0) { %>
+                        <% let newPrice = producto.price - (producto.price * producto.discount)%>
+                        $ <%= newPrice %>
+                    <% } else { %>
+                        $ <%= producto.price %>
+                    <% } %></h4>
                 <p> <%= producto.description %> </p>
                 <div class="talle">
                     <h4>Talle</h4>
@@ -45,7 +51,14 @@
                                     <h4 class="product-name">
                                         <%= item.name %>
                                     </h4>
-                                    <p class="price">$<%= item.price %></p>
+                                    <p class="price"> 
+                                        <% if(item.discount!=0) { %>
+                                            <% let newPrice = item.price - (item.price * item.discount)%>
+                                            <span class="price-tachado">$ <%= item.price %></span> $ <%= newPrice %>
+                                        <% } else { %>
+                                            $ <%= item.price %>
+                                        <% } %>
+                                        </p>
                                 </div>
                             </a> 
                         </div>          

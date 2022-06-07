@@ -26,8 +26,15 @@
                                 <div>
                                     <h4 class="product-name">
                                         <%= item.name %>
-                                    </h4>
-                                    <p class="price"> $ <%= item.price %></p>
+                                    </h4>                                    
+                                    <p class="price"> 
+                                        <% if(item.discount!=0) { %>
+                                            <% let newPrice = item.price - (item.price * item.discount)%>
+                                            <span class="price-tachado">$ <%= item.price %></span> $ <%= newPrice %>
+                                        <% } else { %>
+                                            $ <%= item.price %>
+                                        <% } %>
+                                    </p>   
                                 </div>
                             </a>
                         </div>
