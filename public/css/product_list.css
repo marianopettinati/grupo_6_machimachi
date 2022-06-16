@@ -1,0 +1,93 @@
+*{
+    box-sizing: border-box;
+    font-family: 'poppins';
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.div-wraper {
+    width: 90vw;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: darkred;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-self: center;
+    align-items: center;
+    margin: 15px;
+    color: black;
+}
+
+#product-img {
+    height: 20vh;
+    margin: 1em
+}
+.product-edit {
+    margin: 0.5em;
+    flex-grow: 3;
+    font-size: medium;
+    font-weight:600;
+    color: black;
+}
+
+/* .product-edit>div {
+    display: flex;
+    justify-content: space-between;
+    height: 1.5em;
+    margin: 0.2em
+} */
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    height: 1.5em;
+    margin: 0.2em
+}   
+
+.admin-button {
+    padding: 0.2em;
+    background-color: #e23f30;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+#save-changes {
+    width: 68%;
+}
+
+#delete {
+    width: 28%;
+}
+
+.values {
+    border-style: none;
+    /* background-color: #efebeb; */
+    height: 1.2em;
+    width: 80%;
+    color: black;
+    /* align-self: flex-end */
+}
+
+#radio-button {
+    display:flex;
+    height: 1.5em;
+    margin: 0.2em;
+    justify-content: space-between;
+    
+}
+
+select.values {
+    background-color: white;
+}

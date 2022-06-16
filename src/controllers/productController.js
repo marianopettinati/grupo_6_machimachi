@@ -42,6 +42,11 @@ const getProduct = (req, res) => {
     res.render('product', {producto, productos});
 };
 
+const getProductList = (req,res) => {
+    res.render('productList', {productos});  
+    
+}
+
 //editProduct y putProduct funcionan en conjunto para mostrar el producto a editar y hacer el put dps de editarlo
 const editProduct = (req, res) => {
     let id_producto = req.params.id;
@@ -78,7 +83,6 @@ const deleteProduct = (req, res) => {
 const productsNiñas = (req,res)=> {
     let productosNiñas= productos.filter((el) => el.gender === "niñas");
     res.render('productsGender', { products: productosNiñas, category:"Niñas"})
-    
 }
 
 const productsNiños = (req,res)=> {
@@ -95,6 +99,7 @@ const saleProducts = (req,res)=> {
 
 const productController = {
     getProduct,
+    getProductList,
     newProduct,
     postProduct,
     editProduct,
@@ -103,6 +108,7 @@ const productController = {
     productsNiñas,
     productsNiños,
     saleProducts,
+    
 
 }
 

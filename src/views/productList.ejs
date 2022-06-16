@@ -1,0 +1,88 @@
+<%- include ('./partials/head') %>
+    <title>Amamos el color!</title>
+    
+    
+    <link rel="stylesheet" href="/css/product_list.css">
+</head>
+
+<body>
+    <!-- Header -->
+   <%- include ('./partials/header') %>
+
+    <main>
+
+        <% for(let i=0; i<5;i++){ %>
+
+        <div class="div-wraper">
+    
+            <!-- <section> -->
+                    <div id="img">
+                        <a href="/product/<%= productos[i].id %>"><img id="product-img" src=<%= productos[i].img %> alt=<%= productos[i].name %>></a>
+                    </div>
+        
+                        <div class="product-edit"> 
+                            <form method="POST" action="/product/edit/<%= productos[i].id %>?_method=PUT">
+                                <!-- los p eran class="input" -->
+                                <div class="product-info">Nombre:
+                                    <input type="text" id="name" name="name" class="values" value="<%= productos[i].name %>">
+                                </div>
+                                <div class="product-info">Descripción: 
+                                    <textarea id="description" name="description" class="values" value="<%=productos[i].description%>"><%=productos[i].description%></textarea>
+                                </div>
+                                <div class="product-info">Precio: 
+                                    <input type="number" id="price" name="price" class="values" value="<%= productos[i].price %>">
+                                </div>    
+                                <div class="product-info">Talle:
+                                        <select class="values">
+                                            <option value="value1">XS</option> 
+                                            <option value="value2">S</option>
+                                            <option value="value3">M</option>
+                                            <option value="value4">L</option>
+                                        </select>                                   
+                                    </div>             
+                                <div class="input">
+                                    <div id="radio-button">
+                                        <label for="gender">Colección:</label> 
+                                        <% if (productos[i].gender == "niñas") { %> 
+                                        <div class="values">
+                                            <input type="radio" name="gender" value="niñas" checked>
+                                            <label> Niñas </label>
+                                            <input type="radio" name="gender" value="niños">
+                                            <label> Niños </label>
+                                        </div>
+                                        <% } else { %>
+                                            <div class="values">
+                                                <input type="radio" name="gender" value="niñas">
+                                                <label> Niñas </label>
+                                                <input type="radio" name="gender" value="niños" checked>
+                                                <label> Niños </label>
+                                            </div>
+                                        <% } %>  
+                                    </div>                 
+                                </div>
+                             
+                            
+                                <div class="input" id="buttons">
+                                    <button type="submit" class="admin-button" id="save-changes">Guardar cambios</button>
+                                    <form action="/product/edit/<%= productos[i].id %>?_method=DELETE" method="POST">
+                                        <button type="submit"class="admin-button" id="delete"> Eliminar</button>
+                                    </form>
+                                </div>
+                            </form>
+                            
+                            
+                                
+                            
+                        </div>
+                    
+        
+                </div>
+
+
+            <!-- </section> -->
+    <% } %> 
+    </main>
+   
+    <%- include('./partials/footer') %> 
+</body>
+</html>
