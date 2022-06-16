@@ -24,14 +24,14 @@
                             <% } %>
                         </div>
                         <div class="input">
-                            <label for="lastname">Apellido:</label>
+                            <label for="last_name">Apellido:</label>
                             <input  type="text" 
-                                    name="lastname" 
-                                    id="lastname"
-                                    value="<%= locals.oldData ? oldData.lastname : null %>"
+                                    name="last_name" 
+                                    id="last_name"
+                                    value="<%= locals.oldData ? oldData.last_name : null %>"
                                     >
-                            <% if(locals.errors && errors.lastname) {%>
-                                <p class="required">* <%= errors.lastname.msg %></p>   
+                            <% if(locals.errors && errors.last_name) {%>
+                                <p class="required">* <%= errors.last_name.msg %></p>   
                             <% } %>
                         </div>
                         <div class="input">

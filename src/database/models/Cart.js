@@ -45,7 +45,7 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "id_user"
         });
 
-        Cart.belongsTo(model.Status, {
+        Cart.belongsTo(models.Status, {
             as: "status",
             foreignKey: "id_status"
         });

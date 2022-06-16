@@ -34,7 +34,7 @@ module.exports = (sequelize, dataTypes) => {
 
     let Product = sequelize.define(alias, cols, config);
 
-    Product.associate((models) => {
+    Product.associate = ((models) => {
         Product.belongsToMany(models.Cart, {
             as: "carts",
             through: "details_cart",
@@ -42,7 +42,7 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: "id_cart",
             timestamps: false
         });
-        Product.belongsToMany(module.Size, {
+        Product.belongsToMany(models.Size, {
             as: "sizes",
             through: "products_size",
             foreignKey: "id_product",

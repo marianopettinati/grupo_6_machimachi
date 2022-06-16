@@ -17,8 +17,8 @@ module.exports = (sequelize, dataTypes) => {
 
     let Size = sequelize.define(alias, cols, config);
 
-    Size.association((models) => {
-        Size.belongsToMany(module.Product, {
+    Size.association = ((models) => {
+        Size.belongsToMany(models.Product, {
             as: "products",
             through: "products_size",
             foreignKey: "id_size",

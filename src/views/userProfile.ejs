@@ -15,12 +15,19 @@
             </div>
 
             <div id="user-data-wraper">
-                <h3 id="user-name"> Hola, <%= locals.loggedUser.name + ' ' + locals.loggedUser.lastname %></h3>
+                <h3 id="user-name"> Hola, <%= locals.loggedUser.name + ' ' + locals.loggedUser.last_name %></h3>
                 <div id="user-data">
                     <p> Correo electrónico: <%= locals.loggedUser.email %></p>
                     <p> Teléfono: <%= locals.loggedUser.phone %></p>
                     <% if (locals.loggedUser.admin) { %>
-                        <p id="is-admin"> Administrador</p>
+                        <div class="is-admin">
+                            <div id="admin-tag">Administrador</div>
+                            <div class="user-button">
+                                <button> Subir producto</button>
+                                <button> Editar productos</button>
+                                <button> Editar usuarios</button>
+                            </div>
+                        </div>
                     <% } %>
                 </div>
                          

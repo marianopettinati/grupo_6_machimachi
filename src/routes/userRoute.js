@@ -22,19 +22,19 @@ const uploadFile = multer({ storage });
 const loginController = require ('../controllers/userController');
 
 
-router.get('/login', guestMiddleware, loginController.getLogin);
+router.get('/login', guestMiddleware, loginController.viewLogin);
 
-router.post ('/login', validaciones.validacionesLogin, loginController.postLogin);
+router.post('/login', validaciones.validacionesLogin, loginController.login);
 
-router.get ('/register', guestMiddleware, loginController.register);
+router.get('/register', guestMiddleware, loginController.viewRegister);
 
-router.post ('/register', uploadFile.single('userImg'), validaciones.validacionesRegister, loginController.processRegister);
+router.post('/register', uploadFile.single('userImg'), validaciones.validacionesRegister, loginController.createUser);
 
-router.get ('/forgotpassword', loginController.forgotpassword);
+router.get('/forgotpassword', loginController.viewForgotPassword);
 
-router.get ('/profile', authMiddleware, loginController.profile);
+router.get('/profile', authMiddleware, loginController.viewProfile);
 
-router.get ('/logout', loginController.logout);
+router.get('/logout', loginController.logout);
 
 
 module.exports = router;
