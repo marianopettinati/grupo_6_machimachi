@@ -42,11 +42,30 @@ div>p {
     padding: 10px 0px;
 }
 
-#is-admin {
-    padding: 10px 0px;
+.is-admin {
+    border: solid 1px darkred;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0px;
     font-weight: bold;
 }
 
+.is-admin button {
+    padding: 0px 15px;
+    margin: 0.3em;
+    width: 100%;
+    align-items: center;
+}
+
+#admin-tag {
+    align-self: center;
+    text-align: center;
+}
+
+.admin-edits {
+    padding: 2px;
+}
 h4 {
     margin: 5px 12px 12px 12px;
     font-size: small;
@@ -68,13 +87,16 @@ div.user-edit {
 .user-button {    
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
+    margin: 0.3em;
 }
 
 .user-button button {
     color: white;
+    font-size: 15px;
     font-weight: bolder;
     background-color: #e23f30;
+    border-radius: 5px;
+    padding: 0.2em;
 }
 
 .user-button a {

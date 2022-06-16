@@ -21,6 +21,9 @@ router.get ('/ninos', productController.productsNiños);
 router.get ('/ninas', productController.productsNiñas);
 router.get ('/sale', productController.saleProducts);
 
+//GET listado para administrador
+router.get ('/list', productController.getProductList)
+
 //procesamiento POST
 router.get ('/new', productController.newProduct);
 router.post ('/new', uploadFile.single('product-img'), productController.postProduct);
@@ -32,6 +35,7 @@ router.delete ('/edit/:id', productController.deleteProduct);
 
 //GET
 router.get ('/:id', productController.getProduct);
+
 
 
 module.exports = router;

@@ -35,6 +35,12 @@
                     </div>
                 </div>                
                 <div class="buy-button"> <a href="/cart">COMPRAR</a></div>
+    
+                <% if (locals.islogged) { %>     
+                    <% if (locals.loggedUser.admin) { %>
+                             <button class="edit-button">EDITAR</button>
+                    <% } %> 
+                <% } %> 
 
             </div>
         </div>

@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "name": "Sweater Bowie",
-    "price": 4500,
+    "name": "Sweater Carlitos",
+    "price": "4512",
     "img": "/images/IMG_0503.jpg",
     "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga suscipit soluta voluptas error fugit minima a dolorem? Repellat officiis corporis nesciunt temporibus!",
-    "gender": "niñas",
+    "gender": "niños",
     "discount": 0.05
   },
   {

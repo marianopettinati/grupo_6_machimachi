@@ -28,5 +28,25 @@
   "password": "$2a$10$RAAZHQRHfekfE9UY9BmOYefsgHECfe/nO4Wj99TRn4iX58ulgr9lK",
   "admin": false,
   "img": "/images/users/userImg1654520047745.jpg"
+ },
+ {
+  "id": 4,
+  "name": "Admin",
+  "lastname": "Admin",
+  "email": "admin@unmail.com",
+  "phone": "12345678",
+  "password": "$2a$10$k1tqZ3b//fmBFXjfnRyvxu/faGIfG4DNuhymXc/FE9d0Db7ROjfVS",
+  "admin": true,
+  "img": "/images/users/userImg1655303139729.png"
+ },
+ {
+  "id": 5,
+  "name": "User",
+  "lastname": "Test",
+  "email": "test@unmail.com",
+  "phone": "1111111111",
+  "password": "$2a$10$9SAYsyimNjRmq4F0ITcJT.pdXB8YeR.TSmiCBKBdw3ybac79GYGSa",
+  "admin": false,
+  "img": "/images/users/userImg1655325670400.png"
  }
 ]

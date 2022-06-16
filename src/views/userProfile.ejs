@@ -20,7 +20,15 @@
                     <p> Correo electrónico: <%= locals.loggedUser.email %></p>
                     <p> Teléfono: <%= locals.loggedUser.phone %></p>
                     <% if (locals.loggedUser.admin) { %>
-                        <p id="is-admin"> Administrador</p>
+                        <div class="is-admin">
+                            <div id="admin-tag">Administrador</div>
+                            <div class="user-button">
+                                <button> Subir producto</button>
+                                <button> Editar productos</button>
+                                <button> Editar usuarios</button>
+                            </div>
+                        </div>
+
                     <% } %>
                 </div>
                          
