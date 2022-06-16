@@ -5,7 +5,7 @@ const validacionesRegister = [
     body('name')
                 .notEmpty().withMessage('El campo nombre es requerido').bail()
                 .isLength({min:3}).withMessage('Debe tener minimo 3 caracteres'),
-    body('lastname')
+    body('last_name')
                 .notEmpty().withMessage('El campo apellido es requerido').bail()
                 .isLength({min:2}).withMessage('Debe tener minimo 2 caracteres'),
     body('email')

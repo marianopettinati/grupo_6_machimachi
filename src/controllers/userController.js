@@ -1,50 +1,49 @@
 const { validationResult } = require('express-validator');
 const bcrypjs = require('bcryptjs');
-const User = require('../models/User');
+let db = require('../database/models');
 
-const getLogin = (req,res) => {
+const viewLogin = (req,res) => {
     res.render ('login');
 };
 
-const postLogin = (req, res) => {
+const login = (req, res) => {
     let errors = validationResult(req);
     let loggedUser;
     if (errors.isEmpty()) {
-        let users = User.findAll();
-
-        users.forEach(user  => {
-           if (user.email == req.body.email) {
-                if (bcrypjs.compareSync(req.body.password,user.password)){
-                    loggedUser = user;
-                }
+        db.User.findOne({
+            where:{
+                email: req.body.email
             }
-        });
-        
-        if (loggedUser == undefined) {
-            return res.render('login', {errors: [{msg : 'Credenciales inválidas'}] });
-        }
+        })
+        .then(user => {
+            let userToLogin = user.dataValues;
 
-        delete loggedUser.password;
-        req.session.loggedUser = loggedUser;
+            if(user!=null || user!=undefined)
+            {
+                if (bcrypjs.compareSync(req.body.password, userToLogin.password)){
+                    loggedUser = userToLogin;
+                }
+                
+                if(loggedUser == null || loggedUser == undefined)
+                {
+                    return res.render('login', {errors: [{msg : 'Credenciales inválidas'}] });
+                }
+                delete loggedUser.password;
+                req.session.loggedUser = loggedUser;
 
-        if(req.body.rememberMe){
-            res.cookie('dataEmail', req.body.email, { maxAge: 6000})
-        }
+                if(req.body.rememberMe){
+                    res.cookie('dataEmail', req.body.email, { maxAge: 6000})
+                }
 
-        res.redirect('/');
-
-    } else {        
-        return res.render('login', {errors : errors.array(), old: req.body});
+                res.redirect('/');
+            }
+            else {        
+                return res.render('login', {errors : errors.array(), old: req.body});
+            }
+        })
     }
-};
 
-const register = (req, res) => {
-    res.render('register', {});
-};
-
-const forgotpassword = (req, res) => {
-    res.render('forgotpassword', {});
-};
+}
 
 const logout = (req,res) => {
     res.clearCookie('dataEmail');
@@ -52,11 +51,12 @@ const logout = (req,res) => {
     return res.redirect ('/');
 }
 
-const profile = (req,res) => {
-    res.render ('userProfile', {});
-}
+const viewRegister = (req, res) => {
+    res.render('register', {});
+} 
 
-const processRegister = (req, res) => {
+const createUser = (req, res) => {
+    
     const resultValidation = validationResult(req);
     if(resultValidation.errors.length > 0){
         return res.render('register', {
@@ -64,10 +64,15 @@ const processRegister = (req, res) => {
             oldData: req.body
         });
     }
-
-    let userInDB = User.findByField('email', req.body.email);
-
-    if(userInDB){
+    
+    let userInDB;
+    db.User.findOne({
+        where: {
+            email: req.body.email
+        }
+    }).then(response => userInDB=response)
+    console.log(userInDB, "EXISTE EN BD?")
+    if(userInDB!=null || userInDB!=undefined){
         return res.render('register', {
             errors: {
                 email:{
@@ -81,25 +86,42 @@ const processRegister = (req, res) => {
     let user = {
         ...req.body,
         password: bcrypjs.hashSync(req.body.password, 10),
-        admin: false, 
         img: '/images/users/'+req.file.filename,
+        id_type_user: 2
     }
 
-    User.create(user);
+    console.log("SETEO USER A GUARDAR", user)
 
-    return res.redirect('/user/login')
+    db.User.create({
+        name: user.name,
+        last_name: user.last_name,
+        email: user.email,
+        phone: user.phone,
+        password: user.password,
+        img: user.img,
+        id_type_user: user.id_type_user
+    })
+    .then(() => {
+        return res.redirect('/user/login');
+    })    
 }
 
-const loginController = {
-    getLogin,
-    postLogin,
-    forgotpassword,
-    register,
-    logout,
-    profile,
-    //add,
-    processRegister
+const viewProfile = (req,res) => {
+    res.render ('userProfile', {});
+}
+
+const viewForgotPassword = (req, res) => {
+    res.render('forgotpassword', {});
 };
 
-// Acá exportamos el resultado
+const loginController = {
+    viewLogin,
+    login,
+    logout,
+    viewRegister,
+    createUser,
+    viewProfile,
+    viewForgotPassword
+};
+
 module.exports = loginController;

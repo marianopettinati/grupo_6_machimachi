@@ -1,6 +1,6 @@
 <%- include ('./partials/head') %>
 <title>Tu perfil</title>
-<link rel="stylesheet" href="/css/userProfileStyles.css">     <!-- REVISAR LINK DE ESTILOS  -->
+<link rel="stylesheet" href="/css/userProfileStyles.css">    
 </head>
 
 <body>
@@ -15,7 +15,7 @@
             </div>
 
             <div id="user-data-wraper">
-                <h3 id="user-name"> Hola, <%= locals.loggedUser.name + ' ' + locals.loggedUser.lastname %></h3>
+                <h3 id="user-name"> Hola, <%= locals.loggedUser.name + ' ' + locals.loggedUser.last_name %></h3>
                 <div id="user-data">
                     <p> Correo electrónico: <%= locals.loggedUser.email %></p>
                     <p> Teléfono: <%= locals.loggedUser.phone %></p>
@@ -28,7 +28,6 @@
                                 <button> Editar usuarios</button>
                             </div>
                         </div>
-
                     <% } %>
                 </div>
                          
@@ -39,11 +38,7 @@
                 <div class= "user-button"> 
                     <button> <a href="/user/logout">Cerrar sesión</a> </button>
                 </div>
-
-
             </div>
-
-
         </div>
         <%- include('./partials/footer') %> 
     </main>
