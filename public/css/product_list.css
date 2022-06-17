@@ -9,6 +9,7 @@ main {
     justify-content: center;
 }
 
+
 .div-wraper {
     width: 90vw;
     border-style: solid;
@@ -36,12 +37,6 @@ main {
     color: black;
 }
 
-/* .product-edit>div {
-    display: flex;
-    justify-content: space-between;
-    height: 1.5em;
-    margin: 0.2em
-} */
 .product-info {
     display: flex;
     justify-content: space-between;
@@ -90,4 +85,14 @@ main {
 
 select.values {
     background-color: white;
+}
+
+#page {
+    font-size: xx-large;
+    margin:1em;
+    text-align: center;
+}
+
+#page a {
+    padding: 1em;
 }

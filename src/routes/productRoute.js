@@ -3,6 +3,8 @@ const router = express.Router();
 const path = require ('path');
 const multer = require ('multer');
 const productController = require ('../controllers/productController');
+const adminMiddleware = require('../middlewares/adminMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 const storage = multer.diskStorage({ 
     destination: function (req, file, cb) { 
@@ -22,7 +24,7 @@ router.get ('/ninas', productController.productsNiñas);
 router.get ('/sale', productController.saleProducts);
 
 //GET listado para administrador
-router.get ('/list', productController.getProductList)
+router.get ('/list', adminMiddleware, productController.getProductList)
 
 //procesamiento POST
 router.get ('/new', productController.newProduct);

@@ -1,7 +1,5 @@
 <%- include ('./partials/head') %>
     <title>Amamos el color!</title>
-    
-    
     <link rel="stylesheet" href="/css/product_list.css">
 </head>
 
@@ -10,7 +8,8 @@
    <%- include ('./partials/header') %>
 
     <main>
-
+        <div>
+        <div>
         <% for(let i=0; i<5;i++){ %>
 
         <div class="div-wraper">
@@ -77,11 +76,19 @@
                     
         
                 </div>
+        <% } %> 
+        </div>
+    
+        <div id="page">
+            <a href="#"><i class="fas fa-caret-left"></i></a>
+            <a href="#"><i class="fas fa-caret-right"></i></a>
+        </div>
 
-
-            <!-- </section> -->
-    <% } %> 
+    </div>
+        
     </main>
+
+   
    
     <%- include('./partials/footer') %> 
 </body>
