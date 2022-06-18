@@ -14,7 +14,7 @@
                 <img id="user-main-img" src=<%= locals.loggedUser.img %> alt=<%= locals.loggedUser.name %>> 
             </div>
 
-            <div id="user-data-wraper">
+            <form action="/user/logout" method="POST" id="user-data-wraper">
                 <h3 id="user-name"> Hola, <%= locals.loggedUser.name + ' ' + locals.loggedUser.last_name %></h3>
                 <div id="user-data">
                     <p> Correo electrónico: <%= locals.loggedUser.email %></p>
@@ -32,13 +32,13 @@
                 </div>
                          
                 <div class="user-button">
-                    <button type="submit">Editar perfil</button>
+                    <a href="/edit-profile">Editar perfil</button>
                 </div>
 
                 <div class= "user-button"> 
-                    <button> <a href="/user/logout">Cerrar sesión</a> </button>
+                    <button type="submit">Cerrar sesión</button>
                 </div>
-            </div>
+            </form>
         </div>
         <%- include('./partials/footer') %> 
     </main>

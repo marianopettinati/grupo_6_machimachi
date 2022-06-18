@@ -88,7 +88,6 @@ div.user-edit {
     display: flex;
     flex-direction: column;
     margin: 0.3em;
-    cursor: pointer;
 }
 
 .user-button button {
@@ -98,9 +97,33 @@ div.user-edit {
     background-color: #e23f30;
     border-radius: 5px;
     padding: 0.2em;
+    cursor: pointer;
+    border:none;
 }
 
+.user-button button:hover{
+    background-color: #E61515;
+    color: white;
+    font-weight: 600;
+    transition-duration: 500ms;
+}
+.user-button a:hover{
+    background-color: #E61515;
+    color: white;
+    font-weight: 600;
+    transition-duration: 500ms;
+}
 .user-button a {
     color: white;
+    font-size: 15px;
     font-weight: bolder;
+    background-color: #e23f30;
+    border-radius: 5px;
+    padding: 0.2em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
