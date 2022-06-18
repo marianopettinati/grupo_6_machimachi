@@ -50,7 +50,9 @@ app.use('/', rutasMain);
 app.use('/cart', rutasCarrito);
 app.use('/product', rutasProduct);
 app.use('/user', rutasUser);
-
+app.use((req,res, next)=>{
+    res.status(404).render("not-found");
+})
 
 app.listen (3000, ()=>{
     console.log("Servidor corriendo en el puerto 3000");
