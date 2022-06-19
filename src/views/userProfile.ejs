@@ -17,8 +17,8 @@
             <form action="/user/logout" method="POST" id="user-data-wraper">
                 <h3 id="user-name"> Hola, <%= locals.loggedUser.name + ' ' + locals.loggedUser.last_name %></h3>
                 <div id="user-data">
-                    <p> Correo electrónico: <%= locals.loggedUser.email %></p>
-                    <p> Teléfono: <%= locals.loggedUser.phone %></p>
+                    <p class="user-info"> Correo electrónico: <%= locals.loggedUser.email %></p>
+                    <p class="user-info"> Teléfono: <%= locals.loggedUser.phone %></p>
                     <% if (locals.loggedUser.admin) { %>
                         <div class="is-admin">
                             <div id="admin-tag">Administrador</div>
@@ -40,7 +40,7 @@
                 </div>
             </form>
         </div>
-        <%- include('./partials/footer') %> 
     </main>
+    <%- include('./partials/footer') %> 
 </body>
 </html>
