@@ -34,7 +34,7 @@ router.get('/forgotpassword', loginController.viewForgotPassword);
 
 router.get('/profile', authMiddleware, loginController.viewProfile);
 
-router.get('/logout', loginController.logout);
+router.post('/logout', loginController.logout);
 
 
 module.exports = router;
