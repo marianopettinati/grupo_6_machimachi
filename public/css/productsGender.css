@@ -73,7 +73,7 @@
 
 .products .product-container{
     display: flex;
-    width: 340px;
+    width: 300px;
     height: 380px;
     justify-content: center;
     align-items: center;

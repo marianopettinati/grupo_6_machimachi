@@ -71,7 +71,7 @@ const createUser = (req, res) => {
             email: req.body.email
         }
     }).then(response => userInDB=response)
-    console.log(userInDB, "EXISTE EN BD?")
+    
     if(userInDB!=null || userInDB!=undefined){
         return res.render('register', {
             errors: {
@@ -89,8 +89,6 @@ const createUser = (req, res) => {
         img: '/images/users/'+req.file.filename,
         id_type_user: 2
     }
-
-    console.log("SETEO USER A GUARDAR", user)
 
     db.User.create({
         name: user.name,
@@ -114,6 +112,37 @@ const viewForgotPassword = (req, res) => {
     res.render('forgotpassword', {});
 };
 
+const updateUser = (req, res) => {
+    const resultValidation = validationResult(req);
+    if(resultValidation.errors.length > 0){
+        return res.render('register', {
+            errors: resultValidation.mapped(),
+            oldData: req.body
+        });
+    }
+
+    let user = {
+        ...req.body,
+        password: bcrypjs.hashSync(req.body.password, 10),
+        img: '/images/users/'+req.file.filename,
+        id_type_user: 2
+    }
+
+    db.User.update({
+        name: user.name,
+        last_name: user.last_name,
+        email: user.email,
+        phone: user.phone,
+        password: user.password,
+        img: user.img,
+        id_type_user: user.id_type_user
+    },
+    {where: {id_user: req.params.id}})
+    .then(() => {
+        //TODO: Crear la ruta user/edit/:id para redireccionar a una vista
+    })
+}
+
 const loginController = {
     viewLogin,
     login,
@@ -121,7 +150,8 @@ const loginController = {
     viewRegister,
     createUser,
     viewProfile,
-    viewForgotPassword
+    viewForgotPassword,
+    updateUser
 };
 
 module.exports = loginController;
