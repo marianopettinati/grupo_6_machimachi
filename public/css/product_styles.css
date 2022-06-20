@@ -9,6 +9,13 @@
 #home{color: #EA3F32;}
 
 /*FLEX container */
+
+body{
+    position: relative;
+    padding-bottom: 150px;
+    min-height: 100vh;
+}
+
 .product-detail{
     display: flex;
     margin: 1em;

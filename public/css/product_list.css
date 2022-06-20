@@ -9,6 +9,12 @@ main {
     justify-content: center;
 }
 
+body{
+    position: relative;
+    padding-bottom: 150px;
+    min-height: 100vh;
+}
+
 .div-wraper {
     width: 90vw;
     border-style: solid;

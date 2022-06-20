@@ -43,6 +43,12 @@
     font-style: italic;
 }
 
+body{
+    position: relative;
+    padding-bottom: 150px;
+    min-height: 100vh;
+}
+
 .products {
     display: flex;
     flex-wrap: wrap;

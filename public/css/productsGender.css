@@ -32,6 +32,12 @@
     padding: 10px 40px;
 }
 
+body{
+    position: relative;
+    padding-bottom: 150px;
+    min-height: 100vh;
+}
+
 #promo {
     height: 45vh;
     margin: 10px 0px 30px 0;
