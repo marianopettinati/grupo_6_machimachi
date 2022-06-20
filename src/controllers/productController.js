@@ -1,115 +1,151 @@
-const res = require('express/lib/response');
-const fs = require('fs');
-const path = require('path');
-const product_path = path.join(__dirname,'../data/products.json');
-const file_data = fs.readFileSync(product_path, 'utf-8');
-const productos = JSON.parse (file_data);
+let db = require('../database/models');
+const Op = db.Sequelize.Op;
 
-const newProduct = (req,res) => {
+const viewCreateProduct = (req,res) => {
     res.render ('productAdd');
 }
 
-const lastId = () => {
-    let i=0;
-    const lastId = productos.filter((el) => {
-        i++;
-        return el.id != i;
-    });
-    i++;
-    return i;
-}
-
-const postProduct = (req, res) => {
-    productos.push ({
-        id : lastId(),
-        name : req.body.name,
-        description : req.body.description,
-        price : req.body.price,
-        img : "/images/" + req.file.filename,
-        gender : req.body.gender,
-        
-    });
-
-    const productos_string = JSON.stringify (productos,null,2);
-    fs.writeFileSync(product_path,productos_string);
-
-    res.redirect ("/");
+const createProduct = (req, res) => {
+    db.Product.create({
+        name: req.body.name,
+        price: req.body.price,
+        description: req.body.description,
+        img: "/images/" + req.file.filename,
+        gender: req.body.gender,
+        discount: (req.body.discount != null && req.body.discount != undefined ? req.body.discount : 0)
+    }).then(() => {
+        res.redirect ("/");
+    })
 }; 
 
-const getProduct = (req, res) => {
-    const idProduct = req.params.id;
-    const producto = productos.find((el) => el.id === parseInt(idProduct));
-    res.render('product', {producto, productos});
+const viewProduct = (req, res) => {
+    let product = db.Product.findByPk(req.params.id);
+    let products = db.Product.findAll();
+
+    Promise.all([product, products])
+        .then(([producto, productos]) => {
+            res.render('product', {producto, productos});
+        })
 };
 
-const getProductList = (req,res) => {
+const viewProductList = (req,res) => {
     res.render('productList', {productos});  
-    
 }
 
-//editProduct y putProduct funcionan en conjunto para mostrar el producto a editar y hacer el put dps de editarlo
-const editProduct = (req, res) => {
-    let id_producto = req.params.id;
-    const producto = productos.find((el) => el.id === parseInt(id_producto));
-    res.render('productEdit', {producto});  
+const viewEditProduct = (req, res) => {
+    db.Product.findByPk(req.params.id)
+        .then((product) => {
+            let producto = product.dataValues;
+            res.render('productEdit', {producto});  
+        })
 }; 
 
-const putProduct = (req, res) => {
-    productos.forEach(element => {
-        if(element.id === parseInt(req.params.id)){
-            element.name = req.body.name;
-            element.price = req.body.price;
-            element.description = req.body.description;
-            element.gender = req.body.gender;
-        };
-    });
-
-    let data = JSON.stringify(productos,null,2);
-    fs.writeFileSync(product_path,data);
-    res.redirect("/")
-
+const updateProduct = (req, res) => {    
+    db.Product.update({
+        name: req.body.name,
+        price: req.body.price,
+        description: req.body.description,
+        gender: req.body.gender,
+        discount: (req.body.discount != null && req.body.discount != undefined ? req.body.discount : 0)
+    }, 
+    {
+        where:{
+            id_product: req.params.id
+    }}).then(() => {
+        res.redirect("/product/edit/"+req.params.id)
+    })
 }; 
 
 const deleteProduct = (req, res) => {
-
-    let id_producto = req.params.id;
-    let filtered_products = productos.filter(el => el.id!== parseInt(id_producto));
-    let inventario = JSON.stringify (filtered_products,null,2);
-    fs.writeFileSync (product_path,inventario);
-    res.redirect ('/');
-    
+    db.Product.destroy({
+        where: {
+            id_product: req.params.id
+        }
+    })
+    .then(() => {
+        res.redirect ('/');
+    })    
 }
 
-const productsNiñas = (req,res)=> {
-    let productosNiñas= productos.filter((el) => el.gender === "niñas");
-    res.render('productsGender', { products: productosNiñas, category:"Niñas"})
+const viewProductsNiñas = (req,res)=> {
+    let productsNiñas = [];
+    db.Product.findAll({
+        where:{
+            gender: "niñas"
+        }
+    })
+    .then(allProduct => {
+        allProduct.forEach((product) => {
+            productsNiñas.push(product.dataValues);
+        });
+    })
+    .then(() =>{
+        res.render('productsGender', { products: productsNiñas, category:"Niñas"})
+    })   
 }
 
-const productsNiños = (req,res)=> {
-    let productosNiños= productos.filter((el) => el.gender === "niños");
-    res.render('productsGender', { products: productosNiños, category:"Niños"})
+const viewProductsNiños = (req,res)=> {
+    let productsNiños = [];
+    db.Product.findAll({
+        where:{
+            gender: "niños"
+        }
+    })
+    .then(allProduct => {
+        allProduct.forEach((product) => {
+            productsNiños.push(product.dataValues);
+        });
+    })
+    .then(() =>{
+        res.render('productsGender', { products: productsNiños, category:"Niños"})
+    })
 }
 
-const saleProducts = (req,res)=> {
-    let productoSale= productos.filter((el) => el.discount != 0);
-    res.render('productsGender', { products: productoSale, category:"Sale"})
+const viewSaleProducts = (req,res)=> {
+    let productSale = [];
+    db.Product.findAll({
+        where: {
+            discount: {[Op.gt]: 0}
+        }
+    })
+        .then(allProduct => {
+            allProduct.forEach((product) => {
+                productSale.push(product.dataValues);
+            });
+        })
+        .then(() =>{
+            res.render('productsGender', { products: productSale, category:"Sale"})
+        })
+}
+
+const searchProducts = (req, res) => {
+    db.Product.findAll({
+        where:{
+            name: {[Op.like]: `${req.query.search}%`}
+        }
+    })
+    .then(resultados => {
+        resultados.length > 0 ? res.render('productsGender', 
+        { products: resultados, category:`Resultado de la búsqueda de ${req.query.search}`}) 
+        : res.render('productsGender', 
+        { products: resultados, category:`No hubo coincidencias con su búsqueda ${req.query.search}`})
+    })
 }
 
 
 
 const productController = {
-    getProduct,
-    getProductList,
-    newProduct,
-    postProduct,
-    editProduct,
-    putProduct,
+    viewProduct,
+    viewProductList,
+    viewCreateProduct,
+    createProduct,
+    viewEditProduct,
+    updateProduct,
     deleteProduct,
-    productsNiñas,
-    productsNiños,
-    saleProducts,
-    
-
+    viewProductsNiñas,
+    viewProductsNiños,
+    viewSaleProducts,
+    searchProducts
 }
 
 // Acá exportamos el resultado

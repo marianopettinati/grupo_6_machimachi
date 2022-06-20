@@ -8,39 +8,47 @@
    <%- include ('./partials/header') %>
 
     <main>
-        <% if(category=="Niños"){ %>
-            <h2 class="main-title"> <span class="blue"><%= category %></span></h2>
+        <%if(!category.includes("No hubo coincidencias con su búsqueda")) { %>
+            <% if(category=="Niños"){ %>
+                <h2 class="main-title"> <span class="blue"><%= category %></span></h2>
+            <% } %>
+            <% if (category=="Niñas") {%>
+                <h2 class="main-title"> <span class="pink"><%= category %></span></h2>
+            <% } %>
+            <% if (category=="Sale") {%>
+                <h2 class="main-title"> <span class="green"><%= category %></span></h2>
+            <% } %>
+            <% if (category.includes("Resultado de la búsqueda")) {%>
+                <h2 class="main-title"> <span class="red"><%= category %></span></h2>
+            <% } %>
+            <section>
+                <div class="products">
+                        <% products.map((item)=>{ %>
+                            <div class="product-container">
+                                <a href="/product/<%= item.id_product %>">
+                                    <img src=<%= item.img %> alt=<%= item.name %> class="product_img" >
+                                    <div>
+                                        <h4 class="product-name">
+                                            <%= item.name %>
+                                        </h4>                                    
+                                        <p class="price"> 
+                                            <% if(item.discount!=0) { %>
+                                                <% let newPrice = item.price - (item.price * item.discount)%>
+                                                <span class="price-tachado">$ <%= item.price %></span> $ <%= newPrice %>
+                                            <% } else { %>
+                                                $ <%= item.price %>
+                                            <% } %>
+                                        </p>   
+                                    </div>
+                                </a>
+                            </div>
+                        <%  })  %>
+                </div>
+            </section>
         <% } %>
-        <% if (category=="Niñas") {%>
-            <h2 class="main-title"> <span class="pink"><%= category %></span></h2>
+        <% if(category.includes("No hubo coincidencias con su búsqueda")) { %>
+            <h2 class="main-title"> <span class="red"><%= category %></span></h2>
         <% } %>
-        <% if (category=="Sale") {%>
-            <h2 class="main-title"> <span class="pink"><%= category %></span></h2>
-        <% } %>
-        <section>
-            <div class="products">
-                    <% products.map((item)=>{ %>
-                        <div class="product-container">
-                            <a href="/product/<%= item.id %>">
-                                <img src=<%= item.img %> alt=<%= item.name %> class="product_img" >
-                                <div>
-                                    <h4 class="product-name">
-                                        <%= item.name %>
-                                    </h4>                                    
-                                    <p class="price"> 
-                                        <% if(item.discount!=0) { %>
-                                            <% let newPrice = item.price - (item.price * item.discount)%>
-                                            <span class="price-tachado">$ <%= item.price %></span> $ <%= newPrice %>
-                                        <% } else { %>
-                                            $ <%= item.price %>
-                                        <% } %>
-                                    </p>   
-                                </div>
-                            </a>
-                        </div>
-                    <%  })  %>
-            </div>
-        </section>
     </main>
    
     <%- include('./partials/footer') %> 

@@ -17,24 +17,26 @@ const storage = multer.diskStorage({
 const uploadFile = multer({ storage });
 
 //router.get ('/', productController.product);
-router.get ('/ninos', productController.productsNiños);
-router.get ('/ninas', productController.productsNiñas);
-router.get ('/sale', productController.saleProducts);
+router.get('/ninos', productController.viewProductsNiños);
+router.get('/ninas', productController.viewProductsNiñas);
+router.get('/sale', productController.viewSaleProducts);
 
 //GET listado para administrador
-router.get ('/list', productController.getProductList)
+router.get('/list', productController.viewProductList)
 
 //procesamiento POST
-router.get ('/new', productController.newProduct);
-router.post ('/new', uploadFile.single('product-img'), productController.postProduct);
+router.get('/new', productController.viewCreateProduct);
+router.post('/new', uploadFile.single('product-img'), productController.createProduct);
 
 //procesamiento PUT y DELETE
-router.get ('/edit/:id', productController.editProduct);
-router.put ('/edit/:id', productController.putProduct);  //TO DO
-router.delete ('/edit/:id', productController.deleteProduct);
+router.get('/edit/:id', productController.viewEditProduct);
+router.put('/edit/:id', productController.updateProduct); 
+router.delete('/edit/:id', productController.deleteProduct);
+
+router.get('/search', productController.searchProducts)
 
 //GET
-router.get ('/:id', productController.getProduct);
+router.get('/:id', productController.viewProduct);
 
 
 
