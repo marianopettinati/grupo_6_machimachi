@@ -16,17 +16,19 @@ const login = (req, res) => {
             }
         })
         .then(user => {
-            let userToLogin = user.dataValues;
-
             if(user!=null || user!=undefined)
             {
+                let userToLogin = user.dataValues;
                 if (bcrypjs.compareSync(req.body.password, userToLogin.password)){
                     loggedUser = userToLogin;
                 }
                 
                 if(loggedUser == null || loggedUser == undefined)
                 {
-                    return res.render('login', {errors: [{msg : 'Credenciales inválidas'}] });
+                    return res.render('login', {errors: {
+                        credenciales:{
+                            msg: 'Credenciales inválidas'
+                        }}, old: req.body});
                 }
                 delete loggedUser.password;
                 req.session.loggedUser = loggedUser;
@@ -38,7 +40,10 @@ const login = (req, res) => {
                 res.redirect('/');
             }
             else {        
-                return res.render('login', {errors : errors.array(), old: req.body});
+                return res.render('login', {errors: {
+                    credenciales:{
+                        msg: 'Credenciales inválidas'
+                    }}, old: req.body});
             }
         })
     }

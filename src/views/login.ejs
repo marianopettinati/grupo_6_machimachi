@@ -11,11 +11,10 @@
                     Iniciá sesión
                 </h2>
                 <% if (locals.errors) { %>
-                    <%  errors.forEach(error => { %>
                         <div id="error-msjs">
-                            <i class="fas fa-exclamation-circle"></i>  <%= error.msg %> 
+                            <p><i class="fas fa-exclamation-circle"></i> <%= locals.errors.credenciales.msg %></p>
                         </div>
-                <%  }); }                 %>  
+                <%  } %>  
                 <div class="input">
                     <label for="login_email">Correo electrónico:*</label>
                     <input type="text" name="email" placeholder=" Ingresá tu e-mail" value="<%= locals.old && old.email ? old.email : ''%>">
