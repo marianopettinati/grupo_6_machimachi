@@ -3,6 +3,12 @@
     font-family: 'poppins';
 }
 /*FLEX container */
+body{
+    position: relative;
+    padding-bottom: 150px;
+    min-height: 100vh;
+}
+
 #user-wraper{
     display: flex;
     margin: 1em;
@@ -97,9 +103,46 @@ div.user-edit {
     background-color: #e23f30;
     border-radius: 5px;
     padding: 0.2em;
+    cursor: pointer;
+    border:none;
 }
 
+.user-button button:hover{
+    background-color: #E61515;
+    color: white;
+    font-weight: 600;
+    transition-duration: 500ms;
+}
+.user-button a:hover{
+    background-color: #E61515;
+    color: white;
+    font-weight: 600;
+    transition-duration: 500ms;
+}
 .user-button a {
     color: white;
+    font-size: 15px;
     font-weight: bolder;
+    background-color: #e23f30;
+    border-radius: 5px;
+    padding: 0.2em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-info {
+    font-weight: 600;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+main{
+    flex:1
 }

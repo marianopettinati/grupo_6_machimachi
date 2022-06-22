@@ -1,9 +1,11 @@
 <header>
     <div class="header-container">
         <a href="/"><img src="/./images/logo2-machimachi.png" alt="logo"  class="logo"> </a>
-        <a href="/"><img src="/./images/mm-logo-con-nombre.png" alt="logo Machi Machi" class="logoMachiMachi"></a>
+        <a href="/" class="title-main"><img src="/./images/mm-logo-con-nombre.png" alt="logo Machi Machi" class="logoMachiMachi"></a>
         <div class="icons-nav">
-            <a href=""><i class="fas fa-search general"></i></a>
+            <form action="/product/search" method="GET">
+                <input type="text" placeholder="Buscar" name="search">            
+            </form>            
             <a href=""><i class="fas fa-heart general"></i></a>
             <a href="/cart"><i class="fas fa-shopping-bag general"></i></a>
             <% if (!locals._locals.isLogged) { %> 
