@@ -29,7 +29,13 @@ const viewProduct = (req, res) => {
 };
 
 const viewProductList = (req,res) => {
-    res.render('productList', {productos});  
+    let product = db.Product.findByPk(req.params.id);
+    let products = db.Product.findAll();
+
+    Promise.all([product, products])
+        .then(([producto, productos]) => {
+            res.render('productList', {producto, productos});
+        })
 }
 
 const viewEditProduct = (req, res) => {
