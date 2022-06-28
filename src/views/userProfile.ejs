@@ -19,12 +19,12 @@
                 <div id="user-data">
                     <p class="user-info"> Correo electrónico: <%= locals.loggedUser.email %></p>
                     <p class="user-info"> Teléfono: <%= locals.loggedUser.phone %></p>
-                    <% if (locals.loggedUser.admin) { %>
+                    <% if (locals.loggedUser.id_type_user == 1) { %>
                         <div class="is-admin">
                             <div id="admin-tag">Administrador</div>
                             <div class="user-button">
-                                <button> Subir producto</button>
-                                <button> <a href="/user/logout">Editar productos</a></button>
+                                <button> <a href="/product/new">Subir productos</a></button>
+                                <button> <a href="/product/list">Editar productos</a></button>
                                 <button> Editar usuarios</button>
                             </div>
                         </div>
