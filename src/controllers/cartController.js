@@ -1,28 +1,39 @@
-const fs = require('fs');
-const path = require('path');
-//const cart_path = path.join(__dirname,'../data/Cart.json');
-//const cart_file_data = fs.readFileSync(cart_path, 'utf-8');
-//const cart = JSON.parse (cart_file_data);
-const cart_detail_path = path.join(__dirname,'../data/CartDetail.json');
-const cart_detail_file_data = fs.readFileSync(cart_detail_path, 'utf-8');
-const cart_detail = JSON.parse (cart_detail_file_data);
+let db = require('../database/models');
+const Op = db.Sequelize.Op;
 
-let detailProductsForId = (id) => {
-    let cart = cart_detail.filter((carrito)=>{
-        return carrito.idCart==id;
-    })
-    return cart;
-}
 
 const viewCart = (req, res) => {
-    //TODO: Hacer un metodo para saber el nro de carrito por cliente y ahí traerme todos productos del carro
-    let products = detailProductsForId(1);
-    if(products.length!=0){
-        res.render('productCart', {productos: products});
-    }
-    //TODO: hacer una vista de no hay productos 
+    let Cart;
+    db.Cart.findOne({
+        include: ["products"],
+        where: {
+            id_user: req.session.loggedUser.id_user,
+            id_status: 2
+        }
+    })
+    .then((cart) => {
+        if(cart!= null && cart!=undefined){
+            console.log(cart.dataValues);
+            Cart= cart.dataValues;
+            let Products = cart.dataValues.products;
+            let productos = [];
+            if(Products.length>0){
+                for(let product of Products){
+                    productos.push(product.dataValues);
+                }
+            }
+            console.log(productos);
+            res.render('productCart', {productos: productos, cart: Cart});
+        }
+        else{
+            //SE DEBERÍA CREAR UN CARRITO SIEMPRE QUE SE CREA UN USUARIO O CUANDO SE COMPLETA/COMPRA UN CARRITO DE UN USUARIO
+            //SI SE HACE ESTO, CARRITO NUNCA SERÍA NULL, DEBERÍA CAMBIAR LA CONDICION DEL IF POR UNA QUE SI PRODUCTS!=0
+            res.render('productCart', {productos: [], cart: null})
+        }
+    })
 };
 
+//TODO: hacer una vista de no hay productos 
 
 const cartController = {
     viewCart,

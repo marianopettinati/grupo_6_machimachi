@@ -11,31 +11,35 @@
         <section class="resume-products">
             <h4>Mi carrito</h4>
             <div class="products-details">
-                <% productos.map((item)=>{ %>
-                    <div class="product-detail">
-                        <div class="product-img">
-                            <a href="/product/<%= item.producto.id %>">
-                                <img src=<%= item.producto.img %> alt=<%= item.producto.name %> class="img-product">
-                            </a>
-                        </div>
-                        <div class="description-detail">
-                            <h7 class="title-item-detail"><%= item.producto.name %></h7>
-                            <span>Talle: Medium</span>
-                            <span class="price">Precio: $<%= item.producto.price %></span>
-                            <div class="container-cant-subtotal">
-                                <div class="cantidad">
-                                    <button class="plus-less">-</button>
-                                    <input type="number" class="inp-cantidad" value=<%= item.cantidad %> disabled>
-                                    <button class="plus-less">+</button>
-                                </div>
+                <% if(productos.length>0) { %>
+                    <% productos.map((item)=>{ %>
+                        <div class="product-detail">
+                            <div class="product-img">
+                                <a href="/product/<%= item.id_product %>">
+                                    <img src=<%= item.img %> alt=<%= item.name %> class="img-product">
+                                </a>
                             </div>
-                        </div>                    
-                        <div class="other-info">
-                            <i class="far fa-trash-alt"></i>
-                            <span class="total-item">$<%= item.subTotal %></span>
+                            <div class="description-detail">
+                                <h7 class="title-item-detail"><%= item.name %></h7>
+                                <span>Talle: Medium</span>
+                                <span class="price">Precio: $<%= item.price %></span>
+                                <div class="container-cant-subtotal">
+                                    <div class="cantidad">
+                                        <button class="plus-less">-</button>
+                                        <input type="number" class="inp-cantidad" value=<%= item.cantidad %> disabled>
+                                        <button class="plus-less">+</button>
+                                    </div>
+                                </div>
+                            </div>                    
+                            <div class="other-info">
+                                <i class="far fa-trash-alt"></i>
+                                <span class="total-item">$<%= item.subTotal %></span>
+                            </div>
                         </div>
-                    </div>
-                <% }) %>
+                    <% }) %>
+                <% } else { %>
+                    <h3 class="without-products">No hay productos añadidos aún</h3>
+                <% } %>
             </div>
         </section>
         <section class="resume-cart">
@@ -52,10 +56,15 @@
             </div>
             <div class="resume-valor">
                 <% let SubTotal = 0 %>
-                <% productos.forEach((producto)=>{SubTotal=SubTotal+producto.subTotal})%>
-                <span>Subtotal: $<%= SubTotal%></span>
-                <% let total=0; total=SubTotal-descuento;%>
-                <span>Total: $<%= total%></span>
+                <% if(productos.length>0) { %>
+                    <% productos.forEach((producto)=>{SubTotal=SubTotal+producto.subTotal})%>
+                    <span>Subtotal: $<%= cart.sub_total %></span>
+                    <% let total=0; total=cart.sub_total-descuento;%>
+                    <span>Total: $<%= cart.total%></span>
+                <% } else { %>
+                    <span>Subtotal: $0</span>
+                    <span>Total: $0</span>
+                <% } %>
                 <button type="submit">Iniciar pago</button>
             </div>
         </section>

@@ -179,6 +179,10 @@ div.inp-aplicar:focus-within{
     cursor: pointer;
 }
 
+.without-products{
+    text-align: center;
+    margin-top: 50px;
+}
 
 @media (min-width: 391px) {
     .title-item-detail{
