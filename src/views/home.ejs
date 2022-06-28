@@ -14,7 +14,7 @@
             <div class="products">
                     <% for(let item=0; item<4;item++){ %>
                         <div class="product-container">
-                            <a href="/product/<%= productos[item].id %>">
+                            <a href="/product/<%= productos[item].id_product %>">
                                 <img src=<%= productos[item].img %> alt=<%= productos[item].name %> class="product_img" >
                                 <div>
                                     <h4 class="product-name">
@@ -39,7 +39,7 @@
             <div class="products">
                     <% for(let item=4; item<8;item++){ %>
                         <div class="product-container">
-                            <a href="/product/<%= productos[item].id %>">
+                            <a href="/product/<%= productos[item].id_product %>">
                                 <img src=<%= productos[item].img %> alt=<%= productos[item].name %> class="product_img" >
                                 <div>
                                     <h4 class="product-name">

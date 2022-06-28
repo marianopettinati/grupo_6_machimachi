@@ -51,9 +51,9 @@
             <div class="recommended-products">
                 <% for(let i=0; i<4; i++){ %>
                     <% let item = productos[i] %>
-                    <% if( item.id !=producto.id) { %>
+                    <% if( item.id_product !=producto.id_product) { %>
                         <div class="product-recommended">
-                            <a href="/product/<%= item.id %>"> <img src=<%= item.img %> alt=<%= item.name %>>
+                            <a href="/product/<%= item.id_product %>"> <img src=<%= item.img %> alt=<%= item.name %>>
                                 <div>
                                     <h4 class="product-name">
                                         <%= item.name %>
