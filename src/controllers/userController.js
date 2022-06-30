@@ -34,7 +34,7 @@ const login = (req, res) => {
                 req.session.loggedUser = loggedUser;
 
                 if(req.body.rememberMe){
-                    res.cookie('dataEmail', req.body.email, { maxAge: 6000})
+                    res.cookie('dataEmail', req.body.email, { maxAge: (1000 * 60) * 15})
                 }
 
                 res.redirect('/');
