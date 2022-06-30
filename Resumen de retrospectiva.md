@@ -24,3 +24,8 @@
 <h3>Nuestros accionables</h3>
 <img src="./public/images/img-retrospectiva/Accionables sp 5.png">
 
+<h3>Nuestro resumen de la retro</h3>
+<img src="./public/images/img-retrospectiva/Retro sprint 6.png">
+<h3>Nuestros accionables</h3>
+<img src="./public/images/img-retrospectiva/Accionables sp 6.png">
+
