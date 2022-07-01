@@ -1,0 +1,61 @@
+<%- include ('./partials/head') %>
+    <title>Amamos el color!</title>
+    <link rel="stylesheet" href="/css/admin_lists.css">
+</head>
+
+<body>
+   <%- include ('./partials/header') %>
+
+    <main>
+        <div>
+            <div>
+            <% for(let i=0; i < user.length; i++){ %>
+                
+                <div class="div-wraper">
+
+                    <div id="img">
+                        <a href="/user/<%= user[i].img%>"><img id="user-img" src=<%= user[i].img %> alt=<%= user[i].name %>></a>
+                    </div> 
+                    
+                    <div class="product-edit"> 
+                    
+                        <% if (user[i].id_type_user === 1) { %> 
+                            <div id="administrador">Administrador</div>
+                        <% } %> 
+
+                        <form method="POST" action="/user/list?_method=PUT">
+                            <div class="user-info">Nombre:
+                                <input type="text" id="name" name="name" class="values" value="<%= user[i].name %>">
+                            </div>
+                            <div class="user-info">Apellido:
+                                <input type="text" id="last-name" name="last-name" class="values" value="<%= user[i].last_name %>">
+                            </div>
+                            <div class="user-info">Correo electrónico: 
+                                <input type="text" id="email" name="email" class="values" value="<%= user[i].email %>">
+                            </div>
+                            <div class="user-info">Teléfono:
+                                <input type="text" id="phone" name="phone" class="values" value="<%= user[i].phone %>">
+                            </div>
+                            <div class="input" id="buttons">
+                                <button type="submit" class="admin-button" id="save-changes">Guardar cambios</button>
+                                <form action="/user/edit/<%= user[i].id %>?_method=DELETE" method="POST">
+                                    <button type="submit"class="admin-button" id="delete"> Eliminar</button>
+                                </form>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            <% } %> 
+            </div>
+            <div id="page">
+                <a href="#"><i class="fas fa-caret-left"></i></a>
+                <a href="#"><i class="fas fa-caret-right"></i></a>
+            </div>
+        </div>
+
+
+    </main>
+   
+    <%- include('./partials/footer') %> 
+</body>
+</html>

@@ -36,8 +36,8 @@
                 </div>                
                 <div class="button"> <a href="/cart">COMPRAR</a></div>
     
-
-                <% if (locals._locals.isLogged && locals.loggedUser.admin) { %>
+                <% console.log (locals.loggedUser) %> 
+                <% if (locals._locals.isLogged && locals.loggedUser.id_type_user == 1) { %>
                     <button class="edit-button">EDITAR</button> 
                 <% } %> 
 
