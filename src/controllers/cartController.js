@@ -19,6 +19,7 @@ const viewCart = (req, res) => {
             let productos = [];
             if(Products.length>0){
                 for(let product of Products){
+                    console.log("data values del detail carts", product.details_cart.dataValues)
                     productos.push(product.dataValues);
                 }
             }

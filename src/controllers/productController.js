@@ -127,7 +127,7 @@ const viewSaleProducts = (req,res)=> {
 const searchProducts = (req, res) => {
     db.Product.findAll({
         where:{
-            name: {[Op.like]: `${req.query.search}%`}
+            name: {[Op.like]: `%${req.query.search}%`}
         }
     })
     .then(resultados => {
@@ -154,5 +154,4 @@ const productController = {
     searchProducts
 }
 
-// Acá exportamos el resultado
 module.exports = productController;

@@ -8,19 +8,46 @@ const viewLogin = (req, res) => {
 };
 
 const login = (req, res) => {
-  let errors = validationResult(req);
-  let loggedUser;
-  if (errors.isEmpty()) {
-    db.User.findOne({
-      where: {
-        email: req.body.email,
-      },
-    }).then((user) => {
-      if (user != null || user != undefined) {
-        let userToLogin = user.dataValues;
-        if (bcrypjs.compareSync(req.body.password, userToLogin.password)) {
-          loggedUser = userToLogin;
-        }
+    let errors = validationResult(req);
+    let loggedUser;
+    if (errors.isEmpty()) {
+        db.User.findOne({
+            where:{
+                email: req.body.email
+            }
+        })
+        .then(user => {
+            if(user!=null || user!=undefined)
+            {
+                let userToLogin = user.dataValues;
+                if (bcrypjs.compareSync(req.body.password, userToLogin.password)){
+                    loggedUser = userToLogin;
+                }
+                
+                if(loggedUser == null || loggedUser == undefined)
+                {
+                    return res.render('login', {errors: {
+                        credenciales:{
+                            msg: 'Credenciales inválidas'
+                        }}, old: req.body});
+                }
+                delete loggedUser.password;
+                req.session.loggedUser = loggedUser;
+
+                if(req.body.rememberMe){
+                    res.cookie('dataEmail', req.body.email, { maxAge: (1000 * 60) * 15})
+                }
+
+                res.redirect('/');
+            }
+            else {        
+                return res.render('login', {errors: {
+                    credenciales:{
+                        msg: 'Credenciales inválidas'
+                    }}, old: req.body});
+            }
+        })
+    }
 
         if (loggedUser == null || loggedUser == undefined) {
           return res.render("login", {
