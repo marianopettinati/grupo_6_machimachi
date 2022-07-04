@@ -98,9 +98,17 @@ div.quantity p input{
 
 div.buy-button {
     text-align: center;
+    
+        padding: 0.2em;
+        background-color: #e23f30;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 15px;
+        color: white;
+    
 }
 
-div.buy-button a {
+/* div.buy-button a {
     color: darkred;
     font-weight: bolder;
     text-decoration: none;
@@ -109,7 +117,7 @@ div.buy-button a {
     margin: 12px;
     background-color: #EFEBEB;
     border-radius: 0%;
-}
+} */
 
 div.product-edit {
     background-color: #EFEBEB;
@@ -139,9 +147,6 @@ div.product-edit {
 }
 
 
-/* .edit-button {
-
-} */
 .recomendados {
     border-top: solid #EFEBEB 2px;
     border-bottom: solid #EFEBEB 2px;;

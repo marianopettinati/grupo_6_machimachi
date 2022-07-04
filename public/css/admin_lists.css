@@ -30,7 +30,7 @@ body{
     color: black;
 }
 
-#product-img {
+#product-img, #user-img {
     height: 20vh;
     margin: 1em
 }
@@ -42,13 +42,7 @@ body{
     color: black;
 }
 
-/* .product-edit>div {
-    display: flex;
-    justify-content: space-between;
-    height: 1.5em;
-    margin: 0.2em
-} */
-.product-info {
+.product-info, .user-info {
     display: flex;
     justify-content: space-between;
     height: 1.5em;
@@ -62,6 +56,21 @@ body{
     font-weight: 600;
     font-size: 15px;
     color: white;
+}
+
+#administrador {
+    font-weight: bold;
+    color: black;
+    border: solid 1px darkred;
+    padding: 0.2em;
+    background-color: #e23f30;
+    border-radius: 5px;
+    justify-content: center;
+    display: flex;
+    justify-content: space-between;
+    height: 1.5em;
+    margin: 0.2em;
+    margin-bottom: 1.5em;
 }
 
 #buttons {
@@ -81,7 +90,7 @@ body{
     border-style: none;
     /* background-color: #efebeb; */
     height: 1.2em;
-    width: 80%;
+    width: 70%;
     color: black;
     /* align-self: flex-end */
 }
@@ -96,4 +105,14 @@ body{
 
 select.values {
     background-color: white;
+}
+
+#page {
+    font-size: xx-large;
+    margin:1em;
+    text-align: center;
+}
+
+#page a {
+    padding: 1em;
 }

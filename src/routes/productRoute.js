@@ -3,6 +3,8 @@ const router = express.Router();
 const path = require ('path');
 const multer = require ('multer');
 const productController = require ('../controllers/productController');
+const adminMiddleware = require('../middlewares/adminMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 const storage = multer.diskStorage({ 
     destination: function (req, file, cb) { 
@@ -22,16 +24,16 @@ router.get('/ninas', productController.viewProductsNiñas);
 router.get('/sale', productController.viewSaleProducts);
 
 //GET listado para administrador
-router.get('/list', productController.viewProductList)
+router.get('/list', adminMiddleware, productController.viewProductList)
 
 //procesamiento POST
 router.get('/new', productController.viewCreateProduct);
 router.post('/new', uploadFile.single('product-img'), productController.createProduct);
 
 //procesamiento PUT y DELETE
-router.get('/edit/:id', productController.viewEditProduct);
-router.put('/edit/:id', productController.updateProduct); 
-router.delete('/edit/:id', productController.deleteProduct);
+router.get('/edit/:id',adminMiddleware, productController.viewEditProduct);
+router.put('/edit/:id',adminMiddleware, productController.updateProduct); 
+router.delete('/edit/:id',adminMiddleware, productController.deleteProduct);
 
 router.get('/search', productController.searchProducts)
 
