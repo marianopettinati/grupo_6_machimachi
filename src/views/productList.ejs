@@ -1,8 +1,6 @@
 <%- include ('./partials/head') %>
     <title>Amamos el color!</title>
-    
-    
-    <link rel="stylesheet" href="/css/product_list.css">
+    <link rel="stylesheet" href="/css/admin_lists.css">
 </head>
 
 <body>
@@ -10,12 +8,12 @@
    <%- include ('./partials/header') %>
 
     <main>
-
+        <div>
+        <div>
         <% for(let i=0; i<5;i++){ %>
 
         <div class="div-wraper">
     
-            <!-- <section> -->
                     <div id="img">
                         <a href="/product/<%= productos[i].id %>"><img id="product-img" src=<%= productos[i].img %> alt=<%= productos[i].name %>></a>
                     </div>
@@ -77,11 +75,19 @@
                     
         
                 </div>
+        <% } %> 
+        </div>
+    
+        <div id="page">
+            <a href="#"><i class="fas fa-caret-left"></i></a>
+            <a href="#"><i class="fas fa-caret-right"></i></a>
+        </div>
 
-
-            <!-- </section> -->
-    <% } %> 
+    </div>
+        
     </main>
+
+   
    
     <%- include('./partials/footer') %> 
 </body>
