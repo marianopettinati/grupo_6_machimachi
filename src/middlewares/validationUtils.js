@@ -4,7 +4,7 @@ const path = require ('path');
 const validacionesRegister = [
     body('name')
                 .notEmpty().withMessage('El campo nombre es requerido').bail()
-                .isLength({min:3}).withMessage('Debe tener minimo 3 caracteres'),
+                .isLength({min:2}).withMessage('Debe tener minimo 2 caracteres'),
     body('last_name')
                 .notEmpty().withMessage('El campo apellido es requerido').bail()
                 .isLength({min:2}).withMessage('Debe tener minimo 2 caracteres'),
@@ -15,10 +15,11 @@ const validacionesRegister = [
                 .notEmpty().withMessage('El campo telefono es requerido').bail()
                 .isLength({min:8}).withMessage('Debe tener minimo 8 caracteres'),
     body('password')
-                .notEmpty().withMessage('El campo contraseña es requerido').bail(),
+                .notEmpty().withMessage('El campo contraseña es requerido').bail()
+                .isLength({min:8}).withMessage('Debe tener minimo 8 caracteres'),
     body('userImg').custom((value, { req }) => {
         let file = req.file;
-        const extencionesAceptadas = ['.jpg', '.png', '.gif'];
+        const extencionesAceptadas = ['.jpg', '.jpeg', '.png', '.gif'];
 
         if(!file){
             throw new Error('Debe subir una imagen');
@@ -41,9 +42,38 @@ const validacionesLogin = [
     body('password').notEmpty().withMessage("Debes ingresar tu contraseña")
 ];
 
+const validacionesProducts = [
+    body('name')
+            .notEmpty().withMessage('El campo nombre es requerido').bail()
+            .isLength({min:5}).withMessage('Debe tener minimo 5 caracteres'),
+    body('price')
+            .notEmpty().withMessage('El campo precio es requerido').bail(),
+    body('description')
+            .notEmpty().withMessage('El campo descripcion es requerido').bail()
+            .isLength({min:20}).withMessage('Debe tener minimo 20 caracteres'),
+    body('product-img').custom((value, { req }) => {
+            let file = req.file;
+            const extencionesAceptadas = ['.jpg', '.jpeg', '.png', '.gif'];
+
+            if(!file){
+                throw new Error('Debe subir una imagen');
+            }
+            else
+            {
+                let extencion = path.extname(file.originalname);
+                if(!extencionesAceptadas.includes(extencion))
+                {
+                    throw new Error(`Debe ser una imagen con formato: ${extencionesAceptadas.join(', ')}`);
+                }
+            }
+            return true;
+        })
+];
+
 const validaciones = {
     validacionesRegister,
     validacionesLogin,
+    validacionesProducts,
 }
 
 module.exports = validaciones;

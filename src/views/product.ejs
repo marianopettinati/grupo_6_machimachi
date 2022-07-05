@@ -38,8 +38,10 @@
     
 
                 <% if (locals._locals.isLogged) { %>     
-                    <% if (locals.loggedUser.admin) { %>
-                             <button class="edit-button">EDITAR</button>
+                    <% if (locals.loggedUser.id_type_user==1) { %>
+                        <form action="/product/edit/<%= producto.id_product %>" method="get">
+                            <button class="edit-button">EDITAR</button>
+                        </form>
                     <% } %> 
                 <% } %> 
 
