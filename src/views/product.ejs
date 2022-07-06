@@ -34,7 +34,9 @@
                         </select>
                     </div>
                 </div>                
-                <div class="button"> <a href="/cart">COMPRAR</a></div>
+                <form action="/cart" method="get">
+                    <button class="edit-button">COMPRAR</button>
+                </form>
     
 
                 <% if (locals._locals.isLogged) { %>     

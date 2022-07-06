@@ -48,37 +48,6 @@ const login = (req, res) => {
             }
         })
     }
-
-        if (loggedUser == null || loggedUser == undefined) {
-          return res.render("login", {
-            errors: {
-              credenciales: {
-                msg: "Credenciales inválidas",
-              },
-            },
-            old: req.body,
-          });
-        }
-        delete loggedUser.password;
-        req.session.loggedUser = loggedUser;
-
-        if (req.body.rememberMe) {
-          res.cookie("dataEmail", req.body.email, { maxAge: 6000 });
-        }
-
-        res.redirect("/");
-      } else {
-        return res.render("login", {
-          errors: {
-            credenciales: {
-              msg: "Credenciales inválidas",
-            },
-          },
-          old: req.body,
-        });
-      }
-    });
-  }
 };
 
 const logout = (req, res) => {
