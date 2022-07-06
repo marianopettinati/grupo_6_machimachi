@@ -8,7 +8,7 @@
         <main>
             <div class="register-form">
                 <div class="wraper">
-                    <form action="/user/register" method="post" enctype="multipart/form-data">
+                    <form action="/user/register" class="register" method="post" enctype="multipart/form-data">
                         <h2 class="tituloCuenta">
                             ¡Crea tu cuenta!
                         </h2>
@@ -78,5 +78,8 @@
             </div>
             <%- include('./partials/footer') %> 
         </main>
+
+        <script> src="/public/js/validation.js" </script>
+        
     </body>
 </html>
