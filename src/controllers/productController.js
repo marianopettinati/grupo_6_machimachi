@@ -6,6 +6,7 @@ const viewCreateProduct = (req,res) => {
 }
 
 const createProduct = (req, res) => {
+    
     db.Product.create({
         name: req.body.name,
         price: req.body.price,
