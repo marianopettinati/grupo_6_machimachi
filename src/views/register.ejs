@@ -1,6 +1,7 @@
     <%- include ('./partials/head') %>
     <title>Registrate!</title>
-    <link rel="stylesheet" href="/css/forms.css">    
+    <link rel="stylesheet" href="/css/forms.css">  
+    <script src="/js/register.js"></script> 
     </head>
     
     <body>
@@ -19,9 +20,10 @@
                                     id="name"
                                     value="<%= locals.oldData ? oldData.name : null %>"
                                     >
-                            <% if(locals.errors && errors.name) {%>
+                            <p class="required name-error"></p>
+                        <!--     <% if(locals.errors && errors.name) {%>
                                 <p class="required">* <%= errors.name.msg %></p>
-                            <% } %>
+                            <% } %> -->
                         </div>
                         <div class="input">
                             <label for="last_name">Apellido:</label>
@@ -30,9 +32,10 @@
                                     id="last_name"
                                     value="<%= locals.oldData ? oldData.last_name : null %>"
                                     >
-                            <% if(locals.errors && errors.last_name) {%>
+                            <p class="required last-name-error"></p>
+                            <!-- <% if(locals.errors && errors.last_name) {%>
                                 <p class="required">* <%= errors.last_name.msg %></p>   
-                            <% } %>
+                            <% } %> -->
                         </div>
                         <div class="input">
                             <label for="email">E-mail:</label>
@@ -41,9 +44,10 @@
                                     id="email"
                                     value="<%= locals.oldData ? oldData.email : null %>"
                                     >
-                            <% if(locals.errors && errors.email) {%>
+                            <p class="required email-error"></p>
+                            <!-- <% if(locals.errors && errors.email) {%>
                                 <p class="required">* <%= errors.email.msg %></p>  
-                            <% } %>
+                            <% } %> -->
                         </div>
                         <div class="input">
                             <label for="phone">Telefono:</label>
@@ -52,23 +56,26 @@
                                     id="phone"
                                     value="<%= locals.oldData ? oldData.phone : null %>"
                                     >
-                            <% if(locals.errors && errors.phone) {%>
+                            <p class="required phone-error"></p>
+                            <!-- <% if(locals.errors && errors.phone) {%>
                                 <p class="required">* <%= errors.phone.msg %></p>  
-                            <% } %>
+                            <% } %> -->
                         </div>
                         <div class="input">
                             <label for="password">Contraseña:</label>
                             <input type="password" name="password" id="password">
-                            <% if(locals.errors && errors.password) {%>
+                            <p class="required password-error"></p>
+                            <!-- <% if(locals.errors && errors.password) {%>
                                 <p class="required">* <%= errors.password.msg %></p>  
-                            <% } %>
+                            <% } %> -->
                         </div>
                         <div class="input">
                             <label for="user-img">Imagen:</label>
                             <input type="file" name="userImg" id="user-img">
-                            <% if(locals.errors && errors.userImg) {%>
+                            <p class="required img-error"></p>
+                            <!-- <% if(locals.errors && errors.userImg) {%>
                                 <p class="required">* <%= errors.userImg.msg %></p>  
-                            <% } %>
+                            <% } %> -->
                         </div>
                         <div class="input">
                             <button class="submit" type="submit">Registrarse</button>
