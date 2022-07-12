@@ -5,6 +5,7 @@ const multer = require ('multer');
 const productController = require ('../controllers/productController');
 const adminMiddleware = require('../middlewares/adminMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const validationsMiddleware = require('../middlewares/validationUtils');
 
 const storage = multer.diskStorage({ 
     destination: function (req, file, cb) { 
@@ -28,11 +29,11 @@ router.get('/list', adminMiddleware, productController.viewProductList)
 
 //procesamiento POST
 router.get('/new', productController.viewCreateProduct);
-router.post('/new', uploadFile.single('product-img'), productController.createProduct);
+router.post('/new', uploadFile.single('product-img'), validationsMiddleware.validacionesProducts, productController.createProduct);
 
 //procesamiento PUT y DELETE
 router.get('/edit/:id',adminMiddleware, productController.viewEditProduct);
-router.put('/edit/:id',adminMiddleware, productController.updateProduct); 
+router.put('/edit/:id',adminMiddleware, validationsMiddleware.validacionesProducts, productController.updateProduct); 
 router.delete('/edit/:id',adminMiddleware, productController.deleteProduct);
 
 router.get('/search', productController.searchProducts)
