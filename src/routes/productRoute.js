@@ -27,7 +27,7 @@ router.get('/sale', productController.viewSaleProducts);
 router.get('/list', adminMiddleware, productController.viewProductList)
 
 //procesamiento POST
-router.get('/new', productController.viewCreateProduct);
+router.get('/new', adminMiddleware, productController.viewCreateProduct);
 router.post('/new', uploadFile.single('product-img'), productController.createProduct);
 
 //procesamiento PUT y DELETE

@@ -5,13 +5,14 @@
 <%- include ('./partials/head') %>
 <title>Carga de producto</title>
 <link rel="stylesheet" href="/css/forms.css"> 
+<script src="/js/productAdd.js"></script> 
 </head>
 
 <body>
     <%- include ('./partials/header') %>
     <main>
         <div class="upload-form">
-            <form action="/product/new" method="POST" enctype="multipart/form-data" class="wraper">
+            <form action="/product/new" method="POST" enctype="multipart/form-data" class="productAdd wraper">
                 <div class="newProduct">
                     <h2>
                         Subí un producto
@@ -19,20 +20,23 @@
                 </div>
                 <div class="input">
                     <label for="name">Nombre del producto:</label>
-                    <input type="text" name="name" placeholder="Gorrito Cebra" required id="name">
+                    <input type="text" name="name" id="name">
                     <p class="error name-error"></p>
                 </div>
                 <div class="input">
                     <label for="price">Precio:</label>
                     <input type="text" name="price" id="price">
+                    <p class="error price-error"></p>
                 </div>
                 <div class="input">
                     <label for="description">Descripción:</label>
-                    <input type="text" name="description" id="description">
+                    <input type="text" name="description"  id="description">
+                    <p class="error description-error"></p>
                 </div>
                 <div class="input">
                     <label for="product-img">Imagen:</label>
                     <input type="file" name="product-img" id="product-img">
+                    <p class="error img-error"></p>
                 </div>
                 <div class="input">
                     <div id="radio-button">
