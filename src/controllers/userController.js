@@ -10,7 +10,8 @@ const viewLogin = (req, res) => {
 const login = (req, res) => {
     let errors = validationResult(req);
     let loggedUser;
-    if (errors.isEmpty()) {
+    if (errors.isEmpty()) 
+    {
         db.User.findOne({
             where:{
                 email: req.body.email
@@ -47,6 +48,12 @@ const login = (req, res) => {
                     }}, old: req.body});
             }
         })
+    }
+    else {        
+      return res.render('login', {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
     }
 };
 
