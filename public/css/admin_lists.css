@@ -49,6 +49,19 @@ body{
     margin: 0.2em
 }   
 
+#product-description {
+    min-height: 3em;
+    max-height: 5em;
+}
+
+#product-description textarea {
+    width: 70%;
+}
+p.error.name-error {
+    width: 70%;
+    justify-self: end;
+}
+
 .admin-button {
     padding: 0.2em;
     background-color: #e23f30;

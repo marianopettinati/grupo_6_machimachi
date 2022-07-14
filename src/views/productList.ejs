@@ -1,6 +1,7 @@
 <%- include ('./partials/head') %>
     <title>Amamos el color!</title>
     <link rel="stylesheet" href="/css/admin_lists.css">
+    <script src="/js/productList.js"></script> 
 </head>
 
 <body>
@@ -19,17 +20,19 @@
                     </div>
         
                         <div class="product-edit"> 
-                            <form method="POST" action="/product/edit/<%= productos[i].id_product %>?_method=PUT">
-                                <!-- los p eran class="input" -->
+                            <form method="POST" action="/product/edit/<%= productos[i].id_product %>?_method=PUT" class="productList">
                                 <div class="product-info">Nombre:
                                     <input type="text" id="name" name="name" class="values" value="<%= productos[i].name %>">
                                 </div>
-                                <div class="product-info">Descripción: 
+                                <p class="error name-error"></p>
+                                <div class="product-info" id="product-description">Descripción: 
                                     <textarea id="description" name="description" class="values" value="<%=productos[i].description%>"><%=productos[i].description%></textarea>
                                 </div>
+                                <p class="error description-error"></p>
                                 <div class="product-info">Precio: 
                                     <input type="number" id="price" name="price" class="values" value="<%= productos[i].price %>">
                                 </div>    
+                                <p class="error price-error"></p>
                                 <div class="product-info">Talle:
                                         <select class="values">
                                             <option value="value1">XS</option> 
@@ -67,13 +70,7 @@
                                     </form>
                                 </div>
                             </form>
-                            
-                            
-                                
-                            
                         </div>
-                    
-        
                 </div>
         <% } %> 
         </div>
