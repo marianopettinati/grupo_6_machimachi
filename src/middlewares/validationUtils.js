@@ -70,10 +70,22 @@ const validacionesProducts = [
         })
 ];
 
+const validacionesEditProducts = [
+    body('name')
+            .notEmpty().withMessage('El campo nombre es requerido').bail()
+            .isLength({min:5}).withMessage('Debe tener minimo 5 caracteres'),
+    body('price')
+            .notEmpty().withMessage('El campo precio es requerido').bail(),
+    body('description')
+            .notEmpty().withMessage('El campo descripcion es requerido').bail()
+            .isLength({min:20}).withMessage('Debe tener minimo 20 caracteres')
+];
+
 const validaciones = {
     validacionesRegister,
     validacionesLogin,
     validacionesProducts,
+    validacionesEditProducts,
 }
 
 module.exports = validaciones;

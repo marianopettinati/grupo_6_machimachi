@@ -23,11 +23,11 @@
                     <form action="/product/edit/<%= producto.id_product %>?_method=PUT" method="POST" class="productEdit">
                         <div class="input">
                             <input type="text" id="name" name="name" class="control" value="<%= producto.name %>">
-                            <p class="error name-error"></p>
+                            <p class="required name-error"></p>
                         </div>
                         <div class="input">
                             <input type="number" id="price" name="price" class="control" value="<%= producto.price %>">
-                            <p class="error price-error"></p>
+                            <p class="required price-error"></p>
                         </div>    
                         <div class="input">
                             <div id="radio-button">
@@ -55,7 +55,7 @@
                         </div>
                         <div class="input">
                             <textarea id="description" name="description" value="<%=producto.description%>"><%=producto.description%></textarea>
-                            <p class="error description-error"></p>
+                            <p class="required description-error"></p>
                         </div>
                         <br>
                         <div class="input">

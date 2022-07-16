@@ -1,5 +1,6 @@
 let db = require('../database/models');
 const Op = db.Sequelize.Op;
+const { validationResult } = require("express-validator");
 
 const viewCreateProduct = (req,res) => {
     res.render ('productAdd');
@@ -22,7 +23,7 @@ const createProduct = (req, res) => {
     }
     else{
         return res.render("productAdd", {
-            errors: resultValidation.mapped(),
+            errors: errors.mapped(),
             oldData: req.body,
           });
     }
@@ -58,6 +59,7 @@ const viewEditProduct = (req, res) => {
 
 const updateProduct = (req, res) => { 
     let errors = validationResult(req);
+    console.log(errors);
     if(errors.isEmpty())
     {   
         db.Product.update({
@@ -76,7 +78,7 @@ const updateProduct = (req, res) => {
     }
     else{
         return res.render("/product/edit/"+req.params.id, {
-            errors: resultValidation.mapped(),
+            errors: errors.mapped(),
             oldData: req.body,
         });
     }

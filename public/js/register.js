@@ -2,10 +2,10 @@ window.addEventListener('load', () => {
     
     let errors = [];
 
-    const nameRegex = /^[a-zA-Z ]{2,30}$/;
+    const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{5,20}$/;
     const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const phoneRegex = /^([0-9]{8,12})$/;
-    const passwordRegex = /^[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+    const passwordRegex = /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ!@#$%^&*]{8,16}$/;
     const extensionRegex = /\.(jpe?g|png|gif)$/i;
 
     let name = document.querySelector('#name');

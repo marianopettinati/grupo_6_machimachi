@@ -18,6 +18,7 @@ body{
     margin: 3px 0;
     color: #EA3F32;
     font-weight: bold;
+    display: none;
 }
 
 #niños {color: #326DC7;}

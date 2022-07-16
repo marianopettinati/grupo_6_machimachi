@@ -2,9 +2,9 @@ window.addEventListener('load', () => {
     
     let errors = [];
 
-    const nameRegex = /^[a-zA-Z ]{5,20}$/;
-    const descriptionRegex = /^[a-zA-Z0-9!@#$%^&*]{20,300}$/;
-    const priceRegex = /^([0-9]{2,5})$/;  //chequear con la DB
+    const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{5,20}$/;
+    const descriptionRegex = /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ!@#$%^&*\s]{20,300}$/;
+    const priceRegex = /^([0-9]{2,5})$/;
     const imgRegex = /\.(jpe?g|png|gif)$/i;
 
     let name = document.querySelector('#name');
@@ -53,7 +53,7 @@ window.addEventListener('load', () => {
                 descriptionError.style.display = "block";
                 description.style.backgroundColor = '#e23f30';
                 if(description.value.length == 0){
-                    descriptionError.innerHTML = "*El campo descriptión es requerido";
+                    descriptionError.innerHTML = "*El campo descripción es requerido";
                 }
                 if(description.value.length != 0 && description.value.length < 20){
                     descriptionError.innerHTML = "*La descripción debe tener al menos 20 caracteres";

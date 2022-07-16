@@ -33,7 +33,7 @@ router.post('/new', uploadFile.single('product-img'), validationsMiddleware.vali
 
 //procesamiento PUT y DELETE
 router.get('/edit/:id',adminMiddleware, productController.viewEditProduct);
-router.put('/edit/:id',adminMiddleware, validationsMiddleware.validacionesProducts, productController.updateProduct); 
+router.put('/edit/:id',adminMiddleware, validationsMiddleware.validacionesEditProducts, productController.updateProduct); 
 router.delete('/edit/:id',adminMiddleware, productController.deleteProduct);
 
 router.get('/search', productController.searchProducts)
