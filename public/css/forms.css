@@ -18,13 +18,14 @@ body{
     margin: 3px 0;
     color: #EA3F32;
     font-weight: bold;
+    display: none;
 }
 
 #niños {color: #326DC7;}
 #niñas {color:#FC5DD9;}
 #sale{color:#0F9D58;}
 #home{color: #EA3F32;}
-#name, #img {font-size: 12px;;}
+#img {font-size: 12px;;}
 
 #error-msjs { 
     color: darkred;

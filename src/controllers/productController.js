@@ -1,22 +1,32 @@
 let db = require('../database/models');
 const Op = db.Sequelize.Op;
+const { validationResult } = require("express-validator");
 
 const viewCreateProduct = (req,res) => {
     res.render ('productAdd');
 }
 
 const createProduct = (req, res) => {
-    
-    db.Product.create({
-        name: req.body.name,
-        price: req.body.price,
-        description: req.body.description,
-        img: "/images/" + req.file.filename,
-        gender: req.body.gender,
-        discount: (req.body.discount != null && req.body.discount != undefined ? req.body.discount : 0)
-    }).then(() => {
-        res.redirect ("/");
-    })
+    let errors = validationResult(req);
+    if(errors.isEmpty())
+    {
+        db.Product.create({
+            name: req.body.name,
+            price: req.body.price,
+            description: req.body.description,
+            img: "/images/" + req.file.filename,
+            gender: req.body.gender,
+            discount: (req.body.discount != null && req.body.discount != undefined ? req.body.discount : 0)
+        }).then(() => {
+            res.redirect ("/");
+        })
+    }
+    else{
+        return res.render("productAdd", {
+            errors: errors.mapped(),
+            oldData: req.body,
+          });
+    }
 }; 
 
 const viewProduct = (req, res) => {
@@ -47,20 +57,31 @@ const viewEditProduct = (req, res) => {
         })
 }; 
 
-const updateProduct = (req, res) => {    
-    db.Product.update({
-        name: req.body.name,
-        price: req.body.price,
-        description: req.body.description,
-        gender: req.body.gender,
-        discount: (req.body.discount != null && req.body.discount != undefined ? req.body.discount : 0)
-    }, 
-    {
-        where:{
-            id_product: req.params.id
-    }}).then(() => {
-        res.redirect("/product/edit/"+req.params.id)
-    })
+const updateProduct = (req, res) => { 
+    let errors = validationResult(req);
+    console.log(errors);
+    if(errors.isEmpty())
+    {   
+        db.Product.update({
+            name: req.body.name,
+            price: req.body.price,
+            description: req.body.description,
+            gender: req.body.gender,
+            discount: (req.body.discount != null && req.body.discount != undefined ? req.body.discount : 0)
+        }, 
+        {
+            where:{
+                id_product: req.params.id
+        }}).then(() => {
+            res.redirect("/product/edit/"+req.params.id)
+        })
+    }
+    else{
+        return res.render("/product/edit/"+req.params.id, {
+            errors: errors.mapped(),
+            oldData: req.body,
+        });
+    }
 }; 
 
 const deleteProduct = (req, res) => {

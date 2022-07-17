@@ -79,7 +79,7 @@ h4 {
 
 .talles { font-size: 12px; }
 
-div.product-description p{
+div.product-description>p{
     text-align: left;
     color: black;
     font-weight: 600;

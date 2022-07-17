@@ -1,12 +1,15 @@
 <%- include ('./partials/head') %>
 <title>Login</title>
 <link rel="stylesheet" href="/css/forms.css">
+<script src="/js/login.js"></script> 
+
 </head>
+
 <body>
     <%- include ('./partials/header') %>
     <main>
         <div class="login-section">
-            <form action="/user/login" method="POST" class="wraper">
+            <form action="/user/login" method="POST" class="wraper login" >
                 <h2>
                     Iniciá sesión
                 </h2>
@@ -17,11 +20,13 @@
                 <%  } %>  
                 <div class="input">
                     <label for="login_email">Correo electrónico:*</label>
-                    <input type="text" name="email" placeholder=" Ingresá tu e-mail" value="<%= locals.old && old.email ? old.email : ''%>">
+                    <input type="text" name="email" id="email" placeholder=" Ingresá tu e-mail" value="<%= locals.old && old.email ? old.email : ''%>">
+                    <p class="required email-error"></p>
                 </div>
                 <div class="input">
                     <label for="password">Contraseña:*</label>
-                    <input type="password" name="password" placeholder=" Ingresá tu contraseña" />
+                    <input type="password" name="password" id="password" placeholder=" Ingresá tu contraseña" />
+                    <p class="required password-error"></p>
                     <div>
                         <input type="checkbox" name="rememberMe"> 
                         <label for="rememberMe">Recuérdame</label>
