@@ -2,6 +2,7 @@ const { validationResult } = require("express-validator");
 const bcrypjs = require("bcryptjs");
 let db = require("../database/models");
 const { localsName } = require("ejs");
+const { BLOB } = require("sequelize");
 
 const viewLogin = (req, res) => {
   res.render("login");
@@ -176,6 +177,46 @@ const updateUser = (req, res) => {
   });
 };
 
+const apiUsers = (req, res) => {
+  db.User.findAll()
+  .then(users => {
+    let usersList = [];
+    users.forEach(user => {
+      let userAdd = {
+        id: user.id_user,
+        name: user.name,
+        last_name: user.last_name,
+        email: user.email,
+        detail: "http://localhost:3000/user/api/users/"+user.id_user
+      }
+      usersList.push(userAdd);
+    });
+    return res.status(200).json({
+      count: usersList.length,
+      data: usersList,
+      status: 200
+    })
+  })
+}
+
+const apiUsersForId = (req, res) => {
+  db.User.findByPk(req.params.id)
+  .then(userInDb => {
+    let user = {
+      id: userInDb.id_user,
+      name: userInDb.name,
+      last_name: userInDb.last_name,
+      email: userInDb.email,
+      img: userInDb.img,
+      phone: userInDb.phone
+    }
+    return res.status(200).json({
+      data: user,
+      status: 200
+    })
+  })
+}
+
 const loginController = {
   viewLogin,
   login,
@@ -188,6 +229,8 @@ const loginController = {
   profilesList,
   userDelete,
   userEdit,
+  apiUsers,
+  apiUsersForId
 };
 
 module.exports = loginController;
