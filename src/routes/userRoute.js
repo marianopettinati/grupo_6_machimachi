@@ -46,5 +46,8 @@ router.get("/list", adminMiddleware, loginController.profilesList); //FALTA EL A
 router.put ("/list", loginController.userEdit);
 router.delete ("/list", loginController.userDelete);
 
+router.get("/api/users", loginController.apiUsers)
+router.get("/api/users/:id", loginController.apiUsersForId)
+
 
 module.exports = router;
