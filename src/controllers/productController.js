@@ -160,7 +160,9 @@ const searchProducts = (req, res) => {
     })
 }
 
-
+const listProducts = (req, res) => {
+    
+}
 
 const productController = {
     viewProduct,
@@ -173,7 +175,8 @@ const productController = {
     viewProductsNiñas,
     viewProductsNiños,
     viewSaleProducts,
-    searchProducts
+    searchProducts,
+    listProducts
 }
 
 module.exports = productController;

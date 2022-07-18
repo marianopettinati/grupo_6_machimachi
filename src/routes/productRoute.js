@@ -41,6 +41,8 @@ router.get('/search', productController.searchProducts)
 //GET
 router.get('/:id', productController.viewProduct);
 
+router.get('/api/products', productController.listProducts)
+
 
 
 module.exports = router;
