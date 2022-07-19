@@ -41,7 +41,8 @@ router.get('/search', productController.searchProducts)
 //GET
 router.get('/:id', productController.viewProduct);
 
-router.get('/api/products', productController.listProducts)
+router.get('/api/products', productController.listProducts);
+router.get('/api/products/:id', productController.apiProductForId);
 
 
 
