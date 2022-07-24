@@ -8,7 +8,7 @@ const viewCart = (req, res) => {
         include: ["products"],
         where: {
             id_user: req.session.loggedUser.id_user,
-            id_status: "Incompleto"
+            id_status: "Incompleta"
         }
     })
     .then((cart) => {
