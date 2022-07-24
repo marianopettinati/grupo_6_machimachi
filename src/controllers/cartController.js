@@ -8,7 +8,7 @@ const viewCart = (req, res) => {
         include: ["products"],
         where: {
             id_user: req.session.loggedUser.id_user,
-            id_status: 2
+            id_status: "Incompleto"
         }
     })
     .then((cart) => {
@@ -32,6 +32,7 @@ const viewCart = (req, res) => {
             res.render('productCart', {productos: [], cart: null})
         }
     })
+    .catch(ex => {throw ex})
 };
 
 //TODO: hacer una vista de no hay productos 

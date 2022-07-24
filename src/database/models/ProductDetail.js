@@ -1,7 +1,7 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "ProductSize";
+    let alias = "ProductDetail";
     let cols = {
-        id_products_size: {
+        id_products_details: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncremental: true
@@ -12,8 +12,8 @@ module.exports = (sequelize, dataTypes) => {
         id_product: {
             type: dataTypes.INTEGER
         },
-        id_size: {
-            type: dataTypes.INTEGER
+        size: {
+            type: dataTypes.STRING
         }
     };
     let config = {
@@ -21,7 +21,14 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     }
 
-    let ProductSize = sequelize.define(alias, cols, config);
+    let ProductDetail = sequelize.define(alias, cols, config);
 
-    return ProductSize;
+    ProductDetail.associate = ((models) => {
+        ProductDetail.belongsTo(models.TypeUser, {
+            as: "product",
+            foreignKey: "id_product"
+        })
+    })
+
+    return ProductDetail;
 }
