@@ -8,22 +8,19 @@ const viewCart = (req, res) => {
         include: ["products"],
         where: {
             id_user: req.session.loggedUser.id_user,
-            id_status: "Incompleto"
+            status: "Incompleta"
         }
     })
     .then((cart) => {
-        if(cart!= null && cart!=undefined){
-            console.log(cart.dataValues);
+        if(cart!= null && cart!=undefined){            
             Cart= cart.dataValues;
             let Products = cart.dataValues.products;
             let productos = [];
             if(Products.length>0){
                 for(let product of Products){
-                    console.log("data values del detail carts", product.details_cart.dataValues)
                     productos.push(product.dataValues);
                 }
             }
-            console.log(productos);
             res.render('productCart', {productos: productos, cart: Cart});
         }
         else{
