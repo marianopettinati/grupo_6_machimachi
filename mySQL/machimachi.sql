@@ -29,13 +29,11 @@ CREATE TABLE `carts` (
   `coupon` varchar(45) DEFAULT NULL,
   `sub_total` int NOT NULL,
   `total` int NOT NULL,
-  `id_status` int NOT NULL,
+  `status` varchar(45) NOT NULL,
   `id_user` int NOT NULL,
   PRIMARY KEY (`id_cart`),
-  KEY `status_cart_idx` (`id_status`),
   KEY `cart_user_idx` (`id_user`),
-  CONSTRAINT `cart_user` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`),
-  CONSTRAINT `status_cart` FOREIGN KEY (`id_status`) REFERENCES `status` (`id_status`)
+  CONSTRAINT `cart_user` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -45,7 +43,7 @@ CREATE TABLE `carts` (
 
 LOCK TABLES `carts` WRITE;
 /*!40000 ALTER TABLE `carts` DISABLE KEYS */;
-INSERT INTO `carts` VALUES (1,NULL,4300,4300,1,2),(2,NULL,5000,5000,1,3),(3,NULL,4400,4400,1,4),(4,NULL,2500,2500,2,4);
+INSERT INTO `carts` VALUES (1,NULL,4300,4300,'Completa',2),(2,NULL,5000,5000,'Completa',3),(3,NULL,4400,4400,'Completa',4),(4,NULL,2500,2500,'Incompleta',4);
 /*!40000 ALTER TABLE `carts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -105,87 +103,36 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Sweater Bowie',4500,'Sweater tejido a mano','/images/IMG_0503.jpg','niñas',0.05),(2,'Chaleco Freddie',4500,'Chaleco tejido a mano','/images/IMG_0501.jpg','niños',0),(3,'Gorrito frutilla',2200,'Gorrito tejido a mano','/images/IMG_gorrito_Frutilla.jpg','niñas',0),(4,'Gorrito cebra',2200,'Gorrito tejido a mano','/images/IMG_gorrito_Cebra.jpg','niños',0),(5,'Chaleco bosque',4500,'Chaleco tejido a mano','/images/IMG_0498.jpg','niños',0.2),(6,'Gorrito tricolor',2200,'Gorrito tejido a mano','/images/IMG_0502.jpg','niños',0),(7,'Sweater jirafa',4500,'Sweater tejido a mano','/images/IMG_0495.jpg','niñas',0.1),(8,'Gorrito militar',2200,'Gorrito tejido a mano','/images/IMG_0505.jpg','niños',0.4),(9,'Polainas suerte',1800,'Cruzando los dedos una vez más','/images/polainas-tejidas-para-niñas-de-colores.jpg','niñas',0),(10,'Combo miñons',4500,'Gorrito, guantes y bufandas de miñons','/images/product-img1652653924113.jpg','niñas',0.6),(11,'Gorrito mickey mouse',2500,'Gorrito tejido a mano de mickey','/images/c6bd60471982a0155c924bdc6b7682fa.jpg','niños',0);
+INSERT INTO `products` VALUES (1,'Sweater Bowie',4500,'Sweater tejido a mano','/images/IMG_0503.jpg','niñas',0.05),(2,'Chaleco Freddie',4500,'Chaleco tejido a mano','/images/IMG_0501.jpg','niños',0),(3,'Gorrito frutilla',2200,'Gorrito tejido a mano','/images/IMG_gorrito_Frutilla.jpg','niñas',0),(4,'Gorrito cebra',2200,'Gorrito tejido a mano','/images/IMG_gorrito_Cebra.jpg','niños',0),(5,'Chaleco bosque',4500,'Chaleco tejido a mano','/images/IMG_0498.jpg','niños',0.2),(6,'Gorrito tricolor',2200,'Gorrito tejido a mano','/images/IMG_0502.jpg','niños',0),(7,'Sweater jirafa',4500,'Sweater tejido a mano','/images/IMG_0495.jpg','niñas',0.1),(8,'Gorrito militar',2200,'Gorrito tejido a mano','/images/IMG_0505.jpg','niños',0.4),(9,'Polainas suerte',1800,'Cruzando los dedos una vez más','/images/polainas-tejidas-para-niñas-de-colores.jpg','niñas',0),(10,'Combo miñons',4500,'Gorrito, guantes y bufandas de miñons','/images/product-img1652653924113.jpg','niñas',0.6),(11,'Gorrito mickey mouse',2500,'Gorrito tejido a mano de mickey','/images/c6bd60471982a0155c924bdc6b7682fa.jpg','niños',0),(12,'Gorrito marrón',2100,'Gorrito marrón tejido a mano','/images/035c7a680d15d2a21df783a2b35616c7.jpg','niños',0);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `products_size`
+-- Table structure for table `products_details`
 --
 
-DROP TABLE IF EXISTS `products_size`;
+DROP TABLE IF EXISTS `products_details`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `products_size` (
-  `id_products_size` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `products_details` (
+  `id_products_details` int NOT NULL AUTO_INCREMENT,
   `stock` int NOT NULL,
-  `id_size` int NOT NULL,
+  `size` varchar(5) NOT NULL,
   `id_product` int NOT NULL,
-  PRIMARY KEY (`id_products_size`),
+  PRIMARY KEY (`id_products_details`),
   KEY `products_idx` (`id_product`),
-  KEY `size_product_size_idx` (`id_size`),
-  CONSTRAINT `product_product_size` FOREIGN KEY (`id_product`) REFERENCES `products` (`id_product`),
-  CONSTRAINT `size_product_size` FOREIGN KEY (`id_size`) REFERENCES `sizes` (`id_size`)
-) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='	';
+  CONSTRAINT `product_product_details` FOREIGN KEY (`id_product`) REFERENCES `products` (`id_product`)
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='	';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `products_size`
+-- Dumping data for table `products_details`
 --
 
-LOCK TABLES `products_size` WRITE;
-/*!40000 ALTER TABLE `products_size` DISABLE KEYS */;
-INSERT INTO `products_size` VALUES (1,5,1,1),(2,5,2,1),(3,5,3,1),(4,5,4,1),(5,5,5,1),(6,5,6,1),(7,5,1,2),(8,5,2,2),(9,5,3,2),(10,5,4,2),(11,5,5,2),(12,5,6,2),(13,5,1,3),(14,5,2,3),(15,5,3,3),(16,5,4,3),(17,5,5,3),(18,5,6,3),(19,5,1,4),(20,5,2,4),(21,5,3,4),(22,5,4,4),(23,5,5,4),(24,5,6,4),(25,5,1,5),(26,5,2,5),(27,5,3,5),(28,5,4,5),(29,5,5,5),(30,5,6,5),(31,5,1,6),(32,5,2,6),(33,5,3,6),(34,5,4,6),(35,5,5,6),(36,5,6,6),(37,5,1,7),(38,5,2,7),(39,5,3,7),(40,5,4,7),(41,5,5,7),(42,5,6,7),(43,5,1,8),(44,5,2,8),(45,5,3,8),(46,5,4,8),(47,5,5,8),(48,5,6,8),(49,5,1,9),(50,5,2,9),(51,5,3,9),(52,5,4,9),(53,5,5,9),(54,5,6,9),(55,5,1,10),(56,5,2,10),(57,5,3,10),(58,5,4,10),(59,5,5,10),(60,5,6,10),(61,5,1,11),(62,5,2,11),(63,5,3,11),(64,5,4,11),(65,5,5,11),(66,5,6,11);
-/*!40000 ALTER TABLE `products_size` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `sizes`
---
-
-DROP TABLE IF EXISTS `sizes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `sizes` (
-  `id_size` int NOT NULL AUTO_INCREMENT,
-  `description` varchar(3) NOT NULL,
-  PRIMARY KEY (`id_size`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `sizes`
---
-
-LOCK TABLES `sizes` WRITE;
-/*!40000 ALTER TABLE `sizes` DISABLE KEYS */;
-INSERT INTO `sizes` VALUES (1,'XS'),(2,'S'),(3,'M'),(4,'L'),(5,'XL'),(6,'XXL');
-/*!40000 ALTER TABLE `sizes` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `status`
---
-
-DROP TABLE IF EXISTS `status`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `status` (
-  `id_status` int NOT NULL AUTO_INCREMENT,
-  `description` varchar(50) NOT NULL,
-  PRIMARY KEY (`id_status`),
-  UNIQUE KEY `description_UNIQUE` (`description`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `status`
---
-
-LOCK TABLES `status` WRITE;
-/*!40000 ALTER TABLE `status` DISABLE KEYS */;
-INSERT INTO `status` VALUES (1,'Completa'),(2,'Incompleta');
-/*!40000 ALTER TABLE `status` ENABLE KEYS */;
+LOCK TABLES `products_details` WRITE;
+/*!40000 ALTER TABLE `products_details` DISABLE KEYS */;
+INSERT INTO `products_details` VALUES (1,5,'s',1),(2,5,'m',1),(3,5,'l',1),(4,5,'xl',1),(5,5,'s',2),(6,5,'m',2),(7,5,'l',2),(8,5,'xl',2),(9,5,'s',3),(10,5,'m',3),(11,5,'l',3),(12,5,'xl',3),(13,5,'s',4),(14,5,'m',4),(15,5,'l',4),(16,5,'xl',4),(17,5,'s',5),(18,5,'m',5),(19,5,'l',5),(20,5,'xl',5),(21,5,'s',6),(22,5,'m',6),(23,5,'l',6),(24,5,'xl',6),(25,5,'s',7),(26,5,'m',7),(27,5,'l',7),(28,5,'xl',7),(29,5,'s',8),(30,5,'m',8),(31,5,'l',8),(32,5,'xl',8),(33,5,'s',9),(34,5,'m',9),(35,5,'l',9),(36,5,'xl',9),(37,5,'s',10),(38,5,'m',10),(39,5,'l',10),(40,5,'xl',10),(41,5,'s',11),(42,5,'m',11),(43,5,'l',11),(44,5,'xl',11),(45,5,'s',12),(46,5,'m',12),(47,5,'l',12),(48,5,'xl',12);
+/*!40000 ALTER TABLE `products_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -242,7 +189,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','admin','admin@admin.com','/images/users/userImg1655402343027.png','12345678','$2a$10$kEHftcVY0EmlSUegNFnOxOHhp4d4OE6wEUq0z5phQ4RklLnuL17NC',1), (2,'Fernando','Veliz','fernando.e.veliz@gmail.com','/images/users/userImg1655400230542.png','01130280788','$2a$10$0qJivWWzHI0mnA1rFBrMhOFZeNIxfweAKPYdGlyWmQ/nDM6X6mCrq',2),(3,'Mariano','Pettinati','mariano@mail.com','/images/users/userImg1655401365022.png','1231123211','$2a$10$87EoVmD6xz2QtC07pJDxdeKDN06FyGfJBr9JUuBf0GAhbsX62McqW',2),(4,'Valeria','Moncada','vale@unmail.com','/images/users/userImg1655401444538.png','123123123123','$2a$10$Tkug10rQ4z.bZRRPtD6cdeSPF1WJC37Mk1r6lpSsu7Nj2cu6V4j9a',2);
+INSERT INTO `users` VALUES (1,'admin','admin','admin@admin.com','/images/users/userImg1655402343027.png','12345678','$2a$10$kEHftcVY0EmlSUegNFnOxOHhp4d4OE6wEUq0z5phQ4RklLnuL17NC',1),(2,'Fernando','Veliz','fernando.e.veliz@gmail.com','/images/users/userImg1655400230542.png','01130280788','$2a$10$0qJivWWzHI0mnA1rFBrMhOFZeNIxfweAKPYdGlyWmQ/nDM6X6mCrq',2),(3,'Mariano','Pettinati','mariano@mail.com','/images/users/userImg1655401365022.png','1231123211','$2a$10$87EoVmD6xz2QtC07pJDxdeKDN06FyGfJBr9JUuBf0GAhbsX62McqW',2),(4,'Valeria','Moncada','vale@unmail.com','/images/users/userImg1655401444538.png','123123123123','$2a$10$Tkug10rQ4z.bZRRPtD6cdeSPF1WJC37Mk1r6lpSsu7Nj2cu6V4j9a',2);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -263,4 +210,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-23  8:22:59
+-- Dump completed on 2022-07-22  9:23:02

@@ -16,8 +16,8 @@ module.exports = (sequelize, dataTypes) => {
         total: {
             type: dataTypes.INTEGER
         },
-        id_status: {
-            type: dataTypes.INTEGER
+        status: {
+            type: dataTypes.STRING
         },
         id_user: {
             type: dataTypes.INTEGER
@@ -43,11 +43,6 @@ module.exports = (sequelize, dataTypes) => {
         Cart.belongsTo(models.User, {
             as: "user",
             foreignKey: "id_user"
-        });
-
-        Cart.belongsTo(models.Status, {
-            as: "status",
-            foreignKey: "id_status"
         });
     }
     
