@@ -32,7 +32,6 @@ const viewCart = (req, res) => {
     .catch(ex => {throw ex})
 };
 
-//TODO: hacer una vista de no hay productos 
 
 const cartController = {
     viewCart,
