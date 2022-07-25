@@ -59,7 +59,6 @@ const viewEditProduct = (req, res) => {
 
 const updateProduct = (req, res) => { 
     let errors = validationResult(req);
-    console.log(errors);
     if(errors.isEmpty())
     {   
         db.Product.update({
@@ -161,54 +160,70 @@ const searchProducts = (req, res) => {
 }
 
 const listProducts = (req, res) => {
-    db.Product.findAll()
+    db.Product.findAll({
+        include: ["product_details"]})
         .then(products => {
-        let productsNiños = products.filter(product => product.gender === 'niños');
-        let productsNiñas = products.filter(product => product.gender === 'niñas');
-        let productsSale= products.filter((el) => el.discount != 0);
-        let productsGenres = [{niños: productsNiños.length}, 
-            {niñas: productsNiñas.length}];
-        let productList = [];
-        products.forEach(product => {
-            let prod = {
-                id: product.id_product,
-                name: product.name,
-                price: product.price,
-                description: product.description,
-                gender: product.gender,
-                discount: product.discount,
-                detail: "http://localhost:3000/product/api/products/"+product.id_product
-            };
-            productList.push(prod);
+            let productsNiños = products.filter(product => product.gender === 'niños');
+            let productsNiñas = products.filter(product => product.gender === 'niñas');
+            let productsSale= products.filter((el) => el.discount != 0);
+            let productsGenres = [{niños: productsNiños.length}, 
+                {niñas: productsNiñas.length}];
+            let productList = [];
+            products.forEach(product => {
+                let details = [];
+                product.product_details.forEach(detalle => {
+                    let stock = detalle.stock;
+                    let size = detalle.size;
+                    details.push({stock: stock, size: size})
+                });
+                let prod = {
+                    id: product.id_product,
+                    name: product.name,
+                    price: product.price,
+                    description: product.description,
+                    gender: product.gender,
+                    discount: product.discount,
+                    detail: "http://localhost:3000/product/api/products/"+product.id_product,
+                    details_products: details
+                };
+                productList.push(prod);
+            })
+            return res.status(200).json({
+            count: products.length,  
+            countByGenres: productsGenres,
+            countBySale: productsSale.length,
+            products: productList,      
+            status: 200
+            })
         })
-        return res.status(200).json({
-        count: products.length,  
-        countByGenres: productsGenres,
-        countBySale: productsSale.length,
-        products: productList,      
-        status: 200
-        })
-    })
-    .catch(error => res.status(404).json({error: {error}}))
+        .catch(error => res.status(404).json({error: {error}}))
 }
 
 const apiProductForId = (req, res) => {
-    db.Product.findByPk(req.params.id)
-  .then(productInDb => {
-    let product = {
-      id: productInDb.id_product,
-      name: productInDb.name,
-      price: productInDb.price,
-      description: productInDb.description,
-      img: productInDb.img,
-      gender: productInDb.gender,
-      discount: productInDb.discount
-    }
-    return res.status(200).json({
-      data: product,
-      status: 200
+    db.Product.findByPk(req.params.id, {
+        include: ["product_details"]})
+    .then(productInDb => {
+        let details = [];
+        productInDb.product_details.forEach(detalle => {
+            let stock = detalle.stock;
+            let size = detalle.size;
+            details.push({stock: stock, size: size})
+        });
+        let product = {
+        id: productInDb.id_product,
+        name: productInDb.name,
+        price: productInDb.price,
+        description: productInDb.description,
+        img: productInDb.img,
+        gender: productInDb.gender,
+        discount: productInDb.discount,
+        details: details
+        }
+        return res.status(200).json({
+        data: product,
+        status: 200
+        })
     })
-  })
 }
 
 const productController = {
