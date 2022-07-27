@@ -197,6 +197,15 @@ const apiUsers = (req, res) => {
       status: 200
     })
   })
+  .catch((err) => {
+    if(err.parent.code=='ER_ACCESS_DENIED_ERROR')
+    {
+      return res.status(500).json({
+        error: "Error en la conexión con la base de datos",
+        status: 500
+      })
+    }
+   })
 }
 
 const apiUsersForId = (req, res) => {
@@ -214,6 +223,24 @@ const apiUsersForId = (req, res) => {
       data: user,
       status: 200
     })
+  })
+  .catch(err => {
+  
+    if(err.parent && err.parent.code=='ER_ACCESS_DENIED_ERROR')
+    {
+      return res.status(500).json({
+        error: "Error en la conexión con la base de datos",
+        status: 500
+      })
+    }
+    
+    if(err.parent == undefined)
+    {
+      res.status(404).json({
+        error: "Usuario no encontrado. Pruebe con otro id"
+      })
+    }
+    
   })
 }
 

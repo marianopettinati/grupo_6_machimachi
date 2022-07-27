@@ -5,6 +5,10 @@ const session = require ('express-session');
 const { urlencoded } = require('express');
 const cookies = require ('cookie-parser');
 const loggedMiddleware = require ('../src/middlewares/loggedMiddleware');
+const cors = require('cors');
+
+app.use(cors())
+
 
 const rutasMain = require ('./routes/mainRoute');
 const rutasCarrito = require('./routes/cartRoute');
