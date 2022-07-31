@@ -196,7 +196,15 @@ const listProducts = (req, res) => {
             status: 200
             })
         })
-        .catch(error => res.status(404).json({error: {error}}))
+        .catch(err => {
+            if(err.parent && err.parent.code=='ER_ACCESS_DENIED_ERROR')
+                {
+                return res.status(500).json({
+                    error: "Error en la conexión con la base de datos",
+                    status: 500
+                })
+                }
+        })
 }
 
 const apiProductForId = (req, res) => {
@@ -224,6 +232,24 @@ const apiProductForId = (req, res) => {
         status: 200
         })
     })
+    .catch(err => {
+  
+        if(err.parent && err.parent.code=='ER_ACCESS_DENIED_ERROR')
+        {
+          return res.status(500).json({
+            error: "Error en la conexión con la base de datos",
+            status: 500
+          })
+        }
+        
+        if(err.parent == undefined)
+        {
+          res.status(404).json({
+            error: "Producto no encontrado. Pruebe con otro id"
+          })
+        }
+        
+      })
 }
 
 const productController = {
