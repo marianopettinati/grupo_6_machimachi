@@ -11,6 +11,7 @@ app.use(cors())
 
 
 const rutasMain = require ('./routes/mainRoute');
+const rutasApi = require('./routes/apiRoute');
 const rutasCarrito = require('./routes/cartRoute');
 const rutasProduct = require('./routes/productRoute');
 const rutasUser = require('./routes/userRoute');
@@ -54,9 +55,11 @@ app.use (userLoggedMiddleware);
 
 //Rutas
 app.use('/', rutasMain);
+app.use('/api', rutasApi);
 app.use('/cart', rutasCarrito);
 app.use('/product', rutasProduct);
 app.use('/user', rutasUser);
+
 app.use((req,res, next)=>{
     res.status(404).render("not-found");
 })

@@ -4,7 +4,6 @@ const path = require ('path');
 const multer = require ('multer');
 const productController = require ('../controllers/productController');
 const adminMiddleware = require('../middlewares/adminMiddleware');
-const authMiddleware = require('../middlewares/authMiddleware');
 const validationsMiddleware = require('../middlewares/validationUtils');
 
 const storage = multer.diskStorage({ 
@@ -41,8 +40,7 @@ router.get('/search', productController.searchProducts)
 //GET
 router.get('/:id', productController.viewProduct);
 
-router.get('/api/products', productController.listProducts);
-router.get('/api/products/:id', productController.apiProductForId);
+
 
 
 
