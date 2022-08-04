@@ -20,6 +20,7 @@ const createProduct = (req, res) => {
         }).then(() => {
             res.redirect ("/");
         })
+        .catch(error => console.log(error))
     }
     else{
         return res.render("productAdd", {
@@ -37,6 +38,7 @@ const viewProduct = (req, res) => {
         .then(([producto, productos]) => {
             res.render('product', {producto, productos});
         })
+        .catch(error => console.log(error))
 };
 
 const viewProductList = (req,res) => {
@@ -47,6 +49,7 @@ const viewProductList = (req,res) => {
         .then(([producto, productos]) => {
             res.render('productList', {producto, productos});
         })
+        .catch(error => console.log(error))
 }
 
 const viewEditProduct = (req, res) => {
@@ -55,6 +58,7 @@ const viewEditProduct = (req, res) => {
             let producto = product.dataValues;
             res.render('productEdit', {producto});  
         })
+        .catch(error => console.log(error))
 }; 
 
 const updateProduct = (req, res) => { 
@@ -74,6 +78,7 @@ const updateProduct = (req, res) => {
         }}).then(() => {
             res.redirect("/product/edit/"+req.params.id)
         })
+        .catch(error => console.log(error))
     }
     else{
         return res.render("/product/edit/"+req.params.id, {
@@ -91,7 +96,8 @@ const deleteProduct = (req, res) => {
     })
     .then(() => {
         res.redirect ('/');
-    })    
+    }) 
+    .catch(error => console.log(error))   
 }
 
 const viewProductsNiñas = (req,res)=> {
@@ -108,7 +114,8 @@ const viewProductsNiñas = (req,res)=> {
     })
     .then(() =>{
         res.render('productsGender', { products: productsNiñas, category:"Niñas"})
-    })   
+    }) 
+    .catch(error => console.log(error))  
 }
 
 const viewProductsNiños = (req,res)=> {
@@ -126,6 +133,7 @@ const viewProductsNiños = (req,res)=> {
     .then(() =>{
         res.render('productsGender', { products: productsNiños, category:"Niños"})
     })
+    .catch(error => console.log(error))
 }
 
 const viewSaleProducts = (req,res)=> {
@@ -143,6 +151,7 @@ const viewSaleProducts = (req,res)=> {
         .then(() =>{
             res.render('productsGender', { products: productSale, category:"Sale"})
         })
+        .catch(error => console.log(error))
 }
 
 const searchProducts = (req, res) => {
@@ -157,6 +166,7 @@ const searchProducts = (req, res) => {
         : res.render('productsGender', 
         { products: resultados, category:`No hubo coincidencias con su búsqueda ${req.query.search}`})
     })
+    .catch(error => console.log(error))
 }
 
 const listProducts = (req, res) => {
