@@ -19,11 +19,16 @@ const contacto = (req,res) => {
     res.render ('contacto');
 }
 
+const seguinos = (req,res) => {
+    res.render ('seguinos');
+}
+
 const mainController = {
     home,
     nosotros,
     ayuda,
     contacto,
+    seguinos,
 }
 
 

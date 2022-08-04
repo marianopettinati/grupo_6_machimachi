@@ -10,5 +10,7 @@ router.get('/', mainController.home);
 router.get('/nosotros', mainController.nosotros);
 router.get('/ayuda', mainController.ayuda);
 router.get('/contacto', mainController.contacto);
+router.get('/seguinos', mainController.seguinos);
+
 
 module.exports = router;
