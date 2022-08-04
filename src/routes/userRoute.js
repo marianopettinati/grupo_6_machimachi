@@ -42,12 +42,11 @@ router.get("/profile", authMiddleware, loginController.viewProfile);
 router.post("/logout", loginController.logout);
 
 //enrutadores del list
-router.get("/list", adminMiddleware, loginController.profilesList); //FALTA EL ADMINMIDDLEWARE, no lo puse para testear más fácil
+router.get("/list", adminMiddleware, loginController.profilesList); 
 router.put ("/list", loginController.userEdit);
 router.delete ("/list", loginController.userDelete);
 
-router.get("/api/users", loginController.apiUsers);
-router.get("/api/users/:id", loginController.apiUsersForId);
+
 
 
 module.exports = router;
