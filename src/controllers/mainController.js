@@ -15,10 +15,15 @@ const ayuda = (req,res) => {
     res.render ('ayuda');
 }
 
+const contacto = (req,res) => {
+    res.render ('contacto');
+}
+
 const mainController = {
     home,
     nosotros,
     ayuda,
+    contacto,
 }
 
 
