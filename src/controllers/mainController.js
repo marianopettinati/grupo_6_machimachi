@@ -7,9 +7,15 @@ const home = (req, res) => {
    
 }
 
+const nosotros = (req,res) => {
+    res.render ('nosotros');
+}
+
 const mainController = {
     home,
+    nosotros,
 }
+
 
 // Acá exportamos el resultado
 module.exports = mainController;
