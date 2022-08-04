@@ -1,0 +1,29 @@
+.help-wraper{
+    min-height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+}
+
+h3{
+    padding: 15px 0;
+    font-family: 'poppins';
+}
+
+p{
+    padding: 4px 0;
+    
+    
+}
+
+.ayuda{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    text-align: center;
+    box-shadow: 7px 10px 28px -8px rgba(0,0,0,0.40);
+}

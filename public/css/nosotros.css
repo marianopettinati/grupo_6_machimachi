@@ -1,0 +1,46 @@
+.container{
+    width: 70px;
+    display: flex;
+  
+}
+
+.sec-wrapper{
+    justify-content: center;
+    display: flex;
+}
+
+p{
+    padding: 4px 0;
+    
+    
+}
+
+h3{
+    padding: 15px 0;
+    font-family: 'poppins';
+}
+
+.nosotros{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    text-align: center;
+    box-shadow: 7px 10px 28px -8px rgba(0,0,0,0.20);
+}
+
+.yellow{
+    color:#F4B400;
+    font-size: 40px;
+}
+
+.blue{
+    color: #326DC7;
+    font-size: 40px;
+}
+
+.pink{
+    color:#FC5DD9;
+    font-size: 40px;
+}

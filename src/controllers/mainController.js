@@ -7,9 +7,20 @@ const home = (req, res) => {
     .catch(error => console.log(error))
 }
 
+const nosotros = (req,res) => {
+    res.render ('nosotros');
+}
+
+const ayuda = (req,res) => {
+    res.render ('ayuda');
+}
+
 const mainController = {
     home,
+    nosotros,
+    ayuda,
 }
+
 
 // Acá exportamos el resultado
 module.exports = mainController;
