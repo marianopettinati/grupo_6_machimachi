@@ -33,14 +33,15 @@
 }
 
 #promo {
-    height: 45vh;
-    margin: 10px 0px 30px 0;
-    background-image: url("/images/Web-Banner-machi-machi-1.jpg");
-    background-size: cover;
-    color: darkred;
-    text-align: center;
-    font-size: 20;
-    font-style: italic;
+    max-height: 280px;
+    width: 100%;
+    margin: 10px 0px 30px 0px;
+    display: flex;
+}
+
+.img{
+    width: 100%;
+    height: auto;
 }
 
 body{

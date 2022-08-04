@@ -48,6 +48,7 @@ span{
 
 .logoMachiMachi{
     width: 150px;
+    display: none;
 }
 
 .icons-nav{
@@ -119,10 +120,6 @@ header ul{
         align-self: flex-end;
     }
     
-    .logoMachiMachi{
-        width: 200px;
-    }
-    
     .icons-nav i{
         font-size: 15px;
     }
@@ -137,18 +134,32 @@ header ul{
         font-size: 15px;
     }
 }
+@media (min-width: 520px){
+    .logoMachiMachi{
+        width: 150px;
+        display: block;
+    }
+}
+@media (min-width: 620px){
+    .logoMachiMachi{
+        width: 230px;
+        display: block;
+    }
+}
 
+@media (min-width: 880px){
+    .logoMachiMachi{
+        width: 350px;
+        display: block;
+    }
+}
 @media (min-width: 770px){
     
     .logo{
         width: 40px;
         align-self: flex-end;
     }
-    
-    .logoMachiMachi{
-        width: 400px;
-    }
-    
+
     .icons-nav i{
         font-size: 20px;
     }
