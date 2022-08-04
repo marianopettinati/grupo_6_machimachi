@@ -49,6 +49,7 @@ const login = (req, res) => {
                     }}, old: req.body});
             }
         })
+        .catch(error => console.log(error))
     }
     else {        
       return res.render('login', {
@@ -82,7 +83,8 @@ const createUser = (req, res) => {
     where: {
       email: req.body.email,
     },
-  }).then((response) => (userInDB = response));
+  }).then((response) => (userInDB = response))
+  .catch(error => console.log(error));
 
   if (userInDB != null || userInDB != undefined) {
     return res.render("register", {
@@ -112,7 +114,8 @@ const createUser = (req, res) => {
     id_type_user: user.id_type_user,
   }).then(() => {
     return res.redirect("/user/login");
-  });
+  })
+  .catch(error => console.log(error));
 };
 
 const viewProfile = (req, res) => {
@@ -123,7 +126,8 @@ const profilesList = (req, res) => {
   db.User.findAll()
     .then(function (user) {
         res.render("userList", { user: user });
-  });
+  })
+  .catch(error => console.log(error));
 };
 
 const userEdit = (req,res) => {
@@ -134,7 +138,8 @@ const userEdit = (req,res) => {
             } else {
                 res.render ("userProfile")
             }
-    });
+          })
+          .catch(error => console.log(error));
 }
 
 const userDelete = (req,res) => {
@@ -174,7 +179,8 @@ const updateUser = (req, res) => {
     { where: { id_user: req.params.id } }
   ).then(() => {
     //TODO: Crear la ruta user/edit/:id para redireccionar a una vista
-  });
+  })
+  .catch(error => console.log(error));
 };
 
 const apiUsers = (req, res) => {
