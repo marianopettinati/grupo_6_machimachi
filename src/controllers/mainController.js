@@ -11,9 +11,14 @@ const nosotros = (req,res) => {
     res.render ('nosotros');
 }
 
+const ayuda = (req,res) => {
+    res.render ('ayuda');
+}
+
 const mainController = {
     home,
     nosotros,
+    ayuda,
 }
 
 
