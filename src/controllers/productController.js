@@ -20,6 +20,7 @@ const createProduct = (req, res) => {
         }).then(() => {
             res.redirect ("/");
         })
+        .catch(error => console.log(error))
     }
     else{
         return res.render("productAdd", {
@@ -37,6 +38,7 @@ const viewProduct = (req, res) => {
         .then(([producto, productos]) => {
             res.render('product', {producto, productos});
         })
+        .catch(error => console.log(error))
 };
 
 const viewProductList = (req,res) => {
@@ -47,6 +49,7 @@ const viewProductList = (req,res) => {
         .then(([producto, productos]) => {
             res.render('productList', {producto, productos});
         })
+        .catch(error => console.log(error))
 }
 
 const viewEditProduct = (req, res) => {
@@ -55,11 +58,11 @@ const viewEditProduct = (req, res) => {
             let producto = product.dataValues;
             res.render('productEdit', {producto});  
         })
+        .catch(error => console.log(error))
 }; 
 
 const updateProduct = (req, res) => { 
     let errors = validationResult(req);
-    console.log(errors);
     if(errors.isEmpty())
     {   
         db.Product.update({
@@ -75,6 +78,7 @@ const updateProduct = (req, res) => {
         }}).then(() => {
             res.redirect("/product/edit/"+req.params.id)
         })
+        .catch(error => console.log(error))
     }
     else{
         return res.render("/product/edit/"+req.params.id, {
@@ -92,7 +96,8 @@ const deleteProduct = (req, res) => {
     })
     .then(() => {
         res.redirect ('/');
-    })    
+    }) 
+    .catch(error => console.log(error))   
 }
 
 const viewProductsNiñas = (req,res)=> {
@@ -109,7 +114,8 @@ const viewProductsNiñas = (req,res)=> {
     })
     .then(() =>{
         res.render('productsGender', { products: productsNiñas, category:"Niñas"})
-    })   
+    }) 
+    .catch(error => console.log(error))  
 }
 
 const viewProductsNiños = (req,res)=> {
@@ -127,6 +133,7 @@ const viewProductsNiños = (req,res)=> {
     .then(() =>{
         res.render('productsGender', { products: productsNiños, category:"Niños"})
     })
+    .catch(error => console.log(error))
 }
 
 const viewSaleProducts = (req,res)=> {
@@ -144,6 +151,7 @@ const viewSaleProducts = (req,res)=> {
         .then(() =>{
             res.render('productsGender', { products: productSale, category:"Sale"})
         })
+        .catch(error => console.log(error))
 }
 
 const searchProducts = (req, res) => {
@@ -158,9 +166,101 @@ const searchProducts = (req, res) => {
         : res.render('productsGender', 
         { products: resultados, category:`No hubo coincidencias con su búsqueda ${req.query.search}`})
     })
+    .catch(error => console.log(error))
 }
 
+const listProducts = (req, res) => {
+    db.Product.findAll({
+        include: ["product_details"]})
+        .then(products => {
+            let productsNiños = products.filter(product => product.gender === 'niños');
+            let productsNiñas = products.filter(product => product.gender === 'niñas');
+            let productsSale= products.filter((el) => el.discount != 0);
+            let productsGenres = [{niños: productsNiños.length}, 
+                {niñas: productsNiñas.length}];
+            let productList = [];
+            products.forEach(product => {
+                let details = [];
+                product.product_details.forEach(detalle => {
+                    let stock = detalle.stock;
+                    let size = detalle.size;
+                    details.push({stock: stock, size: size})
+                });
+                let prod = {
+                    id: product.id_product,
+                    name: product.name,
+                    price: product.price,
+                    description: product.description,
+                    gender: product.gender,
+                    discount: product.discount,
+                    detail: "http://localhost:3000/product/api/products/"+product.id_product,
+                    details_products: details
+                };
+                productList.push(prod);
+            })
+            return res.status(200).json({
+            count: products.length,  
+            countByGenres: productsGenres,
+            countBySale: productsSale.length,
+            products: productList,      
+            status: 200
+            })
+        })
+        .catch(err => {
+            if(err.parent && err.parent.code=='ER_ACCESS_DENIED_ERROR')
+                {
+                return res.status(500).json({
+                    error: "Error en la conexión con la base de datos",
+                    status: 500
+                })
+                }
+        })
+}
 
+const apiProductForId = (req, res) => {
+    db.Product.findByPk(req.params.id, {
+        include: ["product_details"]})
+    .then(productInDb => {
+        let details = [];
+        productInDb.product_details.forEach(detalle => {
+            let stock = detalle.stock;
+            let size = detalle.size;
+            details.push({stock: stock, size: size})
+        });
+        let product = {
+        id: productInDb.id_product,
+        name: productInDb.name,
+        price: productInDb.price,
+        description: productInDb.description,
+        img: productInDb.img,
+        gender: productInDb.gender,
+        discount: productInDb.discount,
+        details: details
+        }
+        return res.status(200).json({
+        data: product,
+        status: 200
+        })
+    })
+    .catch(err => {
+  
+        if(err.parent && err.parent.code=='ER_ACCESS_DENIED_ERROR')
+        {
+          return res.status(500).json({
+            error: "Error en la conexión con la base de datos",
+            status: 500
+          })
+        }
+        
+        if(err.parent == undefined)
+        {
+          res.status(404).json({
+            error: "Producto no encontrado. Pruebe con otro id"
+          })
+        }
+        
+      })
+}
 
 const productController = {
     viewProduct,
@@ -173,7 +273,9 @@ const productController = {
     viewProductsNiñas,
     viewProductsNiños,
     viewSaleProducts,
-    searchProducts
+    searchProducts,
+    listProducts,
+    apiProductForId
 }
 
 module.exports = productController;

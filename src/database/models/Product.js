@@ -42,12 +42,9 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: "id_cart",
             timestamps: false
         });
-        Product.belongsToMany(models.Size, {
-            as: "sizes",
-            through: "products_size",
+        Product.hasMany(models.ProductDetail, {
+            as: "product_details",
             foreignKey: "id_product",
-            otherKey: "id_size",
-            timestamps: false
         });
     })
     

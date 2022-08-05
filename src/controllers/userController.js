@@ -2,6 +2,7 @@ const { validationResult } = require("express-validator");
 const bcrypjs = require("bcryptjs");
 let db = require("../database/models");
 const { localsName } = require("ejs");
+const { BLOB } = require("sequelize");
 
 const viewLogin = (req, res) => {
   res.render("login");
@@ -48,6 +49,7 @@ const login = (req, res) => {
                     }}, old: req.body});
             }
         })
+        .catch(error => console.log(error))
     }
     else {        
       return res.render('login', {
@@ -81,7 +83,8 @@ const createUser = (req, res) => {
     where: {
       email: req.body.email,
     },
-  }).then((response) => (userInDB = response));
+  }).then((response) => (userInDB = response))
+  .catch(error => console.log(error));
 
   if (userInDB != null || userInDB != undefined) {
     return res.render("register", {
@@ -111,7 +114,8 @@ const createUser = (req, res) => {
     id_type_user: user.id_type_user,
   }).then(() => {
     return res.redirect("/user/login");
-  });
+  })
+  .catch(error => console.log(error));
 };
 
 const viewProfile = (req, res) => {
@@ -122,7 +126,8 @@ const profilesList = (req, res) => {
   db.User.findAll()
     .then(function (user) {
         res.render("userList", { user: user });
-  });
+  })
+  .catch(error => console.log(error));
 };
 
 const userEdit = (req,res) => {
@@ -133,7 +138,8 @@ const userEdit = (req,res) => {
             } else {
                 res.render ("userProfile")
             }
-    });
+          })
+          .catch(error => console.log(error));
 }
 
 const userDelete = (req,res) => {
@@ -173,8 +179,76 @@ const updateUser = (req, res) => {
     { where: { id_user: req.params.id } }
   ).then(() => {
     //TODO: Crear la ruta user/edit/:id para redireccionar a una vista
-  });
+  })
+  .catch(error => console.log(error));
 };
+
+const apiUsers = (req, res) => {
+  db.User.findAll()
+  .then(users => {
+    let usersList = [];
+    users.forEach(user => {
+      let userAdd = {
+        id: user.id_user,
+        name: user.name,
+        last_name: user.last_name,
+        email: user.email,
+        detail: "http://localhost:3000/user/api/users/"+user.id_user
+      }
+      usersList.push(userAdd);
+    });
+    return res.status(200).json({
+      count: usersList.length,
+      data: usersList,
+      status: 200
+    })
+  })
+  .catch((err) => {
+    if(err.parent.code=='ER_ACCESS_DENIED_ERROR')
+    {
+      return res.status(500).json({
+        error: "Error en la conexión con la base de datos",
+        status: 500
+      })
+    }
+   })
+}
+
+const apiUsersForId = (req, res) => {
+  db.User.findByPk(req.params.id)
+  .then(userInDb => {
+    let user = {
+      id: userInDb.id_user,
+      name: userInDb.name,
+      last_name: userInDb.last_name,
+      email: userInDb.email,
+      img: userInDb.img,
+      phone: userInDb.phone
+    }
+    return res.status(200).json({
+      data: user,
+      status: 200
+    })
+  })
+  .catch(err => {
+  
+    if(err.parent && err.parent.code=='ER_ACCESS_DENIED_ERROR')
+    {
+      return res.status(500).json({
+        error: "Error en la conexión con la base de datos",
+        status: 500
+      })
+    }
+    
+    if(err.parent == undefined)
+    {
+      res.status(404).json({
+        error: "Usuario no encontrado. Pruebe con otro id"
+      })
+    }
+    
+  })
+}
 
 const loginController = {
   viewLogin,
@@ -188,6 +262,8 @@ const loginController = {
   profilesList,
   userDelete,
   userEdit,
+  apiUsers,
+  apiUsersForId
 };
 
 module.exports = loginController;
